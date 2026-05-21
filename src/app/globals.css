@@ -15,6 +15,8 @@
   --color-dark-soft: #4a4948;
   --color-gray: #6b7280;
   --color-gray-light: #9ca3af;
+  --color-accent-green: #34d399;
+  --color-accent-amber: #fbbf24;
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
@@ -39,7 +41,7 @@ button, a, [role="button"], input[type="submit"], select { cursor: pointer; }
 }
 .animate-marquee { animation: marquee 25s linear infinite; }
 
-/* Marquee cards — slow horizontal scroll */
+/* Marquee cards */
 @keyframes marqueeCards {
   0% { transform: translateX(0); }
   100% { transform: translateX(-33.333%); }
@@ -74,9 +76,9 @@ button, a, [role="button"], input[type="submit"], select { cursor: pointer; }
 }
 .slow-zoom { animation: slowZoom 20s ease-in-out infinite alternate; }
 
-/* Gradient text — lilac accent */
+/* Gradient text */
 .text-gradient {
-  background: linear-gradient(135deg, #c084fc, #D9A3FF);
+  background: linear-gradient(135deg, #c084fc, #D9A3FF, #e9d5ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -144,30 +146,13 @@ button, a, [role="button"], input[type="submit"], select { cursor: pointer; }
   pointer-events: none;
 }
 
-/* Splash gradient animation */
-@keyframes splashGradient {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-/* Smooth modal enter */
+/* Modal enter */
 @keyframes modalIn {
   from { opacity: 0; transform: scale(0.95) translateY(10px); }
   to { opacity: 1; transform: scale(1) translateY(0); }
 }
 
-/* Toast slide in */
-@keyframes toastIn {
-  from { opacity: 0; transform: translateY(-100%); }
-  to { opacity: 1; transform: translateY(0); }
-}
-@keyframes toastOut {
-  from { opacity: 1; transform: translateY(0); }
-  to { opacity: 0; transform: translateY(-100%); }
-}
-
-/* Hero video crossfade — 4 videos, 24s cycle */
+/* Hero video crossfade */
 .hero-video {
   position: absolute;
   inset: 0;
@@ -179,45 +164,12 @@ button, a, [role="button"], input[type="submit"], select { cursor: pointer; }
 }
 .hero-video--1 { animation: heroV1 24s ease-in-out 0s infinite; }
 .hero-video--2 { animation: heroV2 24s ease-in-out 0s infinite; }
-.hero-video--3 { animation: heroV3 24s ease-in-out 0s infinite; }
-.hero-video--4 { animation: heroV4 24s ease-in-out 0s infinite; }
-
-/* V1: visible 0-17%, fade out 17-25%, hidden rest, fade in 92-100% */
 @keyframes heroV1 {
-  0%   { opacity: 1; }
-  17%  { opacity: 1; }
-  25%  { opacity: 0; }
-  92%  { opacity: 0; }
-  100% { opacity: 1; }
+  0%   { opacity: 1; } 17%  { opacity: 1; } 25%  { opacity: 0; } 92%  { opacity: 0; } 100% { opacity: 1; }
 }
-/* V2: hidden 0-17%, fade in 17-25%, visible 25-42%, fade out 42-50%, hidden rest */
 @keyframes heroV2 {
-  0%   { opacity: 0; }
-  17%  { opacity: 0; }
-  25%  { opacity: 1; }
-  42%  { opacity: 1; }
-  50%  { opacity: 0; }
-  100% { opacity: 0; }
+  0%   { opacity: 0; } 17%  { opacity: 0; } 25%  { opacity: 1; } 42%  { opacity: 1; } 50%  { opacity: 0; } 100% { opacity: 0; }
 }
-/* V3: hidden 0-42%, fade in 42-50%, visible 50-67%, fade out 67-75%, hidden rest */
-@keyframes heroV3 {
-  0%   { opacity: 0; }
-  42%  { opacity: 0; }
-  50%  { opacity: 1; }
-  67%  { opacity: 1; }
-  75%  { opacity: 0; }
-  100% { opacity: 0; }
-}
-/* V4: hidden 0-67%, fade in 67-75%, visible 75-92%, fade out 92-100% */
-@keyframes heroV4 {
-  0%   { opacity: 0; }
-  67%  { opacity: 0; }
-  75%  { opacity: 1; }
-  92%  { opacity: 1; }
-  100% { opacity: 0; }
-}
-
-/* Reduced motion: show only first video */
 @media (prefers-reduced-motion: reduce) {
   .hero-video { animation: none; opacity: 0; }
   .hero-video--1 { opacity: 1; }
@@ -233,4 +185,101 @@ button, a, [role="button"], input[type="submit"], select { cursor: pointer; }
   background-size: 200% 100%;
   animation: skeletonShimmer 1.5s ease-in-out infinite;
   border-radius: 0.75rem;
+}
+
+/* ====== V4 NEW EFFECTS ====== */
+
+/* Aurora gradient bg */
+@keyframes auroraShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.aurora-bg {
+  background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460, #1a1a2e, #2d1b69);
+  background-size: 400% 400%;
+  animation: auroraShift 15s ease infinite;
+}
+
+/* Glow ring for plan cards */
+@keyframes glowRing {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(217,163,255,0.3), 0 0 20px rgba(217,163,255,0); }
+  50% { box-shadow: 0 0 0 4px rgba(217,163,255,0.15), 0 0 30px rgba(217,163,255,0.1); }
+}
+.glow-ring { animation: glowRing 3s ease-in-out infinite; }
+
+/* Notification badge pulse */
+@keyframes badgePulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.2); opacity: 0.8; }
+}
+.badge-pulse { animation: badgePulse 2s ease-in-out infinite; }
+
+/* Gradient line separator */
+.gradient-line {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(217,163,255,0.3), transparent);
+}
+
+/* Glass card */
+.glass-card {
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+/* Hover lift */
+.hover-lift {
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s ease;
+}
+.hover-lift:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+/* Clipboard copy animation */
+@keyframes copyPop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+.copy-pop { animation: copyPop 0.3s ease; }
+
+/* WhatsApp green */
+.whatsapp-green { background-color: #25D366; }
+.whatsapp-green:hover { background-color: #20BD5A; }
+
+/* Typing indicator dots */
+@keyframes typingDot {
+  0%, 80%, 100% { transform: translateY(0); opacity: 0.4; }
+  40% { transform: translateY(-6px); opacity: 1; }
+}
+.typing-dot:nth-child(1) { animation: typingDot 1.4s ease-in-out infinite 0s; }
+.typing-dot:nth-child(2) { animation: typingDot 1.4s ease-in-out infinite 0.2s; }
+.typing-dot:nth-child(3) { animation: typingDot 1.4s ease-in-out infinite 0.4s; }
+
+/* Active nav indicator */
+@keyframes navDot {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+/* Testimonial card shine */
+@keyframes cardShine {
+  0% { left: -100%; }
+  100% { left: 200%; }
+}
+.card-shine::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent);
+  transition: left 0.5s ease;
+  pointer-events: none;
+}
+.card-shine:hover::after {
+  left: 200%;
 }
