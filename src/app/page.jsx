@@ -963,9 +963,6 @@ function Contact() {
           <motion.p variants={fadeUp} className="text-white/45 mb-4">Elegi tu plan y escribime. Respondo en menos de 24h.</motion.p>
 
           <motion.div variants={fadeUp} className="flex flex-wrap justify-center gap-3 mb-10">
-            <a href="https://wa.me/message" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 whatsapp-green text-white px-5 py-2.5 rounded-full text-sm font-bold transition-all shadow-md hover:shadow-lg">
-              <Phone size={14} /> WhatsApp
-            </a>
             <a href="mailto:contacta@elyfitness.es" className="inline-flex items-center gap-2 bg-white/10 border border-white/15 hover:bg-white/20 text-white px-5 py-2.5 rounded-full text-sm font-bold transition-all">
               <Mail size={14} /> Email
             </a>
@@ -1340,7 +1337,6 @@ function ChatWidget() {
     { label: 'Quiero un cambio real', href: '#contacto', icon: <Sparkles size={12} /> },
     { label: 'Coaching Personalizado', href: '#coaching', icon: <Crown size={12} /> },
     { label: 'ElyFitness APP', href: '#app', icon: <Download size={12} /> },
-    { label: 'Contactar por WhatsApp', href: 'https://wa.me/message', external: true, icon: <Phone size={12} /> },
   ];
 
   return (
