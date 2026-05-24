@@ -65,7 +65,7 @@ function Navbar() {
   }, []);
 
   const links = [
-    { href: '#servicios', label: 'SERVICIOS' },
+    { href: '#plan-ultra', label: 'SERVICIOS' },
     { href: '#resultados', label: 'RESULTADOS' },
     { href: '#prozis', label: 'PROZIS' },
     { href: '#contacto', label: 'CONTACTO' },
@@ -74,9 +74,26 @@ function Navbar() {
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-400 ${scrolled ? 'bg-[#FCF3EF]/92 sticky-blur border-b border-dark/8 shadow-sm' : 'bg-transparent'}`}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between h-14">
-        <a href="#" className="flex items-center gap-2">
-          <span className={`text-xl font-black tracking-tight transition-colors ${scrolled ? 'text-dark' : 'text-white'}`}>ELY</span>
-          <span className={`text-[7px] font-bold uppercase leading-tight transition-colors ${scrolled ? 'text-primary-dark' : 'text-primary'}`}>FITNESS<br />&amp; NUTRITION</span>
+        <a href="#" className="flex items-center">
+          <svg className={`h-8 w-auto transition-all ${scrolled ? '[&_path]:fill-[#1d1d1b]' : '[&_path]:fill-white'}`} preserveAspectRatio="xMidYMid meet" viewBox="58.667 144.7 383.471 210.7" xmlns="http://www.w3.org/2000/svg">
+            <g>
+              <path d="M58.667 312.597v-123h49.3v23.8h-24.2v23.9h23.2v23.2h-23.2v28.2h25.8v23.9h-50.9z" />
+              <path d="M117.666 312.597v-123h49.3v23.9h-24.6v19.6h23.2v23.7h-23.2v56h-24.8v-.2z" />
+              <path d="M106.8 144.7v24.9h-1.1v-24.9h1.1z" />
+              <path d="M194.3 215.9c.4-1.8-.1-3.4-2.5-3.6-1-.1-1.9.2-2.8.4-1.8.4-3.4 1.3-4.7 2.6-.6.4-1 .9-1.7 1.4-.1-.3-.1-.4-.2-.6-.3-1.5-1-3-2.1-4.2-.4-.6-1-1-1.7-1.5-.2-.2-.7-.2-.9-.2-1 .3-1.8.9-2.1 1.9-.2.7-.4 1.4-.4 2.1-.1 3.1.1 6.1 1.5 8.9.7 1.2 1.2 2.4 1.8 3.6s1.2 2.3 2.1 3.4c.8 1 1.4 1.1 2.3.2.9-.8 1.7-1.7 2.5-2.5 2-2 3.6-4.1 5.3-6.4.9-1.2 1.7-2.5 2.5-3.7.5-.6 1-1.1 1.1-1.8z" />
+              <path d="M227.258 269.115v1.8h-13.3v-19.8h13.1v1.6h-11.1v7.2h9.7v1.6h-9.7v7.5h11.3z" />
+              <path d="M250.826 270.915v-19.8h2v18h11.5v1.8h-13.5z" />
+              <path d="m287.063 251.115 6.4 10.6 6.6-10.6h2.1l-7.7 12.4v7.4h-2v-7.4l-7.7-12.3h2.3v-.1z" />
+              <path d="M214.021 313.415v-19.8h12.9v1.6h-11v7.2h9.3v1.6h-9.3v9.2h-2v.2z" />
+              <path d="M250.234 313.415v-19.8h2v19.8h-2z" />
+              <path d="M290.9 295.415h-7v18h-2v-18h-7v-1.6H291v1.6z" />
+              <path d="M315.78 297.415v16.2h-2v-20h1.5l13.1 16.4v-16.4h2v19.8h-1.6l-13-16z" />
+              <path d="M368.427 311.615v1.8h-13.3v-19.8h13.1v1.6h-11.1v7.2h9.7v1.6h-9.7v7.5h11.3z" />
+              <path d="M403.596 297.415c-.5-.7-1.3-1.1-2.3-1.5-1-.3-2-.7-3.1-.7-1.8 0-2.9.3-3.8 1-.8.7-1.1 1.6-1.1 2.6 0 .7.2 1.1.3 1.5.2.3.5.7 1 1 .5.3 1 .5 1.6.7.7.2 1.5.3 2.5.7 1 .2 2 .5 2.8.8s1.6.7 2.1 1c.7.3 1 1 1.3 1.5.3.7.5 1.3.5 2.3 0 1-.2 1.6-.5 2.5-.3.7-.8 1.1-1.5 1.6s-1.5.8-2.3 1c-.8.2-1.8.3-2.8.3-3.1 0-5.7-1-8-2.9l1-1.6c.3.3.8.8 1.3 1.1s1 .7 1.6.8c.7.3 1.3.5 2 .7.7.2 1.5.2 2.1.2 1.6 0 2.8-.3 3.6-.8.8-.5 1.3-1.5 1.3-2.6 0-.7-.2-1.1-.3-1.5-.3-.5-.7-.8-1.1-1.1-.5-.3-1.1-.7-1.8-.8-.7-.2-1.6-.5-2.6-.7-1-.3-2-.5-2.8-.8-.8-.3-1.5-.5-2-1-.5-.3-1-.8-1.1-1.5-.3-.5-.3-1.1-.3-2 0-1 .2-1.6.5-2.5.3-.7.8-1.3 1.5-1.8s1.3-.8 2.3-1.1c.8-.3 1.8-.3 2.9-.3 1.3 0 2.5.2 3.4.7 1 .3 2 1 2.8 1.6l-1 1.6z" />
+              <path d="M440.338 297.415c-.5-.7-1.3-1.1-2.3-1.5-1-.3-2-.7-3.1-.7-1.8 0-2.9.3-3.8 1-.8.7-1.1 1.6-1.1 2.6 0 .7.2 1.1.3 1.5.2.3.5.7 1 1 .5.3 1 .5 1.6.7.7.2 1.5.3 2.5.7 1 .2 2 .5 2.8.8s1.6.7 2.1 1c.7.3 1 1 1.3 1.5.3.7.5 1.3.5 2.3 0 1-.2 1.6-.5 2.5-.3.7-.8 1.1-1.5 1.6s-1.5.8-2.3 1c-.8.2-1.8.3-2.8.3-3.1 0-5.7-1-8-2.9l1-1.6c.3.3.8.8 1.3 1.1s1 .7 1.6.8c.7.3 1.3.5 2 .7.7.2 1.5.2 2.1.2 1.6 0 2.8-.3 3.6-.8.8-.5 1.3-1.5 1.3-2.6 0-.7-.2-1.1-.3-1.5-.3-.5-.7-.8-1.1-1.1-.5-.3-1.1-.7-1.8-.8-.7-.2-1.6-.5-2.6-.7-1-.3-2-.5-2.8-.8-.8-.3-1.5-.5-2-1-.5-.3-1-.8-1.1-1.5-.3-.5-.3-1.1-.3-2 0-1 .2-1.6.5-2.5.3-.7.8-1.3 1.5-1.8s1.3-.8 2.3-1.1c.8-.3 1.8-.3 2.9-.3 1.3 0 2.5.2 3.4.7 1 .3 2 1 2.8 1.6l-1 1.6z" />
+              <path d="M106.8 330.5v24.9h-1.1v-24.9h1.1z" />
+            </g>
+          </svg>
         </a>
 
         <div className="hidden md:flex items-center gap-1">
@@ -85,7 +102,7 @@ function Navbar() {
               {l.label}
             </a>
           ))}
-          <a href="#servicios" className="shine-sweep ml-2 inline-flex items-center gap-1.5 bg-primary hover:bg-primary-dark text-white px-5 py-2 rounded-full text-[11px] font-bold uppercase tracking-wide transition-all shadow-sm shadow-primary/20">
+          <a href="#plan-ultra" className="shine-sweep ml-2 inline-flex items-center gap-1.5 bg-primary hover:bg-primary-dark text-white px-5 py-2 rounded-full text-[11px] font-bold uppercase tracking-wide transition-all shadow-sm shadow-primary/20">
             Empezar ahora <ArrowRight size={11} />
           </a>
         </div>
@@ -101,7 +118,7 @@ function Navbar() {
             {links.map(l => (
               <a key={l.href} href={l.href} onClick={() => setOpen(false)} className="block font-bold text-sm uppercase py-3 border-b border-dark/8 last:border-0 text-dark/70">{l.label}</a>
             ))}
-            <a href="#servicios" onClick={() => setOpen(false)} className="mt-3 flex items-center justify-center gap-2 bg-primary text-white py-3 rounded-xl font-bold text-sm uppercase">
+            <a href="#plan-ultra" onClick={() => setOpen(false)} className="mt-3 flex items-center justify-center gap-2 bg-primary text-white py-3 rounded-xl font-bold text-sm uppercase">
               Empieza tu cambio <ArrowRight size={14} />
             </a>
           </motion.div>
@@ -153,7 +170,7 @@ function Hero() {
 
             {/* Dual CTA */}
             <motion.div variants={fadeUp} className="flex flex-col sm:flex-row justify-center gap-3 mb-12">
-              <MagneticButton href="#coaching" className="shine-sweep group inline-flex items-center justify-center gap-2.5 bg-primary text-white px-8 py-4.5 rounded-full font-bold text-sm uppercase tracking-wide transition-all shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/50 hover:scale-[1.02]">
+              <MagneticButton href="#plan-ultra" className="shine-sweep group inline-flex items-center justify-center gap-2.5 bg-primary text-white px-8 py-4.5 rounded-full font-bold text-sm uppercase tracking-wide transition-all shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/50 hover:scale-[1.02]">
                 <Crown size={16} /> COACHING 1:1 <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
               </MagneticButton>
               <MagneticButton href="#app" className="group inline-flex items-center justify-center gap-2.5 bg-white/15 backdrop-blur-sm border border-white/25 text-white px-8 py-4.5 rounded-full font-bold text-sm uppercase tracking-wide hover:bg-white/25 transition-all">
@@ -208,7 +225,7 @@ function SocialProofBar() {
 /* ============================== CHOOSE YOUR PATH ============================== */
 function ChooseYourPath() {
   return (
-    <section id="servicios" className="py-16 sm:py-24 bg-cream">
+    <section id="plan-ultra" className="py-16 sm:py-24 bg-cream scroll-mt-16">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="text-center mb-14">
           <motion.div variants={fadeUp} className="inline-flex items-center gap-2 bg-primary/10 border border-primary/15 rounded-full px-4 py-1.5 mb-5">
@@ -299,7 +316,7 @@ function ChooseYourPath() {
 
           {/* APP CARD */}
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={scaleUp}>
-            <div id="app" className="card-lift relative bg-dark rounded-3xl overflow-hidden shadow-lg group border-2 border-white/10">
+            <div id="plan-anual" className="card-lift relative bg-dark rounded-3xl overflow-hidden shadow-lg group border-2 border-white/10 scroll-mt-16">
               <div className="absolute top-4 right-4 z-10">
                 <span className="inline-flex items-center gap-1.5 bg-white text-dark text-[9px] font-bold uppercase px-3 py-1.5 rounded-full shadow-lg">
                   <Zap size={10} className="text-primary" /> Solo 4,92&#8364;/mes
@@ -519,7 +536,7 @@ function Transformations() {
   ];
 
   return (
-    <section id="resultados" className="py-14 sm:py-20 bg-white overflow-hidden">
+    <section id="resultados" className="scroll-mt-16 py-14 sm:py-20 bg-white overflow-hidden">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 mb-8">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
           <div>
@@ -661,7 +678,7 @@ function Prozis() {
   const scroll = (dir) => { scrollRef.current?.scrollBy({ left: dir * 216, behavior: 'smooth' }); };
 
   return (
-    <section id="prozis" className="py-12 sm:py-16 bg-cream">
+    <section id="prozis" className="scroll-mt-16 py-12 sm:py-16 bg-cream">
       <div className="max-w-5xl mx-auto px-4 sm:px-6">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="mb-6">
           <div className="bg-dark rounded-3xl p-6 sm:p-8 relative overflow-hidden">
@@ -792,7 +809,7 @@ function Contact() {
   };
 
   return (
-    <section id="contacto" className="py-16 sm:py-20 bg-cream">
+    <section id="contacto" className="scroll-mt-16 py-16 sm:py-20 bg-cream">
       <div className="max-w-2xl mx-auto px-4">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="text-center mb-8">
           <motion.h2 variants={fadeUp} className="text-2xl sm:text-3xl font-black uppercase">Empieza tu <span className="text-gradient">cambio</span></motion.h2>
@@ -896,8 +913,8 @@ function Footer() {
             <p className="text-[9px] font-bold uppercase text-white/40 mb-3 tracking-widest">Links</p>
             <div className="space-y-1.5">
               {[
-                { href: '#servicios', label: 'Servicios' },
-                { href: '#app', label: 'APP Fitness' },
+                { href: '#plan-ultra', label: 'Servicios' },
+                { href: '#plan-anual', label: 'APP Fitness' },
                 { href: '#resultados', label: 'Resultados' },
                 { href: '#prozis', label: 'Prozis' },
                 { href: '#contacto', label: 'Contacto' },
@@ -925,7 +942,10 @@ function Footer() {
             <a href="#" className="hover:text-white/50">Privacidad</a>
             <a href="#" className="hover:text-white/50">Cookies</a>
           </div>
-          <p>&copy; {new Date().getFullYear()} ELY FITNESS</p>
+          <div className="flex items-center gap-2">
+            <span>&copy; {new Date().getFullYear()}</span>
+            <svg className="h-4 w-auto [&_path]:fill-white/30" preserveAspectRatio="xMidYMid meet" viewBox="58.667 144.7 383.471 210.7" xmlns="http://www.w3.org/2000/svg"><g><path d="M58.667 312.597v-123h49.3v23.8h-24.2v23.9h23.2v23.2h-23.2v28.2h25.8v23.9h-50.9z"/><path d="M117.666 312.597v-123h49.3v23.9h-24.6v19.6h23.2v23.7h-23.2v56h-24.8v-.2z"/><path d="M106.8 144.7v24.9h-1.1v-24.9h1.1z"/><path d="M194.3 215.9c.4-1.8-.1-3.4-2.5-3.6-1-.1-1.9.2-2.8.4-1.8.4-3.4 1.3-4.7 2.6-.6.4-1 .9-1.7 1.4-.1-.3-.1-.4-.2-.6-.3-1.5-1-3-2.1-4.2-.4-.6-1-1-1.7-1.5-.2-.2-.7-.2-.9-.2-1 .3-1.8.9-2.1 1.9-.2.7-.4 1.4-.4 2.1-.1 3.1.1 6.1 1.5 8.9.7 1.2 1.2 2.4 1.8 3.6s1.2 2.3 2.1 3.4c.8 1 1.4 1.1 2.3.2.9-.8 1.7-1.7 2.5-2.5 2-2 3.6-4.1 5.3-6.4.9-1.2 1.7-2.5 2.5-3.7.5-.6 1-1.1 1.1-1.8z"/><path d="M227.258 269.115v1.8h-13.3v-19.8h13.1v1.6h-11.1v7.2h9.7v1.6h-9.7v7.5h11.3z"/><path d="M250.826 270.915v-19.8h2v18h11.5v1.8h-13.5z"/><path d="m287.063 251.115 6.4 10.6 6.6-10.6h2.1l-7.7 12.4v7.4h-2v-7.4l-7.7-12.3h2.3v-.1z"/><path d="M214.021 313.415v-19.8h12.9v1.6h-11v7.2h9.3v1.6h-9.3v9.2h-2v.2z"/><path d="M250.234 313.415v-19.8h2v19.8h-2z"/><path d="M290.9 295.415h-7v18h-2v-18h-7v-1.6H291v1.6z"/><path d="M315.78 297.415v16.2h-2v-20h1.5l13.1 16.4v-16.4h2v19.8h-1.6l-13-16z"/><path d="M368.427 311.615v1.8h-13.3v-19.8h13.1v1.6h-11.1v7.2h9.7v1.6h-9.7v7.5h11.3z"/><path d="M403.596 297.415c-.5-.7-1.3-1.1-2.3-1.5-1-.3-2-.7-3.1-.7-1.8 0-2.9.3-3.8 1-.8.7-1.1 1.6-1.1 2.6 0 .7.2 1.1.3 1.5.2.3.5.7 1 1 .5.3 1 .5 1.6.7.7.2 1.5.3 2.5.7 1 .2 2 .5 2.8.8s1.6.7 2.1 1c.7.3 1 1 1.3 1.5.3.7.5 1.3.5 2.3 0 1-.2 1.6-.5 2.5-.3.7-.8 1.1-1.5 1.6s-1.5.8-2.3 1c-.8.2-1.8.3-2.8.3-3.1 0-5.7-1-8-2.9l1-1.6c.3.3.8.8 1.3 1.1s1 .7 1.6.8c.7.3 1.3.5 2 .7.7.2 1.5.2 2.1.2 1.6 0 2.8-.3 3.6-.8.8-.5 1.3-1.5 1.3-2.6 0-.7-.2-1.1-.3-1.5-.3-.5-.7-.8-1.1-1.1-.5-.3-1.1-.7-1.8-.8-.7-.2-1.6-.5-2.6-.7-1-.3-2-.5-2.8-.8-.8-.3-1.5-.5-2-1-.5-.3-1-.8-1.1-1.5-.3-.5-.3-1.1-.3-2 0-1 .2-1.6.5-2.5.3-.7.8-1.3 1.5-1.8s1.3-.8 2.3-1.1c.8-.3 1.8-.3 2.9-.3 1.3 0 2.5.2 3.4.7 1 .3 2 1 2.8 1.6l-1 1.6z"/><path d="M440.338 297.415c-.5-.7-1.3-1.1-2.3-1.5-1-.3-2-.7-3.1-.7-1.8 0-2.9.3-3.8 1-.8.7-1.1 1.6-1.1 2.6 0 .7.2 1.1.3 1.5.2.3.5.7 1 1 .5.3 1 .5 1.6.7.7.2 1.5.3 2.5.7 1 .2 2 .5 2.8.8s1.6.7 2.1 1c.7.3 1 1 1.3 1.5.3.7.5 1.3.5 2.3 0 1-.2 1.6-.5 2.5-.3.7-.8 1.1-1.5 1.6s-1.5.8-2.3 1c-.8.2-1.8.3-2.8.3-3.1 0-5.7-1-8-2.9l1-1.6c.3.3.8.8 1.3 1.1s1 .7 1.6.8c.7.3 1.3.5 2 .7.7.2 1.5.2 2.1.2 1.6 0 2.8-.3 3.6-.8.8-.5 1.3-1.5 1.3-2.6 0-.7-.2-1.1-.3-1.5-.3-.5-.7-.8-1.1-1.1-.5-.3-1.1-.7-1.8-.8-.7-.2-1.6-.5-2.6-.7-1-.3-2-.5-2.8-.8-.8-.3-1.5-.5-2-1-.5-.3-1-.8-1.1-1.5-.3-.5-.3-1.1-.3-2 0-1 .2-1.6.5-2.5.3-.7.8-1.3 1.5-1.8s1.3-.8 2.3-1.1c.8-.3 1.8-.3 2.9-.3 1.3 0 2.5.2 3.4.7 1 .3 2 1 2.8 1.6l-1 1.6z"/><path d="M106.8 330.5v24.9h-1.1v-24.9h1.1z"/></g></svg>
+          </div>
         </div>
       </div>
     </footer>
@@ -938,7 +958,7 @@ function ChatWidget() {
   const options = [
     { label: 'Videollamada gratuita', desc: 'Coaching 1:1', href: 'https://calendar.app.google/LINK-VIDEOLLAMADA', external: true, icon: <CalendarCheck size={13} /> },
     { label: 'Descargar APP (59EUR)', href: 'https://www.bejao.fit/checkout?tribeId=381&typeProduct=DIT', external: true, icon: <Download size={13} /> },
-    { label: 'Ver servicios', href: '#servicios', icon: <Crown size={13} /> },
+    { label: 'Ver servicios', href: '#plan-ultra', icon: <Crown size={13} /> },
     { label: 'Contactar', href: '#contacto', icon: <Send size={13} /> },
   ];
 
