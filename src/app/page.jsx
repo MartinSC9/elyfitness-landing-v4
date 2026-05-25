@@ -151,12 +151,10 @@ function Navbar() {
 
 /* ============================== HERO — Full impact ============================== */
 function Hero() {
-  const [loaded, setLoaded] = useState(false);
-
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
       <div className="absolute inset-0 bg-dark">
-        <video autoPlay muted loop playsInline src={ELY_VIDEO} onCanPlay={() => setLoaded(true)} className={`w-full h-full object-cover blur-[4px] sm:blur-[2px] scale-105 transition-opacity duration-[600ms] ${loaded ? 'opacity-100' : 'opacity-0'}`} />
+        <video autoPlay muted loop playsInline src={ELY_VIDEO} className="w-full h-full object-cover" />
       </div>
       <div className="absolute inset-0 bg-gradient-to-b from-dark/70 via-dark/75 to-dark/90 sm:from-dark/50 sm:via-dark/60 sm:to-dark/80" />
 
@@ -434,7 +432,7 @@ function ChooseYourPath() {
         <div className="grid lg:grid-cols-2 gap-5 sm:gap-6 items-stretch">
           {/* COACHING CARD */}
           <motion.div id="coaching" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={scaleUp} className="flex">
-            <div className="card-lift relative bg-white rounded-3xl border-2 border-primary/25 overflow-hidden shadow-lg group flex flex-col w-full">
+            <div className="card-lift relative bg-gradient-to-b from-primary/10 via-primary/5 to-white rounded-3xl border-2 border-primary/25 overflow-hidden shadow-lg group flex flex-col w-full">
               <div className="absolute top-4 right-4 z-10">
                 <span className="inline-flex items-center gap-1.5 bg-primary text-white text-[9px] font-bold uppercase px-3 py-1.5 rounded-full shadow-lg shadow-primary/30 badge-pulse">
                   <Users size={10} /> Más resultados
@@ -443,7 +441,7 @@ function ChooseYourPath() {
 
               <div className="relative h-48 sm:h-56 overflow-hidden">
                 <img src="/coaching-bg.webp" alt="Coaching" loading="lazy" className="w-full h-full object-cover object-[center_30%] group-hover:scale-105 transition-transform duration-700" />
-                <div className="absolute inset-0 bg-gradient-to-t from-dark/80 via-dark/20 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-primary/15 to-primary/5" />
                 <div className="absolute bottom-4 left-5">
                   <div className="flex items-center gap-2 mb-1">
                     <Users size={14} className="text-primary" />
@@ -468,8 +466,8 @@ function ChooseYourPath() {
               </div>
 
               <div className="relative h-48 sm:h-56 overflow-hidden bg-dark">
-                <img src="/app-banner.webp" alt="APP" loading="lazy" className="w-full h-full object-cover opacity-70 group-hover:scale-105 transition-transform duration-700" />
-                <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/50 to-transparent" />
+                <img src="/app-banner.webp" alt="APP" loading="lazy" className="w-full h-full object-cover opacity-50 group-hover:scale-105 transition-transform duration-700" />
+                <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/70 to-dark/40" />
 
                 <motion.div animate={{ y: [0, -6, 0] }} transition={{ repeat: Infinity, duration: 4, ease: 'easeInOut' }} className="absolute bottom-3 right-5 w-24 sm:w-28 bg-gradient-to-b from-white/12 to-white/5 backdrop-blur-sm rounded-[1.2rem] p-1.5 shadow-2xl border border-white/12 hidden sm:block">
                   <div className="rounded-[0.9rem] aspect-[9/16] overflow-hidden bg-[#1a1a1a]">
