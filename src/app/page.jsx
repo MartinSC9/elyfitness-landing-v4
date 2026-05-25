@@ -895,7 +895,7 @@ function FinalCTA() {
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
           <motion.p variants={fadeUp} className="text-primary text-xs font-bold uppercase tracking-widest mb-4">El momento es ahora</motion.p>
           <motion.h2 variants={fadeUp} className="text-3xl sm:text-5xl font-black uppercase text-white leading-tight mb-4">
-            Tu futuro yo<br /><span className="text-gradient">te lo agradecerá.</span>
+            Tu futuro<br /><span className="text-gradient">te lo agradecerá.</span>
           </motion.h2>
           <motion.p variants={fadeUp} className="text-white/40 text-sm sm:text-base mb-6 sm:mb-10 max-w-lg mx-auto">
             Cada día que pospones es un día menos para sentirte bien. No necesitas estar lista: solo necesitas empezar.
@@ -1176,7 +1176,7 @@ function Footer() {
             </div>
             <form onSubmit={handleSub} className="flex gap-2 w-full sm:w-auto">
               {sub ? (
-                <span className="text-[#34d399] text-sm font-bold flex items-center gap-1.5"><CheckCircle size={14} /> Suscrit@!</span>
+                <span className="text-[#34d399] text-sm font-bold flex items-center gap-1.5"><CheckCircle size={14} /> ¡Suscrit@!</span>
               ) : (
                 <>
                   <input type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder="Tu email" required className="bg-white/10 border border-white/15 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-primary/40 focus:ring-2 focus:ring-primary/20 placeholder:text-white/40 w-full sm:w-60" />
@@ -1356,7 +1356,7 @@ function NewsletterModal({ forceOpen, onClose }) {
                       <div className="w-16 h-16 rounded-full bg-green-50 flex items-center justify-center mx-auto mb-4">
                         <Check size={28} className="text-green-500" />
                       </div>
-                      <h3 className="text-xl font-black mb-2 text-dark">Bienvenid@!</h3>
+                      <h3 className="text-xl font-black mb-2 text-dark">¡Bienvenid@!</h3>
                       <p className="text-sm text-dark/45">Revisa tu email para confirmar.</p>
                     </motion.div>
                   ) : (
