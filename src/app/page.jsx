@@ -84,10 +84,10 @@ function Navbar() {
   ];
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-400 ${scrolled ? 'bg-[#FCF3EF]/92 sticky-blur border-b border-dark/8 shadow-sm' : 'bg-transparent'}`}>
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-400 ${scrolled || open ? 'bg-[#FCF3EF]/92 sticky-blur border-b border-dark/8 shadow-sm' : 'bg-transparent'}`}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between h-14">
         <a href="#" className="flex items-center">
-          <svg className={`h-8 w-auto transition-all ${scrolled ? '[&_path]:fill-[#1d1d1b]' : '[&_path]:fill-white'}`} preserveAspectRatio="xMidYMid meet" viewBox="58.667 144.7 383.471 210.7" xmlns="http://www.w3.org/2000/svg">
+          <svg className={`h-8 w-auto transition-all ${scrolled || open ? '[&_path]:fill-[#1d1d1b]' : '[&_path]:fill-white'}`} preserveAspectRatio="xMidYMid meet" viewBox="58.667 144.7 383.471 210.7" xmlns="http://www.w3.org/2000/svg">
             <g>
               <path d="M58.667 312.597v-123h49.3v23.8h-24.2v23.9h23.2v23.2h-23.2v28.2h25.8v23.9h-50.9z" />
               <path d="M117.666 312.597v-123h49.3v23.9h-24.6v19.6h23.2v23.7h-23.2v56h-24.8v-.2z" />
@@ -120,18 +120,18 @@ function Navbar() {
           </a>
         </div>
 
-        <button onClick={() => setOpen(!open)} className={`md:hidden p-1 transition-colors ${scrolled ? 'text-dark' : 'text-white'}`}>
+        <button onClick={() => setOpen(!open)} className={`md:hidden p-1 transition-colors ${scrolled || open ? 'text-dark' : 'text-white'}`}>
           {open ? <X size={22} /> : <Menu size={22} />}
         </button>
       </div>
 
       <AnimatePresence>
         {open && (
-          <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} exit={{ opacity: 0, height: 0 }} className="md:hidden bg-cream/98 sticky-blur border-t border-dark/8 px-6 pb-5">
+          <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} exit={{ opacity: 0, height: 0 }} transition={{ duration: 0.3 }} className="md:hidden bg-cream/98 sticky-blur border-t border-dark/8 px-6 pb-5 overflow-hidden">
             {links.map(l => (
-              <a key={l.href} href={l.href} onClick={() => setOpen(false)} className="relative inline-flex items-center gap-2 font-bold text-sm uppercase py-3 border-b border-dark/8 last:border-0 text-dark/70 w-full">{l.label}{l.badge && <span className="bg-red-500 text-white text-[9px] font-black px-1.5 py-0.5 rounded-full leading-none">{l.badge}</span>}</a>
+              <a key={l.href} href={l.href} onClick={(e) => { e.preventDefault(); setOpen(false); const el = document.querySelector(l.href); if (el) setTimeout(() => el.scrollIntoView({ behavior: 'smooth' }), 100); }} className="relative inline-flex items-center gap-2 font-bold text-sm uppercase py-3 border-b border-dark/8 last:border-0 text-dark/70 w-full">{l.label}{l.badge && <span className="bg-red-500 text-white text-[9px] font-black px-1.5 py-0.5 rounded-full leading-none">{l.badge}</span>}</a>
             ))}
-            <a href="#plan-ultra" onClick={() => setOpen(false)} className="mt-3 flex items-center justify-center gap-2 bg-primary text-white py-3 rounded-xl font-bold text-sm uppercase">
+            <a href="#plan-ultra" onClick={(e) => { e.preventDefault(); setOpen(false); const el = document.querySelector('#plan-ultra'); if (el) setTimeout(() => el.scrollIntoView({ behavior: 'smooth' }), 100); }} className="mt-3 flex items-center justify-center gap-2 bg-primary text-white py-3 rounded-xl font-bold text-sm uppercase">
               Empieza tu cambio <ArrowRight size={14} />
             </a>
           </motion.div>
@@ -995,17 +995,17 @@ function Contact() {
           </motion.div>
         </motion.div>
 
-        <div className="grid lg:grid-cols-5 gap-8 items-center">
+        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="max-w-4xl mx-auto bg-white rounded-3xl shadow-xl border border-dark/8 overflow-hidden grid lg:grid-cols-2">
           {/* Foto de Ely — izquierda en desktop, oculta en mobile */}
-          <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="hidden lg:block lg:col-span-2">
-            <img src="/ely-contact.jpg" alt="Ely Fitness" className="w-full rounded-3xl shadow-xl border-2 border-white/50 object-cover" />
-          </motion.div>
+          <div className="hidden lg:block relative">
+            <img src="/ely-contact.jpg" alt="Ely Fitness" className="absolute inset-0 w-full h-full object-cover object-top" />
+          </div>
 
           {/* Formulario — derecha en desktop, full en mobile */}
-          <div className="lg:col-span-3">
+          <div>
             <AnimatePresence mode="wait">
               {sent ? (
-                <motion.div key="ok" initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0 }} className="bg-white rounded-3xl p-10 text-center shadow-lg border border-dark/8">
+                <motion.div key="ok" initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0 }} className="p-8 sm:p-10 text-center">
                   <div className="w-16 h-16 rounded-full bg-green-50 flex items-center justify-center mx-auto mb-4">
                     <Check size={28} className="text-green-500" />
                   </div>
@@ -1013,7 +1013,7 @@ function Contact() {
                   <p className="text-dark/50 text-sm">Te respondere en menos de 24 horas.</p>
                 </motion.div>
               ) : (
-                <motion.form key="form" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="bg-white rounded-3xl p-6 sm:p-8 space-y-4 text-left shadow-lg border border-dark/8" onSubmit={handleSubmit}>
+                <motion.form key="form" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="p-6 sm:p-8 space-y-4 text-left" onSubmit={handleSubmit}>
                   <div className="flex flex-wrap gap-2 mb-2">
                     {['Respuesta < 24h', 'Sin compromiso', '+4.000 confian en Ely'].map(t => (
                       <span key={t} className="inline-flex items-center gap-1 text-[10px] font-bold text-dark/60 bg-primary/10 px-2.5 py-1 rounded-full">
@@ -1046,7 +1046,7 @@ function Contact() {
               )}
             </AnimatePresence>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
