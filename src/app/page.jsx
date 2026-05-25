@@ -151,25 +151,12 @@ function Navbar() {
 
 /* ============================== HERO — Full impact ============================== */
 function Hero() {
-  const videoRef = useRef(null);
   const [loaded, setLoaded] = useState(false);
-
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-    const observer = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting && !video.src) {
-        video.src = ELY_VIDEO;
-      }
-    }, { threshold: 0 });
-    observer.observe(video);
-    return () => observer.disconnect();
-  }, []);
 
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
       <div className="absolute inset-0 bg-dark">
-        <video ref={videoRef} autoPlay muted loop playsInline preload="none" onCanPlay={() => setLoaded(true)} className={`w-full h-full object-cover blur-[4px] sm:blur-[2px] scale-105 transition-opacity duration-[600ms] ${loaded ? 'opacity-100' : 'opacity-0'}`} />
+        <video autoPlay muted loop playsInline src={ELY_VIDEO} onCanPlay={() => setLoaded(true)} className={`w-full h-full object-cover blur-[4px] sm:blur-[2px] scale-105 transition-opacity duration-[600ms] ${loaded ? 'opacity-100' : 'opacity-0'}`} />
       </div>
       <div className="absolute inset-0 bg-gradient-to-b from-dark/70 via-dark/75 to-dark/90 sm:from-dark/50 sm:via-dark/60 sm:to-dark/80" />
 
