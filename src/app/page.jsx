@@ -158,7 +158,7 @@ function Hero() {
       <div className="absolute inset-0 bg-dark">
         <video ref={videoRef} autoPlay muted loop playsInline className={`w-full h-full object-cover transition-opacity duration-700 ${videoLoaded ? 'opacity-100' : 'opacity-0'}`} />
       </div>
-      <div className="absolute inset-0 bg-gradient-to-b from-dark/50 via-dark/60 to-dark/80" />
+      <div className="absolute inset-0 bg-gradient-to-b from-dark/70 via-dark/75 to-dark/90 sm:from-dark/50 sm:via-dark/60 sm:to-dark/80" />
 
       <div className="relative z-10 w-full">
         <div className="max-w-4xl mx-auto px-5 sm:px-6 text-center">
