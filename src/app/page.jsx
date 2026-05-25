@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import {
   X, Menu, ArrowRight, ChevronDown, ChevronLeft, ChevronRight,
   MessageCircle, Star, Check, Send, Copy, ExternalLink,
-  Instagram, Heart, Sparkles, TrendingUp, Users, Download, Crown, Dumbbell, Apple,
+  Instagram, Heart, Sparkles, TrendingUp, Users, Download, Crown, Dumbbell, Apple, Smartphone, UserCheck,
   Shield, Award, Play, Mail, MapPin, Utensils, Video, CalendarCheck,
   Clipboard, CheckCircle, Target, Flame, Zap, Clock, Lock, Gift,
 } from 'lucide-react';
@@ -156,7 +156,7 @@ function Hero() {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
       <div className="absolute inset-0 bg-dark">
-        <video ref={videoRef} autoPlay muted loop playsInline className={`w-full h-full object-cover transition-opacity duration-700 blur-[2px] sm:blur-0 ${videoLoaded ? 'opacity-100' : 'opacity-0'}`} />
+        <video ref={videoRef} autoPlay muted loop playsInline className={`w-full h-full object-cover transition-opacity duration-700 blur-[4px] sm:blur-[2px] ${videoLoaded ? 'opacity-100' : 'opacity-0'}`} />
       </div>
       <div className="absolute inset-0 bg-gradient-to-b from-dark/70 via-dark/75 to-dark/90 sm:from-dark/50 sm:via-dark/60 sm:to-dark/80" />
 
@@ -184,10 +184,10 @@ function Hero() {
             {/* Dual CTA */}
             <motion.div variants={fadeUp} className="flex flex-col sm:flex-row justify-center gap-3 mb-8 sm:mb-12">
               <MagneticButton href="#plan-ultra" className="shine-sweep group inline-flex items-center justify-center gap-2 sm:gap-2.5 bg-primary text-white px-5 sm:px-8 py-4 sm:py-4.5 rounded-full font-bold text-xs sm:text-sm uppercase tracking-wide transition-all shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/50 hover:scale-[1.02]">
-                <Crown size={16} /> COACHING 1:1 <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                <Users size={16} /> COACHING 1:1 <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
               </MagneticButton>
               <MagneticButton href="#app" className="group inline-flex items-center justify-center gap-2 sm:gap-2.5 bg-white/15 backdrop-blur-sm border border-white/25 text-white px-5 sm:px-8 py-4 sm:py-4.5 rounded-full font-bold text-xs sm:text-sm uppercase tracking-wide hover:bg-white/25 transition-all">
-                <Download size={16} /> APP DESDE 4,92&#8364;/MES <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                <Smartphone size={16} /> APP DESDE 4,92&#8364;/MES <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
               </MagneticButton>
             </motion.div>
 
@@ -437,7 +437,7 @@ function ChooseYourPath() {
             <div className="card-lift relative bg-white rounded-3xl border-2 border-primary/25 overflow-hidden shadow-lg group flex flex-col w-full">
               <div className="absolute top-4 right-4 z-10">
                 <span className="inline-flex items-center gap-1.5 bg-primary text-white text-[9px] font-bold uppercase px-3 py-1.5 rounded-full shadow-lg shadow-primary/30 badge-pulse">
-                  <Crown size={10} /> Más resultados
+                  <Users size={10} /> Más resultados
                 </span>
               </div>
 
@@ -446,7 +446,7 @@ function ChooseYourPath() {
                 <div className="absolute inset-0 bg-gradient-to-t from-dark/80 via-dark/20 to-transparent" />
                 <div className="absolute bottom-4 left-5">
                   <div className="flex items-center gap-2 mb-1">
-                    <Crown size={14} className="text-primary" />
+                    <Users size={14} className="text-primary" />
                     <span className="text-[10px] font-bold uppercase tracking-widest text-primary">Premium</span>
                   </div>
                   <h3 className="text-2xl sm:text-3xl font-black text-white uppercase">Coaching 1:1</h3>
@@ -479,7 +479,7 @@ function ChooseYourPath() {
 
                 <div className="absolute bottom-4 left-5">
                   <div className="flex items-center gap-2 mb-1">
-                    <Download size={14} className="text-white/50" />
+                    <Smartphone size={14} className="text-white/50" />
                     <span className="text-[10px] font-bold uppercase tracking-widest text-white/50">App Fitness</span>
                   </div>
                   <h3 className="text-2xl sm:text-3xl font-black text-white uppercase">ElyFitness APP</h3>
@@ -529,7 +529,7 @@ function QuickComparison() {
           <div className="bg-white rounded-2xl border border-primary/20 overflow-hidden shadow-lg">
             <div className="bg-primary/10 px-4 py-3 text-center">
               <div className="inline-flex items-center gap-1.5">
-                <Crown size={13} className="text-primary-dark" />
+                <Users size={13} className="text-primary-dark" />
                 <span className="text-xs font-black uppercase text-primary-dark">Coaching</span>
               </div>
             </div>
@@ -550,7 +550,7 @@ function QuickComparison() {
           <div className="bg-white rounded-2xl border border-dark/10 overflow-hidden shadow-lg">
             <div className="bg-dark/5 px-4 py-3 text-center">
               <div className="inline-flex items-center gap-1.5">
-                <Download size={13} className="text-dark/70" />
+                <Smartphone size={13} className="text-dark/70" />
                 <span className="text-xs font-black uppercase text-dark/80">APP</span>
               </div>
             </div>
@@ -571,49 +571,55 @@ function QuickComparison() {
         </motion.div>
 
         {/* Desktop: table */}
-        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="hidden sm:block bg-white/95 backdrop-blur-md rounded-2xl border border-primary/15 overflow-hidden shadow-lg">
-          <div className="grid grid-cols-[1fr_1fr_1fr] border-b border-primary/20">
-            <div className="px-5 py-3" />
-            <div className="px-5 py-3 text-center border-l border-primary/12 bg-primary/10">
-              <div className="inline-flex items-center gap-2">
-                <Crown size={14} className="text-primary-dark" />
-                <span className="text-sm font-black uppercase text-primary-dark">Coaching</span>
+        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="hidden sm:block max-w-5xl mx-auto bg-white/95 backdrop-blur-md rounded-3xl border border-white/60 overflow-hidden shadow-2xl shadow-dark/10">
+          {/* Header */}
+          <div className="grid grid-cols-[1fr_1.2fr_1.2fr]">
+            <div className="px-8 py-6 flex items-end">
+              <span className="text-xs font-bold text-dark/30 uppercase tracking-widest">Característica</span>
+            </div>
+            <div className="px-6 py-6 text-center bg-gradient-to-b from-primary/15 to-primary/5 border-l border-primary/10">
+              <div className="inline-flex items-center gap-2 bg-primary text-white px-4 py-1.5 rounded-full shadow-md shadow-primary/25">
+                <Users size={13} />
+                <span className="text-xs font-black uppercase tracking-wide">Coaching</span>
               </div>
             </div>
-            <div className="px-5 py-3 text-center border-l border-primary/12 bg-primary/5">
-              <div className="inline-flex items-center gap-2">
-                <Download size={14} className="text-dark/70" />
-                <span className="text-sm font-black uppercase text-dark/80">APP</span>
+            <div className="px-6 py-6 text-center bg-dark/[0.03] border-l border-dark/5">
+              <div className="inline-flex items-center gap-2 bg-dark text-white px-4 py-1.5 rounded-full shadow-md">
+                <Smartphone size={13} />
+                <span className="text-xs font-black uppercase tracking-wide">APP</span>
               </div>
             </div>
           </div>
 
           {rows.map((r, i) => (
-            <div key={r.label} className={`grid grid-cols-[1fr_1fr_1fr] ${i < rows.length - 1 ? 'border-b border-primary/10' : ''}`}>
-              <div className="px-5 py-3 flex items-center">
-                <span className="text-sm font-bold text-dark/70 uppercase tracking-wide">{r.label}</span>
+            <div key={r.label} className={`grid grid-cols-[1fr_1.2fr_1.2fr] group transition-colors hover:bg-primary/[0.03] border-t border-dark/6`}>
+              <div className="px-8 py-5 flex items-center">
+                <span className="text-[13px] font-bold text-dark/60 uppercase tracking-wider">{r.label}</span>
               </div>
-              <div className="px-5 py-3 border-l border-primary/10 bg-primary/[0.05]">
-                <span className="text-sm text-dark/75 leading-snug">{r.coaching}</span>
+              <div className="px-6 py-5 border-l border-primary/8 bg-primary/[0.04] flex items-center gap-2.5">
+                <CheckCircle size={15} className="text-primary shrink-0" />
+                <span className="text-[13px] text-dark/80 leading-snug">{r.coaching}</span>
               </div>
-              <div className="px-5 py-3 border-l border-primary/10">
-                <span className="text-sm text-dark/75 leading-snug">{r.app}</span>
+              <div className="px-6 py-5 border-l border-dark/5 flex items-center gap-2.5">
+                <CheckCircle size={15} className="text-dark/30 shrink-0" />
+                <span className="text-[13px] text-dark/80 leading-snug">{r.app}</span>
               </div>
             </div>
           ))}
 
-          <div className="grid grid-cols-[1fr_1fr_1fr] border-t border-primary/20 bg-primary/5">
-            <div className="px-5 py-3 flex items-center">
-              <span className="text-xs font-bold text-dark/60 uppercase">Empezar</span>
+          {/* CTA row */}
+          <div className="grid grid-cols-[1fr_1.2fr_1.2fr] border-t-2 border-primary/15 bg-gradient-to-r from-cream/50 to-cream/80">
+            <div className="px-8 py-6 flex items-center">
+              <span className="text-xs font-bold text-dark/40 uppercase tracking-widest">Empezar</span>
             </div>
-            <div className="px-5 py-3 border-l border-primary/12 text-center">
-              <a href="https://calendar.app.google/LINK-VIDEOLLAMADA" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 bg-primary hover:bg-primary-dark text-white px-5 py-2.5 rounded-full text-sm font-bold uppercase transition-all">
-                <CalendarCheck size={12} /> Videollamada gratis
+            <div className="px-6 py-6 border-l border-primary/10 flex items-center justify-center">
+              <a href="https://calendar.app.google/LINK-VIDEOLLAMADA" target="_blank" rel="noopener noreferrer" className="shine-sweep inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white px-6 py-3 rounded-full text-xs font-bold uppercase tracking-wide transition-all shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/40 hover:scale-[1.02]">
+                <CalendarCheck size={14} /> Videollamada gratis
               </a>
             </div>
-            <div className="px-5 py-3 border-l border-primary/12 text-center">
-              <a href="https://www.bejao.fit/checkout?tribeId=381&typeProduct=DIT" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 bg-dark hover:bg-dark-soft text-white px-5 py-2.5 rounded-full text-sm font-bold uppercase transition-all">
-                59&#8364;/año <ArrowRight size={12} />
+            <div className="px-6 py-6 border-l border-dark/5 flex items-center justify-center">
+              <a href="https://www.bejao.fit/checkout?tribeId=381&typeProduct=DIT" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-dark hover:bg-dark-soft text-white px-6 py-3 rounded-full text-xs font-bold uppercase tracking-wide transition-all shadow-md hover:shadow-lg hover:scale-[1.02]">
+                59&#8364;/año <ArrowRight size={14} />
               </a>
             </div>
           </div>
@@ -666,9 +672,9 @@ function Transformations() {
 
   const filtered = data;
   const tabs = [
-    { key: 'todos', label: 'Todos' },
-    { key: 'coaching', label: '1:1' },
-    { key: 'app', label: 'APP' },
+    { key: 'todos', label: 'Todos', icon: null },
+    { key: 'coaching', label: '1:1', icon: <Users size={12} /> },
+    { key: 'app', label: 'APP', icon: <Smartphone size={12} /> },
   ];
 
   return (
@@ -681,8 +687,8 @@ function Transformations() {
           </div>
           <motion.div variants={fadeUp} className="flex gap-1.5">
             {tabs.map(tab => (
-              <button key={tab.key} onClick={() => setFilter(tab.key)} className={`px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wide transition-all ${filter === tab.key ? 'bg-dark text-white shadow-sm' : 'bg-cream border border-dark/10 text-dark/40 hover:text-dark/60'}`}>
-                {tab.label}
+              <button key={tab.key} onClick={() => setFilter(tab.key)} className={`inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wide transition-all ${filter === tab.key ? 'bg-dark text-white shadow-sm' : 'bg-cream border border-dark/10 text-dark/40 hover:text-dark/60'}`}>
+                {tab.icon} {tab.label}
               </button>
             ))}
           </motion.div>
@@ -697,7 +703,7 @@ function Transformations() {
             <div key={i} className="min-w-[280px] max-w-[280px] rounded-2xl overflow-hidden shrink-0 bg-cream border border-dark/8 shadow-sm hover:shadow-lg transition-all group">
               <div className="relative h-52 overflow-hidden">
                 <img src={t.img} alt={`Transformación ${t.name}`} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
-                <span className={`absolute top-2.5 right-2.5 text-[10px] font-black uppercase px-2.5 py-1 rounded-full shadow-md ${t.plan === 'coaching' ? 'bg-primary text-white' : 'bg-dark text-white'}`}>{t.plan === 'coaching' ? '1:1' : 'APP'}</span>
+                <span className={`absolute top-2.5 right-2.5 text-[10px] font-black uppercase px-2.5 py-1 rounded-full shadow-md inline-flex items-center gap-1 ${t.plan === 'coaching' ? 'bg-primary text-white' : 'bg-dark text-white'}`}>{t.plan === 'coaching' ? <><Users size={10} /> 1:1</> : <><Smartphone size={10} /> APP</>}</span>
               </div>
               <div className="p-4">
                 <div className="flex items-center justify-between mb-1.5">
@@ -889,10 +895,10 @@ function FinalCTA() {
           </motion.p>
           <motion.div variants={fadeUp} className="flex flex-col sm:flex-row justify-center gap-3">
             <a href="https://calendar.app.google/LINK-VIDEOLLAMADA" target="_blank" rel="noopener noreferrer" className="shine-sweep group inline-flex items-center justify-center gap-2 sm:gap-2.5 bg-primary hover:bg-primary-dark text-white px-5 sm:px-10 py-4 sm:py-5 rounded-full font-bold text-xs sm:text-sm uppercase tracking-wide transition-all shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/50 hover:scale-[1.02]">
-              <Crown size={16} /> COACHING — Videollamada gratis <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+              <Users size={16} /> COACHING — Videollamada gratis <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
             </a>
             <a href="https://www.bejao.fit/checkout?tribeId=381&typeProduct=DIT" target="_blank" rel="noopener noreferrer" className="group inline-flex items-center justify-center gap-2 sm:gap-2.5 bg-white/15 backdrop-blur-sm border border-white/25 text-white px-5 sm:px-10 py-4 sm:py-5 rounded-full font-bold text-xs sm:text-sm uppercase tracking-wide hover:bg-white/25 transition-all">
-              <Download size={16} /> PLAN ANUAL — 59&#8364;/año <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+              <Smartphone size={16} /> PLAN ANUAL — 59&#8364;/año <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
             </a>
           </motion.div>
         </motion.div>
@@ -1239,8 +1245,8 @@ function ChatWidget({ onNewsletter }) {
   const [open, setOpen] = useState(false);
   const options = [
     { label: 'Videollamada gratuita', desc: 'Coaching 1:1', href: 'https://calendar.app.google/LINK-VIDEOLLAMADA', external: true, icon: <CalendarCheck size={13} /> },
-    { label: 'Plan Anual (59EUR)', href: 'https://www.bejao.fit/checkout?tribeId=381&typeProduct=DIT', external: true, icon: <Download size={13} /> },
-    { label: 'Ver servicios', href: '#plan-ultra', icon: <Crown size={13} /> },
+    { label: 'Plan Anual (59EUR)', href: 'https://www.bejao.fit/checkout?tribeId=381&typeProduct=DIT', external: true, icon: <Smartphone size={13} /> },
+    { label: 'Ver servicios', href: '#plan-ultra', icon: <Users size={13} /> },
     { label: 'Contactar', href: '#contacto', icon: <Send size={13} /> },
     { label: 'Newsletter', desc: 'Consejos gratis cada semana', icon: <Mail size={13} />, action: 'newsletter' },
   ];
@@ -1405,10 +1411,10 @@ function StickyCTA() {
         >
           <div className="flex gap-2">
             <a href="https://calendar.app.google/LINK-VIDEOLLAMADA" target="_blank" rel="noopener noreferrer" className="shine-sweep flex-1 flex items-center justify-center gap-1.5 bg-primary text-white py-3 rounded-xl font-bold text-xs uppercase">
-              <Crown size={12} /> Coaching
+              <Users size={12} /> Coaching
             </a>
             <a href="https://www.bejao.fit/checkout?tribeId=381&typeProduct=DIT" target="_blank" rel="noopener noreferrer" className="flex-1 flex items-center justify-center gap-1.5 bg-white text-dark py-3 rounded-xl font-bold text-xs uppercase">
-              <Download size={12} /> APP 59&#8364;
+              <Smartphone size={12} /> APP 59&#8364;
             </a>
           </div>
         </motion.div>
