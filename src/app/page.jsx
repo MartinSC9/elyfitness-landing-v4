@@ -178,8 +178,8 @@ function Hero() {
 
             {/* Headline */}
             <motion.h1 variants={fadeUp} className="text-[2rem] sm:text-5xl lg:text-7xl font-black text-white uppercase leading-[0.88] mb-5">
-              Deja de pensar<br />
-              <span className="text-gradient">empieza hoy.</span>
+              Empieza tu cambio<br />
+              <span className="text-gradient">hoy.</span>
             </motion.h1>
 
             <motion.p variants={fadeUp} className="text-white/50 text-base sm:text-xl mb-8 max-w-2xl mx-auto leading-relaxed">
@@ -230,7 +230,7 @@ function SocialProofBar() {
           { icon: <Shield size={12} />, t: 'Sin permanencia' },
           { icon: <CheckCircle size={12} />, t: 'Resultados desde 2 semanas' },
           { icon: <Star size={12} className="fill-yellow-400 text-yellow-400" />, t: '4.9/5 valoración media' },
-          { icon: <Users size={12} />, t: '+4.000 clientes satisfechos' },
+          { icon: <Users size={12} />, t: '+4.000 cambios reales' },
           { icon: <Lock size={12} />, t: 'Pago seguro' },
         ].map(b => (
           <span key={b.t} className="inline-flex items-center gap-1.5 font-medium">{b.icon} {b.t}</span>
@@ -858,7 +858,7 @@ function MiMetodo() {
             </motion.p>
             <motion.div variants={fadeUp}>
               <a href="#plan-ultra" className="group inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white px-7 py-3.5 rounded-full font-bold text-sm uppercase tracking-wide transition-all shadow-lg shadow-primary/20">
-                Ver planes <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                Empieza tu cambio <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
               </a>
             </motion.div>
           </motion.div>
@@ -895,14 +895,14 @@ function FinalCTA() {
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
           <motion.p variants={fadeUp} className="text-primary text-xs font-bold uppercase tracking-widest mb-4">El momento es ahora</motion.p>
           <motion.h2 variants={fadeUp} className="text-3xl sm:text-5xl font-black uppercase text-white leading-tight mb-4">
-            Tu futuro<br /><span className="text-gradient">te lo agradecerá.</span>
+            Tu cambio<br /><span className="text-gradient">empieza aquí.</span>
           </motion.h2>
           <motion.p variants={fadeUp} className="text-white/40 text-sm sm:text-base mb-6 sm:mb-10 max-w-lg mx-auto">
-            Cada día que pospones es un día menos para sentirte bien. No necesitas estar lista: solo necesitas empezar.
+            Cada día que pospones es un día menos de cambio. No necesitas estar lista: solo necesitas empezar.
           </motion.p>
           <motion.div variants={fadeUp} className="flex flex-col sm:flex-row justify-center gap-3">
             <a href="https://calendar.app.google/LINK-VIDEOLLAMADA" target="_blank" rel="noopener noreferrer" className="shine-sweep group inline-flex items-center justify-center gap-2 sm:gap-2.5 bg-primary hover:bg-primary-dark text-white px-5 sm:px-10 py-4 sm:py-5 rounded-full font-bold text-xs sm:text-sm uppercase tracking-wide transition-all shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/50 hover:scale-[1.02]">
-              <Users size={16} /> COACHING — Videollamada gratis <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+              <Users size={16} /> COACHING — Tu cambio empieza aquí <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
             </a>
             <a href="https://www.bejao.fit/checkout?tribeId=381&typeProduct=DIT" target="_blank" rel="noopener noreferrer" className="group inline-flex items-center justify-center gap-2 sm:gap-2.5 bg-white/15 backdrop-blur-sm border border-white/25 text-white px-5 sm:px-10 py-4 sm:py-5 rounded-full font-bold text-xs sm:text-sm uppercase tracking-wide hover:bg-white/25 transition-all">
               <Smartphone size={16} /> PLAN ANUAL — 59&#8364;/año <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
@@ -1422,7 +1422,7 @@ function StickyCTA() {
         >
           <div className="flex gap-2">
             <a href="https://calendar.app.google/LINK-VIDEOLLAMADA" target="_blank" rel="noopener noreferrer" className="shine-sweep flex-1 flex items-center justify-center gap-1.5 bg-primary text-white py-3 rounded-xl font-bold text-xs uppercase">
-              <Users size={12} /> Coaching
+              <Users size={12} /> Tu cambio
             </a>
             <a href="https://www.bejao.fit/checkout?tribeId=381&typeProduct=DIT" target="_blank" rel="noopener noreferrer" className="flex-1 flex items-center justify-center gap-1.5 bg-white text-dark py-3 rounded-xl font-bold text-xs uppercase">
               <Smartphone size={12} /> APP 59&#8364;
