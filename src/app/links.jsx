@@ -248,7 +248,7 @@ export default function Links() {
       {/* Background - fullscreen image with overlay */}
       <div className="fixed inset-0 z-0">
         <img
-          src="/links-bg.jpg"
+          src="/links-bg.webp"
           alt=""
           className="w-full h-full object-cover"
         />
@@ -262,7 +262,7 @@ export default function Links() {
           {/* Card background */}
           <div className="absolute inset-0 hidden md:block">
             <img
-              src="/links-bg.jpg"
+              src="/links-bg.webp"
               alt=""
               className="w-full h-full object-cover object-bottom blur-[3px]"
             />

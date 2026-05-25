@@ -172,34 +172,34 @@ function Hero() {
             </motion.div>
 
             {/* Headline */}
-            <motion.h1 variants={fadeUp} className="text-4xl sm:text-5xl lg:text-7xl font-black text-white uppercase leading-[0.88] mb-5">
+            <motion.h1 variants={fadeUp} className="text-[2rem] sm:text-5xl lg:text-7xl font-black text-white uppercase leading-[0.88] mb-5">
               Deja de pensar<br />
               <span className="text-gradient">empieza hoy.</span>
             </motion.h1>
 
             <motion.p variants={fadeUp} className="text-white/50 text-base sm:text-xl mb-8 max-w-2xl mx-auto leading-relaxed">
-              2 opciones, 1 objetivo: <span className="text-white/80 font-semibold">tu mejor version.</span> Coaching 1:1 con Ely o APP de entrenamiento. Elige lo que va contigo.
+              2 opciones, 1 objetivo: <span className="text-white/80 font-semibold">tu mejor versión.</span> Coaching 1:1 con Ely o APP de entrenamiento. Elige lo que va contigo.
             </motion.p>
 
             {/* Dual CTA */}
             <motion.div variants={fadeUp} className="flex flex-col sm:flex-row justify-center gap-3 mb-12">
-              <MagneticButton href="#plan-ultra" className="shine-sweep group inline-flex items-center justify-center gap-2.5 bg-primary text-white px-8 py-4.5 rounded-full font-bold text-sm uppercase tracking-wide transition-all shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/50 hover:scale-[1.02]">
+              <MagneticButton href="#plan-ultra" className="shine-sweep group inline-flex items-center justify-center gap-2 sm:gap-2.5 bg-primary text-white px-5 sm:px-8 py-4 sm:py-4.5 rounded-full font-bold text-xs sm:text-sm uppercase tracking-wide transition-all shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/50 hover:scale-[1.02]">
                 <Crown size={16} /> COACHING 1:1 <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
               </MagneticButton>
-              <MagneticButton href="#app" className="group inline-flex items-center justify-center gap-2.5 bg-white/15 backdrop-blur-sm border border-white/25 text-white px-8 py-4.5 rounded-full font-bold text-sm uppercase tracking-wide hover:bg-white/25 transition-all">
+              <MagneticButton href="#app" className="group inline-flex items-center justify-center gap-2 sm:gap-2.5 bg-white/15 backdrop-blur-sm border border-white/25 text-white px-5 sm:px-8 py-4 sm:py-4.5 rounded-full font-bold text-xs sm:text-sm uppercase tracking-wide hover:bg-white/25 transition-all">
                 <Download size={16} /> APP DESDE 4,92&#8364;/MES <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
               </MagneticButton>
             </motion.div>
 
             {/* Stats */}
-            <motion.div variants={fadeUp} className="flex justify-center gap-12 sm:gap-16">
+            <motion.div variants={fadeUp} className="flex justify-center gap-6 sm:gap-16">
               {[
-                { v: 13, s: '+', l: 'Anos exp.' },
+                { v: 13, s: '+', l: 'Años exp.' },
                 { v: 4, s: 'K+', l: 'Cambios' },
                 { v: 400, s: 'K+', l: 'Seguidores' },
               ].map(s => (
                 <div key={s.l} className="text-center">
-                  <div className="text-3xl sm:text-4xl font-black text-white"><NumberTicker value={s.v} suffix={s.s} /></div>
+                  <div className="text-2xl sm:text-4xl font-black text-white"><NumberTicker value={s.v} suffix={s.s} /></div>
                   <div className="text-white/25 text-[9px] font-semibold uppercase tracking-widest mt-0.5">{s.l}</div>
                 </div>
               ))}
@@ -224,7 +224,7 @@ function SocialProofBar() {
         {[
           { icon: <Shield size={12} />, t: 'Sin permanencia' },
           { icon: <CheckCircle size={12} />, t: 'Resultados desde 2 semanas' },
-          { icon: <Star size={12} className="fill-yellow-400 text-yellow-400" />, t: '4.9/5 valoracion media' },
+          { icon: <Star size={12} className="fill-yellow-400 text-yellow-400" />, t: '4.9/5 valoración media' },
           { icon: <Users size={12} />, t: '+4.000 clientes satisfechos' },
           { icon: <Lock size={12} />, t: 'Pago seguro' },
         ].map(b => (
@@ -241,15 +241,15 @@ function CoachingCardBody() {
   return (
     <div className="p-6 sm:p-8 flex flex-col flex-1">
       <p className="text-dark/70 text-sm leading-relaxed mb-4">
-        Ely diseña tu plan de nutricion y entrenamiento 100% a tu medida. Chat diario, revisiones quincenales, ajustes constantes. Tu entrenadora personal contigo cada dia.
+        Ely diseña tu plan de nutrición y entrenamiento 100% a tu medida. Chat diario, revisiones quincenales, ajustes constantes. Tu entrenadora personal contigo cada día.
       </p>
 
       <div className="grid grid-cols-2 gap-2.5 mb-4">
         {[
-          { name: 'Premium Plus', desc: 'Dieta + entreno + suplementacion', hot: true },
+          { name: 'Premium Plus', desc: 'Dieta + entreno + suplementación', hot: true },
           { name: 'Premium Running', desc: 'De 5K a ultramaratones' },
-          { name: 'Nutricion', desc: 'Tu dieta 100% a medida' },
-          { name: 'Training', desc: 'Fuerza, hibrido o casa' },
+          { name: 'Nutrición', desc: 'Tu dieta 100% a medida' },
+          { name: 'Training', desc: 'Fuerza, híbrido o casa' },
         ].map(p => (
           <div key={p.name} className={`rounded-xl p-3.5 border transition-all ${p.hot ? 'bg-primary/8 border-primary/20' : 'bg-cream border-dark/8 hover:border-primary/15'}`}>
             <div className="flex items-center gap-1.5 mb-1">
@@ -272,16 +272,16 @@ function CoachingCardBody() {
           >
             <div className="space-y-2 mb-4">
               {[
-                'Alimentacion 100% personalizada (vegana, vegetariana, antiinflamatoria, intolerancias)',
-                'Gestion metabolica: glucosa, resistencia a insulina, SOP, tiroides, SIBO',
-                'Revision de analiticas y ajustes de tu plan acorde a resultados',
-                'Calculo de macros personalizado',
-                'Plan de entrenamiento a medida (gym o casa) + prevencion de lesiones',
+                'Alimentación 100% personalizada (vegana, vegetariana, antiinflamatoria, intolerancias)',
+                'Gestión metabólica: glucosa, resistencia a insulina, SOP, tiroides, SIBO',
+                'Revisión de analíticas y ajustes de tu plan acorde a resultados',
+                'Cálculo de macros personalizado',
+                'Plan de entrenamiento a medida (gym o casa) + prevención de lesiones',
                 'Tu plan de entreno en video. Apunta tus pesos y marcas',
-                'Asesoramiento en suplementacion para tu caso',
+                'Asesoramiento en suplementación para tu caso',
                 'Seguimiento quincenal con Ely',
-                'Chat y maxima cercania conmigo via APP',
-                'Running: de 5K a ultramaratones (Metodo Hibrido)',
+                'Chat y máxima cercanía conmigo vía APP',
+                'Running: de 5K a ultramaratones (Método Híbrido)',
               ].map(t => (
                 <div key={t} className="flex items-start gap-2">
                   <CheckCircle size={13} className="text-primary shrink-0 mt-0.5" />
@@ -289,7 +289,7 @@ function CoachingCardBody() {
                 </div>
               ))}
             </div>
-            <p className="text-[11px] text-dark/40 italic mb-4">Modalidades: mensual, trimestral o semestral. Tu eliges.</p>
+            <p className="text-[11px] text-dark/40 italic mb-4">Modalidades: mensual, trimestral o semestral. Tú eliges.</p>
           </motion.div>
         )}
       </AnimatePresence>
@@ -316,7 +316,7 @@ function AppCardBody() {
   return (
     <div className="p-6 sm:p-8 flex flex-col flex-1">
       <p className="text-white/70 text-sm leading-relaxed mb-4">
-        Entrenos en video, recetas saludables, lista de la compra, comunidad privada y chat con nutricionista. Todo en una app. Pago unico anual, sin sorpresas.
+        Entrenos en video, recetas saludables, lista de la compra, comunidad privada y chat con nutricionista. Todo en una app. Pago único anual, sin sorpresas.
       </p>
 
       <div className="grid grid-cols-2 gap-3 mb-4">
@@ -409,7 +409,7 @@ function ChooseYourPath() {
   return (
     <section id="plan-ultra" className="py-16 sm:py-24 scroll-mt-16 relative overflow-hidden">
       <div className="absolute inset-0">
-        <img src="/choose-path-bg.jpg" alt="" className="w-full h-full object-cover" />
+        <img src="/choose-path-bg.webp" alt="" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-cream/85" />
       </div>
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6">
@@ -437,7 +437,7 @@ function ChooseYourPath() {
               </div>
 
               <div className="relative h-48 sm:h-56 overflow-hidden">
-                <img src="/coaching-bg.jpg" alt="Coaching" className="w-full h-full object-cover object-[center_30%] group-hover:scale-105 transition-transform duration-700" />
+                <img src="/coaching-bg.webp" alt="Coaching" className="w-full h-full object-cover object-[center_30%] group-hover:scale-105 transition-transform duration-700" />
                 <div className="absolute inset-0 bg-gradient-to-t from-dark/80 via-dark/20 to-transparent" />
                 <div className="absolute bottom-4 left-5">
                   <div className="flex items-center gap-2 mb-1">
@@ -509,7 +509,7 @@ function QuickComparison() {
     <section ref={sectionRef} className="py-12 sm:py-16 relative overflow-hidden">
       <div className="absolute inset-0 flex">
         <div className="w-1/2 h-full relative">
-          <motion.img src="/comparison-training.jpg" alt="" className="w-full h-full object-cover origin-center" style={{ scale: bgScale }} />
+          <motion.img src="/comparison-training.webp" alt="" className="w-full h-full object-cover origin-center" style={{ scale: bgScale }} />
         </div>
         <div className="w-1/2 h-full relative">
           <motion.img src="/comparison-bg.webp" alt="" className="w-full h-full object-cover origin-center" style={{ scale: bgScale }} />
@@ -687,7 +687,7 @@ function About() {
             <motion.div variants={fadeUp} className="grid grid-cols-2 gap-3">
               <div className="space-y-3">
                 <div className="rounded-2xl overflow-hidden shadow-lg">
-                  <img src="/ely-about-1.jpg" alt="Ely estirando" className="w-full h-52 sm:h-64 object-cover" />
+                  <img src="/ely-about-1.webp" alt="Ely estirando" className="w-full h-52 sm:h-64 object-cover" />
                 </div>
                 <div className="rounded-2xl overflow-hidden shadow-lg">
                   <img src="/ely-about-3.jpg" alt="Ely en el gym" className="w-full h-36 sm:h-44 object-cover" />
@@ -764,7 +764,7 @@ function MiMetodo() {
       <div className="relative z-10 h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="max-w-xl">
           <motion.p variants={fadeUp} className="text-primary font-bold text-xs uppercase tracking-widest mb-3">Mi método</motion.p>
-          <motion.h2 variants={fadeUp} className="text-4xl sm:text-5xl font-black uppercase text-white leading-[0.9] mb-4">
+          <motion.h2 variants={fadeUp} className="text-[1.6rem] sm:text-5xl font-black uppercase text-white leading-[0.9] mb-4">
             Tú pones el objetivo,<br />yo te guío en<br /><span className="text-primary">el camino</span>
           </motion.h2>
           <motion.p variants={fadeUp} className="text-white/55 text-sm sm:text-base mb-6 max-w-md">
@@ -1004,7 +1004,7 @@ function Contact() {
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="max-w-4xl mx-auto bg-white rounded-3xl shadow-xl border border-dark/8 overflow-hidden grid lg:grid-cols-2">
           {/* Foto de Ely — izquierda en desktop, oculta en mobile */}
           <div className="hidden lg:block relative">
-            <img src="/ely-contact.jpg" alt="Ely Fitness" className="absolute inset-0 w-full h-full object-cover object-top" />
+            <img src="/ely-contact.webp" alt="Ely Fitness" className="absolute inset-0 w-full h-full object-cover object-top" />
           </div>
 
           {/* Formulario — derecha en desktop, full en mobile */}

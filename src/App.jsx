@@ -18,7 +18,7 @@ function NotFound() {
     <div className="min-h-screen bg-[#0f0f0f] flex items-center justify-center p-6">
       <div className="text-center">
         <p className="text-6xl font-black text-white/10 mb-4">404</p>
-        <p className="text-white/60 text-sm mb-6">Pagina no encontrada</p>
+        <p className="text-white/60 text-sm mb-6">Página no encontrada</p>
         <a href="/" className="text-[#D9A3FF] hover:text-[#c084fc] text-sm font-medium transition-colors">
           Volver al inicio
         </a>
