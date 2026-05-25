@@ -87,7 +87,7 @@ function Navbar() {
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-400 ${scrolled || open ? 'bg-[#FCF3EF]/92 sticky-blur border-b border-dark/8 shadow-sm' : 'bg-transparent'}`}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between h-14">
         <a href="#" className="flex items-center">
-          <svg className={`h-8 w-auto transition-all ${scrolled || open ? '[&_path]:fill-[#1d1d1b]' : '[&_path]:fill-white'}`} preserveAspectRatio="xMidYMid meet" viewBox="58.667 144.7 383.471 210.7" xmlns="http://www.w3.org/2000/svg">
+          <svg className={`h-12 sm:h-14 w-auto transition-all ${scrolled || open ? '[&_path]:fill-[#1d1d1b]' : '[&_path]:fill-white'}`} preserveAspectRatio="xMidYMid meet" viewBox="58.667 144.7 383.471 210.7" xmlns="http://www.w3.org/2000/svg">
             <g>
               <path d="M58.667 312.597v-123h49.3v23.8h-24.2v23.9h23.2v23.2h-23.2v28.2h25.8v23.9h-50.9z" />
               <path d="M117.666 312.597v-123h49.3v23.9h-24.6v19.6h23.2v23.7h-23.2v56h-24.8v-.2z" />
@@ -1110,14 +1110,24 @@ function Footer() {
             <p className="text-[9px] font-bold uppercase text-white/40 mb-3 tracking-widest">Redes</p>
             <div className="flex gap-2 mb-4">
               {[
+                { icon: <Mail size={12} />, url: 'mailto:contacta@elyfitness.es' },
                 { icon: <Instagram size={12} />, url: 'https://www.instagram.com/ely_fitness/' },
-                { icon: <Play size={12} />, url: 'https://www.youtube.com/@ely_fitness' },
-                { icon: <Heart size={12} />, url: 'https://www.tiktok.com/@ely_fitness' },
+                { icon: <svg viewBox="0 0 24 24" className="w-3 h-3" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>, url: 'https://www.youtube.com/@ely_fitness' },
+                { icon: <svg viewBox="0 0 24 24" className="w-3 h-3" fill="currentColor"><path d="M15.9453 8.68918V15.6727C15.9453 19.1598 13.1048 22.0004 9.6177 22.0004C8.27369 22.0004 7.01685 21.5717 5.99251 20.8525C4.35796 19.7047 3.29004 17.8085 3.29004 15.6727C3.29004 12.1783 6.12333 9.34505 9.6104 9.34505C9.90101 9.34505 10.1843 9.36685 10.4676 9.40318V12.9121H10.4386C10.3151 12.8758 10.1843 12.8394 10.0536 12.8177H9.9954C9.86466 12.8032 9.74114 12.7813 9.60309 12.7813C8.00491 12.7813 6.70448 14.0817 6.70448 15.6799C6.70448 17.2782 8.00491 18.5786 9.60309 18.5786C11.2014 18.5786 12.5018 17.2782 12.5018 15.6799V2.00037H15.938C15.938 2.29822 15.9671 2.58881 16.0179 2.87213C16.2649 4.1798 17.035 5.30584 18.1175 6.01053C18.873 6.50452 19.7593 6.78785 20.7182 6.78785V10.2241C18.9416 10.2241 17.288 9.65222 15.9453 8.68918Z"/></svg>, url: 'https://www.tiktok.com/@ely_fitness' },
               ].map((r, i) => (
-                <a key={i} href={r.url} target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-white/8 hover:bg-primary/20 flex items-center justify-center text-white/50 hover:text-primary transition-all">{r.icon}</a>
+                <a key={i} href={r.url} target={r.url.startsWith('mailto') ? '_self' : '_blank'} rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-white/8 hover:bg-primary/20 flex items-center justify-center text-white/50 hover:text-primary transition-all">{r.icon}</a>
               ))}
             </div>
-            <p className="text-white/30 text-[10px] flex items-center gap-1.5">Codigo <span className="text-primary font-bold">ELY</span> 10% dto en <a href="https://www.prozis.com/es/es" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity"><img src="/prozis-logo.png" alt="Prozis" className="h-2.5 invert opacity-50" /></a></p>
+            <p className="text-[9px] font-bold uppercase text-white/40 mb-2 tracking-widest">Colaboraciones</p>
+            <div className="space-y-1">
+              {[
+                { label: 'Prozis — Código ELY 10%', url: 'https://www.prozis.com/1DTPL' },
+                { label: "Women's Best — Código ELY 10%", url: 'https://womens.best/ElyFitness' },
+                { label: 'Matchaflix — Código ELY 26%', url: 'https://matchaflix.com/ELY' },
+              ].map(l => (
+                <a key={l.url} href={l.url} target="_blank" rel="noopener noreferrer" className="block text-white/40 hover:text-white/60 text-[11px] transition-colors">{l.label}</a>
+              ))}
+            </div>
           </div>
         </div>
 
