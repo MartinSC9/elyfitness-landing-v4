@@ -985,12 +985,18 @@ function Contact() {
           <motion.h2 variants={fadeUp} className="text-2xl sm:text-3xl font-black uppercase text-dark">Empieza tu <span className="text-gradient">cambio</span></motion.h2>
           <motion.p variants={fadeUp} className="text-dark/50 text-sm mt-2">Escribeme y te respondo en menos de 24h. Sin compromiso.</motion.p>
 
-          <motion.div variants={fadeUp} className="flex flex-wrap justify-center gap-2 mt-4">
-            <a href="mailto:contacta@elyfitness.es" className="inline-flex items-center gap-2 bg-dark text-white px-4 py-2 rounded-full text-sm font-bold transition-all hover:bg-dark-soft">
-              <Mail size={14} className="text-primary" /> contacta@elyfitness.es
+          <motion.div variants={fadeUp} className="flex items-center justify-center gap-3 mt-4">
+            <a href="mailto:contacta@elyfitness.es" aria-label="Email" className="w-10 h-10 rounded-full bg-dark flex items-center justify-center text-primary hover:bg-dark-soft transition-all">
+              <Mail size={16} />
             </a>
-            <a href="https://www.instagram.com/ely_fitness/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-dark text-white px-4 py-2 rounded-full text-sm font-bold transition-all hover:bg-dark-soft">
-              <Instagram size={14} className="text-primary" /> @ely_fitness
+            <a href="https://www.instagram.com/ely_fitness/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="w-10 h-10 rounded-full bg-dark flex items-center justify-center text-primary hover:bg-dark-soft transition-all">
+              <Instagram size={16} />
+            </a>
+            <a href="https://www.youtube.com/@ely_fitness" target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="w-10 h-10 rounded-full bg-dark flex items-center justify-center text-primary hover:bg-dark-soft transition-all">
+              <svg viewBox="0 0 24 24" className="w-4 h-4" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+            <a href="https://www.tiktok.com/@ely_fitness" target="_blank" rel="noopener noreferrer" aria-label="TikTok" className="w-10 h-10 rounded-full bg-dark flex items-center justify-center text-primary hover:bg-dark-soft transition-all">
+              <svg viewBox="0 0 24 24" className="w-4 h-4" fill="currentColor"><path d="M15.9453 8.68918V15.6727C15.9453 19.1598 13.1048 22.0004 9.6177 22.0004C8.27369 22.0004 7.01685 21.5717 5.99251 20.8525C4.35796 19.7047 3.29004 17.8085 3.29004 15.6727C3.29004 12.1783 6.12333 9.34505 9.6104 9.34505C9.90101 9.34505 10.1843 9.36685 10.4676 9.40318V12.9121H10.4386C10.3151 12.8758 10.1843 12.8394 10.0536 12.8177H9.9954C9.86466 12.8032 9.74114 12.7813 9.60309 12.7813C8.00491 12.7813 6.70448 14.0817 6.70448 15.6799C6.70448 17.2782 8.00491 18.5786 9.60309 18.5786C11.2014 18.5786 12.5018 17.2782 12.5018 15.6799V2.00037H15.938C15.938 2.29822 15.9671 2.58881 16.0179 2.87213C16.2649 4.1798 17.035 5.30584 18.1175 6.01053C18.873 6.50452 19.7593 6.78785 20.7182 6.78785V10.2241C18.9416 10.2241 17.288 9.65222 15.9453 8.68918Z"/></svg>
             </a>
           </motion.div>
         </motion.div>
