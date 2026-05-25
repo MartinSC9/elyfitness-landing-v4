@@ -13,8 +13,8 @@ import MagneticButton from '@/components/MagneticButton';
 import FlipWords from '@/components/FlipWords';
 
 /* --- MEDIA --- */
-const ELY_VIDEO = 'https://video.wixstatic.com/video/4cd4b0_9626817c7320447ea40f07a27ebc5934/720p/mp4/file.mp4';
-const APP_VIDEO = 'https://video.wixstatic.com/video/4cd4b0_d9ff65c4b76343a6988372fccb6cc847/720p/mp4/file.mp4';
+const ELY_VIDEO = '/ely-video.mp4';
+const APP_VIDEO = '/app-video.mp4';
 const HERO_VIDEO_DESKTOP = '/hero-bg-1.mp4';
 const ELY_MODAL = 'https://static.wixstatic.com/media/4cd4b0_a7d6132da9c84d41a3bed4a1d5f77922~mv2.webp/v1/fill/w_800,h_1020,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/ELYFITNESS_MINIATURA_CAMPUS%20POWER%202025.webp';
 
