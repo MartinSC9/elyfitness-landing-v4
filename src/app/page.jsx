@@ -1151,12 +1151,12 @@ function Contact() {
                   </div>
                   <motion.select variants={fadeUp} name="plan" className="bg-cream border border-dark/10 rounded-xl px-4 py-3.5 text-sm text-dark/60 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 w-full transition-all">
                     <option>¿Qué plan te interesa?</option>
-                    <option>Coaching — Premium Plus</option>
-                    <option>Coaching — Premium Running</option>
-                    <option>Coaching — Nutrición</option>
-                    <option>Coaching — Training</option>
-                    <option>ElyFitness APP (59&#8364;/año)</option>
-                    <option>Pack Duo (69&#8364;/año)</option>
+                    <option>Coaching 1:1 — Premium Plus</option>
+                    <option>Coaching 1:1 — Premium Running</option>
+                    <option>Coaching 1:1 — Nutrición</option>
+                    <option>Coaching 1:1 — Training</option>
+                    <option>APP — 1 persona (59€/año)</option>
+                    <option>APP — Pack Duo (69€/año)</option>
                     <option>No sé cuál elegir — ayúdame</option>
                     <option>Otra consulta</option>
                   </motion.select>

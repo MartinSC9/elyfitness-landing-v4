@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
-import { ArrowLeft, Star, X, Crown, ChevronDown, Dumbbell } from 'lucide-react';
+import { ArrowLeft, Star, X, Users, Smartphone, ChevronDown } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const fadeUp = { hidden: { opacity: 0, y: 24 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] } } };
@@ -274,8 +274,8 @@ const CTA_LINKS = {
 
 const FILTERS = [
   { key: 'todos', label: 'Todos' },
-  { key: 'ultra', label: '1:1', icon: Crown },
-  { key: 'anual', label: 'APP', icon: Dumbbell },
+  { key: 'ultra', label: '1:1', icon: Users },
+  { key: 'anual', label: 'APP', icon: Smartphone },
 ];
 
 export default function CambiosPage() {
@@ -356,8 +356,8 @@ export default function CambiosPage() {
                       className="w-full aspect-square object-cover group-hover:scale-105 transition-transform duration-500"
                       loading="lazy"
                     />
-                    <span className={`absolute top-3 right-3 text-[11px] font-black uppercase px-3 py-1 rounded-full shadow-md ${c.plan === 'ultra' ? 'bg-primary text-white' : 'bg-dark text-white'}`}>
-                      {c.plan === 'ultra' ? '1:1' : 'APP'}
+                    <span className={`absolute top-3 right-3 text-[11px] font-black uppercase px-3 py-1 rounded-full shadow-md inline-flex items-center gap-1 ${c.plan === 'ultra' ? 'bg-primary text-white' : 'bg-dark text-white'}`}>
+                      {c.plan === 'ultra' ? <><Users size={11} /> 1:1</> : <><Smartphone size={11} /> APP</>}
                     </span>
                   </div>
 
@@ -397,10 +397,10 @@ export default function CambiosPage() {
         <p className="text-white/35 text-xs sm:text-sm mb-6">Empieza tu cambio conmigo. Elige el plan que mejor se adapte a ti.</p>
         <div className="flex flex-wrap justify-center gap-3">
           <a href={CTA_LINKS.ultra} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white px-7 py-3.5 rounded-full font-bold text-sm uppercase transition-all">
-            Coaching 1:1
+            <Users size={14} /> Coaching 1:1
           </a>
           <a href={CTA_LINKS.anual} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-dark-soft hover:bg-white/20 text-white px-7 py-3.5 rounded-full font-bold text-sm uppercase transition-all border border-white/20">
-            Plan Anual APP
+            <Smartphone size={14} /> Plan Anual APP
           </a>
         </div>
       </div>
@@ -424,8 +424,8 @@ export default function CambiosPage() {
                   <div className="flex items-center justify-between mb-3">
                     <div className="flex items-center gap-2">
                       <span className="text-lg font-black text-dark">{selected.name}</span>
-                      <span className={`text-[9px] font-bold uppercase px-2 py-0.5 rounded-full ${selected.plan === 'ultra' ? 'bg-primary/10 text-primary-dark' : 'bg-dark text-white'}`}>
-                        {selected.plan === 'ultra' ? '1:1' : 'APP'}
+                      <span className={`text-[9px] font-bold uppercase px-2 py-0.5 rounded-full inline-flex items-center gap-1 ${selected.plan === 'ultra' ? 'bg-primary/10 text-primary-dark' : 'bg-dark text-white'}`}>
+                        {selected.plan === 'ultra' ? <><Users size={9} /> 1:1</> : <><Smartphone size={9} /> APP</>}
                       </span>
                     </div>
                     <span className={`${selected.plan === 'ultra' ? 'text-primary' : 'text-dark'} font-bold text-sm`}>{selected.result}</span>
