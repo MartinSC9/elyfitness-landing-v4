@@ -868,7 +868,7 @@ function FinalCTA() {
     <section className="relative pt-20 sm:pt-28 pb-28 sm:pb-36 overflow-hidden">
       <div className="absolute inset-0">
         <video src={ELY_VIDEO} autoPlay muted loop playsInline className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-dark/80" />
+        <div className="absolute inset-0 bg-dark/90 sm:bg-dark/80" />
       </div>
       {/* Top wave — cream into video */}
       <svg viewBox="0 0 1440 50" xmlns="http://www.w3.org/2000/svg" className="absolute top-0 left-0 w-full" preserveAspectRatio="none" style={{ height: 50 }}>
