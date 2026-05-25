@@ -55,9 +55,9 @@ const scaleUp = { hidden: { opacity: 0, scale: 0.92 }, visible: { opacity: 1, sc
 /* ============================== WAVE DIVIDER ============================== */
 function WaveDivider({ from = '#FCF3EF', to = '#ffffff' }) {
   return (
-    <div className="relative w-full overflow-hidden" style={{ height: 60, backgroundColor: from, marginTop: -1 }}>
-      <svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" className="absolute bottom-0 w-full" preserveAspectRatio="none" style={{ height: 60 }}>
-        <path d="M0 25C240 50 480 55 720 40C960 25 1200 10 1440 20V60H0Z" fill={to} />
+    <div className="relative w-full overflow-hidden" style={{ height: 50, backgroundColor: from, marginTop: -1 }}>
+      <svg viewBox="0 0 1440 50" xmlns="http://www.w3.org/2000/svg" className="absolute bottom-0 w-full" preserveAspectRatio="none" style={{ height: 50 }}>
+        <path d="M0 30C240 48 480 50 720 35C960 20 1200 5 1440 18V50H0Z" fill={to} />
       </svg>
     </div>
   );
@@ -407,12 +407,16 @@ function AppCardBody() {
 /* ============================== CHOOSE YOUR PATH ============================== */
 function ChooseYourPath() {
   return (
-    <section id="plan-ultra" className="py-16 sm:py-24 scroll-mt-16 relative overflow-hidden">
+    <section id="plan-ultra" className="pt-20 sm:pt-28 pb-16 sm:pb-24 scroll-mt-16 relative overflow-hidden">
       <div className="absolute inset-0">
         <img src="/choose-path-bg.webp" alt="" loading="lazy" className="w-full h-full object-cover saturate-[0.3] sepia-[0.15]" />
         <div className="absolute inset-0 bg-cream/92" />
         <div className="absolute inset-0 bg-primary/[0.03]" />
       </div>
+      {/* Top wave — white (transformations) into this section */}
+      <svg viewBox="0 0 1440 50" xmlns="http://www.w3.org/2000/svg" className="absolute top-0 left-0 w-full" preserveAspectRatio="none" style={{ height: 50 }}>
+        <path d="M0 0H1440V20C1200 45 960 50 720 35C480 20 240 5 0 18Z" fill="#ffffff" />
+      </svg>
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="text-center mb-14">
           <motion.div variants={fadeUp} className="inline-flex items-center gap-2 bg-primary/10 border border-primary/15 rounded-full px-4 py-1.5 mb-5">
@@ -504,7 +508,7 @@ function QuickComparison() {
   ];
 
   return (
-    <section className="py-12 sm:py-16 relative overflow-hidden">
+    <section className="pt-12 sm:pt-16 pb-20 sm:pb-24 relative overflow-hidden">
       <div className="absolute inset-0 flex">
         <div className="w-1/2 h-full relative">
           <img src="/comparison-training.webp" alt="" loading="lazy" className="w-full h-full object-cover saturate-[0.3] sepia-[0.15]" />
@@ -620,6 +624,10 @@ function QuickComparison() {
           ¿No sabes cuál elegir? <a href="#contacto" className="text-primary-dark font-bold hover:underline">Pregunta sin compromiso</a>
         </motion.p>
       </div>
+      {/* Bottom wave — comparison into cream (About) */}
+      <svg viewBox="0 0 1440 50" xmlns="http://www.w3.org/2000/svg" className="absolute bottom-0 left-0 w-full" preserveAspectRatio="none" style={{ height: 50 }}>
+        <path d="M0 30C240 48 480 50 720 35C960 20 1200 5 1440 18V50H0Z" fill="#FCF3EF" />
+      </svg>
     </section>
   );
 }
@@ -857,11 +865,19 @@ function MiMetodo() {
 /* ============================== FINAL CTA ============================== */
 function FinalCTA() {
   return (
-    <section className="relative py-20 sm:py-28 overflow-hidden">
+    <section className="relative pt-20 sm:pt-28 pb-28 sm:pb-36 overflow-hidden">
       <div className="absolute inset-0">
         <video src={ELY_VIDEO} autoPlay muted loop playsInline className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-dark/80" />
       </div>
+      {/* Top wave — cream into video */}
+      <svg viewBox="0 0 1440 50" xmlns="http://www.w3.org/2000/svg" className="absolute top-0 left-0 w-full" preserveAspectRatio="none" style={{ height: 50 }}>
+        <path d="M0 0H1440V20C1200 45 960 50 720 35C480 20 240 5 0 18Z" fill="#FCF3EF" />
+      </svg>
+      {/* Bottom wave — video into cream */}
+      <svg viewBox="0 0 1440 50" xmlns="http://www.w3.org/2000/svg" className="absolute bottom-0 left-0 w-full" preserveAspectRatio="none" style={{ height: 50 }}>
+        <path d="M0 30C240 48 480 50 720 35C960 20 1200 5 1440 18V50H0Z" fill="#FCF3EF" />
+      </svg>
       <div className="relative z-10 max-w-3xl mx-auto px-4 text-center">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
           <motion.p variants={fadeUp} className="text-primary text-xs font-bold uppercase tracking-widest mb-4">El momento es ahora</motion.p>
@@ -989,22 +1005,22 @@ function FAQ() {
   ];
 
   return (
-    <section className="py-16 sm:py-24 bg-cream">
+    <section className="py-16 sm:py-24 bg-dark">
       <div className="max-w-xl mx-auto px-4">
-        <h2 className="text-xl sm:text-2xl font-black uppercase text-center mb-8">Preguntas <span className="text-gradient">frecuentes</span></h2>
+        <h2 className="text-xl sm:text-2xl font-black uppercase text-center mb-8 text-white">Preguntas <span className="text-gradient">frecuentes</span></h2>
         <div className="space-y-2.5">
           {faqs.map((f, i) => (
-            <div key={i} className={`bg-white rounded-xl overflow-hidden transition-all ${open === i ? 'shadow-md border-l-3 border-l-primary border border-primary/20' : 'border border-dark/8'}`}>
+            <div key={i} className={`bg-white/10 backdrop-blur-sm rounded-xl overflow-hidden transition-all ${open === i ? 'shadow-md border-l-3 border-l-primary border border-primary/30' : 'border border-white/10'}`}>
               <button onClick={() => setOpen(open === i ? null : i)} className="w-full flex items-center justify-between p-4 text-left gap-3">
-                <span className="font-bold text-sm text-dark">{f.q}</span>
-                <div className={`w-7 h-7 rounded-full flex items-center justify-center shrink-0 transition-all ${open === i ? 'bg-primary text-white rotate-180' : 'bg-white text-dark/30'}`}>
+                <span className="font-bold text-sm text-white">{f.q}</span>
+                <div className={`w-7 h-7 rounded-full flex items-center justify-center shrink-0 transition-all ${open === i ? 'bg-primary text-white rotate-180' : 'bg-white/10 text-white/40'}`}>
                   <ChevronDown size={13} />
                 </div>
               </button>
               <AnimatePresence>
                 {open === i && (
                   <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.25 }} className="overflow-hidden">
-                    <p className="px-4 pb-4 text-sm text-dark/50 leading-relaxed">{f.a}</p>
+                    <p className="px-4 pb-4 text-sm text-white/50 leading-relaxed">{f.a}</p>
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -1037,12 +1053,20 @@ function Contact() {
   };
 
   return (
-    <section id="contacto" className="scroll-mt-16 py-16 sm:py-20 relative overflow-hidden">
+    <section id="contacto" className="scroll-mt-16 pt-20 sm:pt-24 pb-28 sm:pb-36 relative overflow-hidden">
       <div className="absolute inset-0">
         <img src="/contact-bg.webp" loading="lazy" alt="" className="w-full h-full object-cover blur-[6px] scale-105 saturate-[0.3] sepia-[0.15]" />
         <div className="absolute inset-0 bg-cream/92" />
         <div className="absolute inset-0 bg-primary/[0.03]" />
       </div>
+      {/* Top wave — dark (FAQ) into contact */}
+      <svg viewBox="0 0 1440 50" xmlns="http://www.w3.org/2000/svg" className="absolute top-0 left-0 w-full" preserveAspectRatio="none" style={{ height: 50 }}>
+        <path d="M0 0H1440V20C1200 45 960 50 720 35C480 20 240 5 0 18Z" fill="#323130" />
+      </svg>
+      {/* Bottom wave — contact into dark (footer) */}
+      <svg viewBox="0 0 1440 50" xmlns="http://www.w3.org/2000/svg" className="absolute bottom-0 left-0 w-full" preserveAspectRatio="none" style={{ height: 50 }}>
+        <path d="M0 30C240 48 480 50 720 35C960 20 1200 5 1440 18V50H0Z" fill="#323130" />
+      </svg>
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="text-center mb-8">
           <motion.h2 variants={fadeUp} className="text-2xl sm:text-3xl font-black uppercase text-dark">Empieza tu <span className="text-gradient">cambio</span></motion.h2>
@@ -1402,20 +1426,16 @@ export default function Home() {
       <Hero />
       <MiMetodo />
       <SocialProofBar />
-      <WaveDivider from="#323130" to="#FCF3EF" />
+      <WaveDivider from="#323130" to="#ffffff" />
+      <Transformations />
       <ChooseYourPath />
       <QuickComparison />
-      <Transformations />
-      <WaveDivider from="#ffffff" to="#FCF3EF" />
       <About />
-      <WaveDivider from="#FCF3EF" to="#323130" />
       <FinalCTA />
-      <WaveDivider from="#323130" to="#FCF3EF" />
       <Prozis />
-      <div className="gradient-line max-w-2xl mx-auto" />
+      <WaveDivider from="#FCF3EF" to="#323130" />
       <FAQ />
       <Contact />
-      <WaveDivider from="#FCF3EF" to="#323130" />
       <Footer />
       <ChatWidget onNewsletter={() => setNlOpen(true)} />
       <NewsletterModal forceOpen={nlOpen} onClose={() => setNlOpen(false)} />
