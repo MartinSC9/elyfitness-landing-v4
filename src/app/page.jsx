@@ -188,10 +188,10 @@ function Hero() {
 
             {/* Dual CTA */}
             <motion.div variants={fadeUp} className="flex flex-col sm:flex-row justify-center gap-3 mb-8 sm:mb-12">
-              <MagneticButton href="#plan-ultra" className="shine-sweep group inline-flex items-center justify-center gap-2 sm:gap-2.5 bg-primary text-white px-5 sm:px-8 py-4 sm:py-4.5 rounded-full font-bold text-xs sm:text-sm uppercase tracking-wide transition-all shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/50 hover:scale-[1.02]">
+              <MagneticButton href="#plan-ultra" className="shine-sweep group w-full sm:w-auto inline-flex items-center justify-center gap-2 sm:gap-2.5 bg-primary text-white px-5 sm:px-8 py-4 sm:py-4.5 rounded-full font-bold text-xs sm:text-sm uppercase tracking-wide transition-all shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/50 hover:scale-[1.02]">
                 <Users size={16} /> COACHING 1:1 <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
               </MagneticButton>
-              <MagneticButton href="#app" className="group inline-flex items-center justify-center gap-2 sm:gap-2.5 bg-white/15 backdrop-blur-sm border border-white/25 text-white px-5 sm:px-8 py-4 sm:py-4.5 rounded-full font-bold text-xs sm:text-sm uppercase tracking-wide hover:bg-white/25 transition-all">
+              <MagneticButton href="#app" className="group w-full sm:w-auto inline-flex items-center justify-center gap-2 sm:gap-2.5 bg-white/15 backdrop-blur-sm border border-white/25 text-white px-5 sm:px-8 py-4 sm:py-4.5 rounded-full font-bold text-xs sm:text-sm uppercase tracking-wide hover:bg-white/25 transition-all">
                 <Smartphone size={16} /> APP DESDE 4,92&#8364;/MES <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
               </MagneticButton>
             </motion.div>
