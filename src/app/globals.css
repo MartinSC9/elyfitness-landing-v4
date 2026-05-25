@@ -31,7 +31,7 @@ button, a, [role="button"], input[type="submit"], select { cursor: pointer; }
 .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
 
 .text-gradient {
-  background: linear-gradient(135deg, #c084fc, #D9A3FF, #e9d5ff);
+  background: linear-gradient(135deg, #a855f7, #c084fc, #D9A3FF);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -98,7 +98,6 @@ button, a, [role="button"], input[type="submit"], select { cursor: pointer; }
   transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 .card-lift:hover {
-  transform: translateY(-8px);
   box-shadow: 0 25px 60px -15px rgba(217, 163, 255, 0.3);
 }
 
