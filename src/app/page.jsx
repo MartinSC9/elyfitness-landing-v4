@@ -630,9 +630,9 @@ function QuickComparison() {
           ¿No sabes cuál elegir? <a href="#contacto" className="text-primary-dark font-bold hover:underline">Pregunta sin compromiso</a>
         </motion.p>
       </div>
-      {/* Bottom wave — comparison into white (Resultados) */}
+      {/* Bottom wave — comparison into cream (About) */}
       <svg viewBox="0 0 1440 50" xmlns="http://www.w3.org/2000/svg" className="absolute bottom-0 left-0 w-full" preserveAspectRatio="none" style={{ height: 50 }}>
-        <path d="M0 30C240 48 480 50 720 35C960 20 1200 5 1440 18V50H0Z" fill="#ffffff" />
+        <path d="M0 30C240 48 480 50 720 35C960 20 1200 5 1440 18V50H0Z" fill="#FCF3EF" />
       </svg>
     </section>
   );
