@@ -494,9 +494,6 @@ function ChooseYourPath() {
 
 /* ============================== COMPARISON ============================== */
 function QuickComparison() {
-  const sectionRef = useRef(null);
-  const { scrollYProgress } = useScroll({ target: sectionRef, offset: ['start end', 'end start'] });
-  const bgScale = useTransform(scrollYProgress, [0, 0.5, 1], [1.02, 1.12, 1.02]);
 
   const rows = [
     { label: 'Personalización', coaching: '100% a tu medida', app: 'Rutinas + recetas profesionales' },
@@ -507,13 +504,13 @@ function QuickComparison() {
   ];
 
   return (
-    <section ref={sectionRef} className="py-12 sm:py-16 relative overflow-hidden">
+    <section className="py-12 sm:py-16 relative overflow-hidden">
       <div className="absolute inset-0 flex">
         <div className="w-1/2 h-full relative">
-          <motion.img src="/comparison-training.webp" alt="" className="w-full h-full object-cover origin-center saturate-[0.3] sepia-[0.15]" style={{ scale: bgScale }} />
+          <img src="/comparison-training.webp" alt="" loading="lazy" className="w-full h-full object-cover saturate-[0.3] sepia-[0.15]" />
         </div>
         <div className="w-1/2 h-full relative">
-          <motion.img src="/comparison-bg.webp" alt="" className="w-full h-full object-cover origin-center saturate-[0.3] sepia-[0.15]" style={{ scale: bgScale }} />
+          <img src="/comparison-bg.webp" alt="" loading="lazy" className="w-full h-full object-cover saturate-[0.3] sepia-[0.15]" />
         </div>
         <div className="absolute inset-0 bg-white/90" />
         <div className="absolute inset-0 bg-primary/[0.03]" />
