@@ -136,9 +136,9 @@ function Navbar() {
           <div className="md:hidden fixed inset-0 top-14 z-[-1]" onClick={() => setOpen(false)} />
           <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} exit={{ opacity: 0, height: 0 }} transition={{ duration: 0.3 }} className="md:hidden bg-cream/98 sticky-blur border-t border-dark/8 px-6 pb-5 overflow-hidden">
             {links.map(l => (
-              <a key={l.href} href={l.href} onClick={(e) => { e.preventDefault(); setOpen(false); smoothScroll(l.href); }} className="relative inline-flex items-center gap-2 font-bold text-sm uppercase py-3 border-b border-dark/8 last:border-0 text-dark/70 w-full">{l.label}{l.badge && <span className="bg-red-500 text-white text-[9px] font-black px-1.5 py-0.5 rounded-full leading-none">{l.badge}</span>}</a>
+              <a key={l.href} href={l.href} onClick={(e) => { e.preventDefault(); smoothScroll(l.href); setTimeout(() => setOpen(false), 300); }} className="relative inline-flex items-center gap-2 font-bold text-sm uppercase py-3 border-b border-dark/8 last:border-0 text-dark/70 w-full">{l.label}{l.badge && <span className="bg-red-500 text-white text-[9px] font-black px-1.5 py-0.5 rounded-full leading-none">{l.badge}</span>}</a>
             ))}
-            <a href="#plan-ultra" onClick={(e) => { e.preventDefault(); setOpen(false); smoothScroll('#plan-ultra'); }} className="mt-3 flex items-center justify-center gap-2 bg-primary text-white py-3 rounded-xl font-bold text-sm uppercase">
+            <a href="#plan-ultra" onClick={(e) => { e.preventDefault(); smoothScroll('#plan-ultra'); setTimeout(() => setOpen(false), 300); }} className="mt-3 flex items-center justify-center gap-2 bg-primary text-white py-3 rounded-xl font-bold text-sm uppercase">
               Empieza tu cambio <ArrowRight size={14} />
             </a>
           </motion.div>
