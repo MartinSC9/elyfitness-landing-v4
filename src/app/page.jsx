@@ -52,21 +52,9 @@ const fadeIn = { hidden: { opacity: 0 }, visible: { opacity: 1, transition: { du
 const stagger = { visible: { transition: { staggerChildren: 0.08 } } };
 const scaleUp = { hidden: { opacity: 0, scale: 0.92 }, visible: { opacity: 1, scale: 1, transition: { duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] } } };
 
-function slowScroll(id, duration = 1800) {
+function smoothScroll(id) {
   const el = document.querySelector(id);
-  if (!el) return;
-  const start = window.scrollY;
-  const end = el.getBoundingClientRect().top + start - 70;
-  const diff = end - start;
-  let startTime = null;
-  const ease = t => t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
-  function step(time) {
-    if (!startTime) startTime = time;
-    const progress = Math.min((time - startTime) / duration, 1);
-    window.scrollTo(0, start + diff * ease(progress));
-    if (progress < 1) requestAnimationFrame(step);
-  }
-  requestAnimationFrame(step);
+  if (el) el.scrollIntoView({ behavior: 'smooth' });
 }
 
 /* ============================== WAVE DIVIDER ============================== */
@@ -144,14 +132,17 @@ function Navbar() {
 
       <AnimatePresence>
         {open && (
+          <>
+          <div className="md:hidden fixed inset-0 top-14 z-[-1]" onClick={() => setOpen(false)} />
           <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} exit={{ opacity: 0, height: 0 }} transition={{ duration: 0.3 }} className="md:hidden bg-cream/98 sticky-blur border-t border-dark/8 px-6 pb-5 overflow-hidden">
             {links.map(l => (
-              <a key={l.href} href={l.href} onClick={(e) => { e.preventDefault(); setOpen(false); const el = document.querySelector(l.href); if (el) setTimeout(() => el.scrollIntoView({ behavior: 'smooth' }), 100); }} className="relative inline-flex items-center gap-2 font-bold text-sm uppercase py-3 border-b border-dark/8 last:border-0 text-dark/70 w-full">{l.label}{l.badge && <span className="bg-red-500 text-white text-[9px] font-black px-1.5 py-0.5 rounded-full leading-none">{l.badge}</span>}</a>
+              <a key={l.href} href={l.href} onClick={(e) => { e.preventDefault(); setOpen(false); smoothScroll(l.href); }} className="relative inline-flex items-center gap-2 font-bold text-sm uppercase py-3 border-b border-dark/8 last:border-0 text-dark/70 w-full">{l.label}{l.badge && <span className="bg-red-500 text-white text-[9px] font-black px-1.5 py-0.5 rounded-full leading-none">{l.badge}</span>}</a>
             ))}
-            <a href="#plan-ultra" onClick={(e) => { e.preventDefault(); setOpen(false); const el = document.querySelector('#plan-ultra'); if (el) setTimeout(() => el.scrollIntoView({ behavior: 'smooth' }), 100); }} className="mt-3 flex items-center justify-center gap-2 bg-primary text-white py-3 rounded-xl font-bold text-sm uppercase">
+            <a href="#plan-ultra" onClick={(e) => { e.preventDefault(); setOpen(false); smoothScroll('#plan-ultra'); }} className="mt-3 flex items-center justify-center gap-2 bg-primary text-white py-3 rounded-xl font-bold text-sm uppercase">
               Empieza tu cambio <ArrowRight size={14} />
             </a>
           </motion.div>
+          </>
         )}
       </AnimatePresence>
     </nav>
@@ -205,10 +196,10 @@ function Hero() {
 
             {/* Dual CTA */}
             <motion.div variants={fadeUp} className="flex flex-col sm:flex-row justify-center gap-3 mb-8 sm:mb-12">
-              <MagneticButton href="#plan-ultra" onClick={(e) => { e.preventDefault(); slowScroll('#plan-ultra'); }} className="shine-sweep group w-full sm:flex-1 inline-flex items-center justify-center gap-2 sm:gap-2.5 bg-primary text-white px-5 sm:px-8 py-4 sm:py-4.5 rounded-full font-bold text-xs sm:text-sm uppercase tracking-wide transition-all shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/50 hover:scale-[1.02]">
+              <MagneticButton href="#plan-ultra" onClick={(e) => { e.preventDefault(); smoothScroll('#plan-ultra'); }} className="shine-sweep group w-full sm:flex-1 inline-flex items-center justify-center gap-2 sm:gap-2.5 bg-primary text-white px-5 sm:px-8 py-4 sm:py-4.5 rounded-full font-bold text-xs sm:text-sm uppercase tracking-wide transition-all shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/50 hover:scale-[1.02]">
                 <Users size={16} /> COACHING 1:1 <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
               </MagneticButton>
-              <MagneticButton href="#app" onClick={(e) => { e.preventDefault(); slowScroll('#app'); }} className="group w-full sm:flex-1 inline-flex items-center justify-center gap-2 sm:gap-2.5 bg-white/15 backdrop-blur-sm border border-white/25 text-white px-5 sm:px-8 py-4 sm:py-4.5 rounded-full font-bold text-xs sm:text-sm uppercase tracking-wide hover:bg-white/25 transition-all">
+              <MagneticButton href="#app" onClick={(e) => { e.preventDefault(); smoothScroll('#app'); }} className="group w-full sm:flex-1 inline-flex items-center justify-center gap-2 sm:gap-2.5 bg-white/15 backdrop-blur-sm border border-white/25 text-white px-5 sm:px-8 py-4 sm:py-4.5 rounded-full font-bold text-xs sm:text-sm uppercase tracking-wide hover:bg-white/25 transition-all">
                 <Smartphone size={16} /> APP DESDE 4,92&#8364;/MES <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
               </MagneticButton>
             </motion.div>
@@ -874,7 +865,7 @@ function MiMetodo() {
               Has puesto esfuerzo pero no ves resultados. Tu plan exclusivo te ayudará a lograr tus objetivos encontrando el equilibrio entre tu vida social, laboral y la salud.
             </motion.p>
             <motion.div variants={fadeUp}>
-              <a href="#plan-ultra" onClick={(e) => { e.preventDefault(); slowScroll('#plan-ultra'); }} className="group inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white px-7 py-3.5 rounded-full font-bold text-sm uppercase tracking-wide transition-all shadow-lg shadow-primary/20">
+              <a href="#plan-ultra" onClick={(e) => { e.preventDefault(); smoothScroll('#plan-ultra'); }} className="group inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white px-7 py-3.5 rounded-full font-bold text-sm uppercase tracking-wide transition-all shadow-lg shadow-primary/20">
                 Empieza tu cambio <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
               </a>
             </motion.div>
