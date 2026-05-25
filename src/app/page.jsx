@@ -840,11 +840,11 @@ function FinalCTA() {
 
 /* ============================== PROZIS ============================== */
 const PROZIS_PRODUCTS = [
-  { name: 'Creatina Micropure', desc: 'Rendimiento, recuperación y foco.', img: '/prozis/creatina.webp', url: 'https://www.prozis.com/es/es/prozis/creatina-micronpure-300-g/?ot=AFFES2777&utm_source=prz_affiliate&utm_medium=referral&utm_campaign=el_es_ib_pr_af&utm_content=product' },
-  { name: 'Colageno PeptiPlus', desc: 'Articulaciones, piel y recuperación.', img: '/prozis/colageno.webp', url: 'https://www.prozis.com/es/es/?ot=AFFES2777&utm_source=prz_affiliate&utm_medium=referral&utm_campaign=el_es_ib_pr_af' },
+  { name: 'Creatina Micropure', desc: 'Rendimiento, recuperación y foco.', img: 'https://static.sscontent.com/thumb/1000/1000/products/124/v1698746_prozis_creatine-micronpure-300g_newin.webp', url: 'https://www.prozis.com/es/es/prozis/creatina-micronpure-300-g/?ot=AFFES2777&utm_source=prz_affiliate&utm_medium=referral&utm_campaign=el_es_ib_pr_af&utm_content=product' },
+  { name: 'Colageno PeptiPlus', desc: 'Articulaciones, piel y recuperación.', img: 'https://static.sscontent.com/thumb/1000/1000/products/124/v1708709_prozis_peptiplus-hydrolyzed-collagen-protein-900g_newin.webp', url: 'https://www.prozis.com/es/es/?ot=AFFES2777&utm_source=prz_affiliate&utm_medium=referral&utm_campaign=el_es_ib_pr_af' },
   { name: 'Ely x Prozis', desc: 'Mi selección favorita.', img: '/prozis/ely-prozis.webp', url: 'https://www.prozis.com/es/es/?ot=AFFES2777&utm_source=prz_affiliate&utm_medium=referral&utm_campaign=el_es_ib_pr_af' },
-  { name: 'Duffle Backpack 35L', desc: 'Mochila deportiva ideal gym.', img: '/prozis/backpack.webp', url: 'https://www.prozis.com/es/es/?ot=AFFES2777&utm_source=prz_affiliate&utm_medium=referral&utm_campaign=el_es_ib_pr_af' },
-  { name: 'Guantes Minimalist', desc: 'Agarre y protección.', img: '/prozis/guantes.webp', url: 'https://www.prozis.com/es/es/?ot=AFFES2777&utm_source=prz_affiliate&utm_medium=referral&utm_campaign=el_es_ib_pr_af' },
+  { name: 'Duffle Backpack 35L', desc: 'Mochila deportiva ideal gym.', img: 'https://static.sscontent.com/thumb/500/500/products/124/v1499995_prozis_core-workout-duffle-backpack-35l-black_single-size_black_other2.webp', url: 'https://www.prozis.com/es/es/?ot=AFFES2777&utm_source=prz_affiliate&utm_medium=referral&utm_campaign=el_es_ib_pr_af' },
+  { name: 'Guantes Minimalist', desc: 'Agarre y protección.', img: 'https://static.sscontent.com/thumb/1000/1000/products/124/v1498172_prozis_minimalist-padded-gloves-black_s_black_newin.webp', url: 'https://www.prozis.com/es/es/?ot=AFFES2777&utm_source=prz_affiliate&utm_medium=referral&utm_campaign=el_es_ib_pr_af' },
   { name: 'Suplementación Top', desc: 'Omega 3, magnesio, vitaminas.', img: '/prozis/suplementacion.webp', url: 'https://www.prozis.com/es/es/?ot=AFFES2777&utm_source=prz_affiliate&utm_medium=referral&utm_campaign=el_es_ib_pr_af' },
 ];
 
