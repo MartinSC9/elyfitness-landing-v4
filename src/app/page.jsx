@@ -240,10 +240,10 @@ function ChooseYourPath() {
           </motion.p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-5 sm:gap-6">
+        <div className="grid lg:grid-cols-2 gap-5 sm:gap-6 items-stretch">
           {/* COACHING CARD */}
-          <motion.div id="coaching" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={scaleUp}>
-            <div className="card-lift relative bg-white rounded-3xl border-2 border-primary/25 overflow-hidden shadow-lg group">
+          <motion.div id="coaching" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={scaleUp} className="flex">
+            <div className="card-lift relative bg-white rounded-3xl border-2 border-primary/25 overflow-hidden shadow-lg group flex flex-col w-full">
               <div className="absolute top-4 right-4 z-10">
                 <span className="inline-flex items-center gap-1.5 bg-primary text-white text-[9px] font-bold uppercase px-3 py-1.5 rounded-full shadow-lg shadow-primary/30 badge-pulse">
                   <Crown size={10} /> Mas resultados
@@ -263,46 +263,45 @@ function ChooseYourPath() {
                 </div>
               </div>
 
-              <div className="p-6 sm:p-8">
-                <p className="text-dark/55 text-sm leading-relaxed mb-6">
-                  Ely diseña tu plan de nutricion y entrenamiento 100% a tu medida. Chat diario, revisiones quincenales, ajustes constantes. Como tener a tu entrenadora personal contigo cada dia.
+              <div className="p-6 sm:p-8 flex flex-col flex-1">
+                <p className="text-dark/70 text-sm leading-relaxed mb-6">
+                  Ely diseña tu plan de nutricion y entrenamiento 100% a tu medida. Chat diario, revisiones quincenales, ajustes constantes. Tu entrenadora personal contigo cada dia.
                 </p>
 
-                <div className="grid grid-cols-2 gap-2 mb-6">
+                <div className="grid grid-cols-2 gap-2.5 mb-6">
                   {[
-                    { name: 'Premium Plus', desc: 'Nutricion + Entreno + Suplem.', hot: true },
-                    { name: 'Premium Running', desc: '5K, 10K, Maraton, Ultras' },
-                    { name: 'Nutricion', desc: 'Alimentacion personalizada' },
-                    { name: 'Training', desc: 'Entreno adaptado a ti' },
+                    { name: 'Premium Plus', desc: 'Dieta + entreno + suplementacion', hot: true },
+                    { name: 'Premium Running', desc: 'De 5K a ultramaratones' },
+                    { name: 'Nutricion', desc: 'Tu dieta 100% a medida' },
+                    { name: 'Training', desc: 'Fuerza, hibrido o casa' },
                   ].map(p => (
-                    <div key={p.name} className={`rounded-xl p-3 border transition-all ${p.hot ? 'bg-primary/8 border-primary/20' : 'bg-cream border-dark/8 hover:border-primary/15'}`}>
-                      <div className="flex items-center gap-1.5 mb-0.5">
-                        <span className={`text-xs font-black ${p.hot ? 'text-primary-dark' : 'text-dark/70'}`}>{p.name}</span>
+                    <div key={p.name} className={`rounded-xl p-3.5 border transition-all ${p.hot ? 'bg-primary/8 border-primary/20' : 'bg-cream border-dark/8 hover:border-primary/15'}`}>
+                      <div className="flex items-center gap-1.5 mb-1">
+                        <span className={`text-sm font-black ${p.hot ? 'text-primary-dark' : 'text-dark/75'}`}>{p.name}</span>
                         {p.hot && <Flame size={10} className="text-primary" />}
                       </div>
-                      <p className="text-[10px] text-dark/35 leading-snug">{p.desc}</p>
+                      <p className="text-xs text-dark/55 leading-snug">{p.desc}</p>
                     </div>
                   ))}
                 </div>
 
-                <div className="space-y-2.5 mb-6">
+                <div className="space-y-3 mb-6 flex-1">
                   {[
-                    { icon: <MessageCircle size={13} />, t: 'Chat VIP diario con Ely', sub: 'Respuesta personal cada dia' },
-                    { icon: <CalendarCheck size={13} />, t: 'Seguimiento quincenal', sub: 'Revisamos juntas tu progreso' },
-                    { icon: <Target size={13} />, t: '100% personalizado', sub: 'Patologias, intolerancias, objetivos' },
-                    { icon: <Shield size={13} />, t: 'Sin permanencia', sub: 'Cancela cuando quieras' },
+                    { icon: <MessageCircle size={14} />, t: 'Chat VIP diario con Ely', sub: 'Te responde personalmente cada dia' },
+                    { icon: <CalendarCheck size={14} />, t: 'Revision quincenal', sub: 'Ajustamos tu plan segun tu progreso' },
+                    { icon: <Target size={14} />, t: 'Adaptado a ti', sub: 'SOP, tiroides, SIBO, embarazo, lesiones...' },
                   ].map(b => (
                     <div key={b.t} className="flex items-start gap-3">
-                      <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 text-primary">{b.icon}</div>
+                      <div className="w-9 h-9 rounded-xl bg-primary/10 flex items-center justify-center shrink-0 text-primary">{b.icon}</div>
                       <div>
-                        <span className="text-sm font-bold text-dark/75">{b.t}</span>
-                        <p className="text-[10px] text-dark/35">{b.sub}</p>
+                        <span className="text-sm font-bold text-dark/80">{b.t}</span>
+                        <p className="text-xs text-dark/55">{b.sub}</p>
                       </div>
                     </div>
                   ))}
                 </div>
 
-                <div className="space-y-3">
+                <div className="space-y-3 mt-auto">
                   <a href="https://calendar.app.google/LINK-VIDEOLLAMADA" target="_blank" rel="noopener noreferrer" className="shine-sweep w-full flex items-center justify-center gap-2.5 bg-primary hover:bg-primary-dark text-white py-4 rounded-2xl font-bold text-sm uppercase tracking-wide transition-all shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/40 hover:scale-[1.01]">
                     <CalendarCheck size={16} /> VIDEOLLAMADA GRATUITA <ArrowRight size={14} />
                   </a>
@@ -315,8 +314,8 @@ function ChooseYourPath() {
           </motion.div>
 
           {/* APP CARD */}
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={scaleUp}>
-            <div id="plan-anual" className="card-lift relative bg-dark rounded-3xl overflow-hidden shadow-lg group border-2 border-white/10 scroll-mt-16">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={scaleUp} className="flex">
+            <div id="plan-anual" className="card-lift relative bg-dark rounded-3xl overflow-hidden shadow-lg group border-2 border-white/10 scroll-mt-16 flex flex-col w-full">
               <div className="absolute top-4 right-4 z-10">
                 <span className="inline-flex items-center gap-1.5 bg-white text-dark text-[9px] font-bold uppercase px-3 py-1.5 rounded-full shadow-lg">
                   <Zap size={10} className="text-primary" /> Solo 4,92&#8364;/mes
@@ -324,7 +323,7 @@ function ChooseYourPath() {
               </div>
 
               <div className="relative h-48 sm:h-56 overflow-hidden bg-dark">
-                <img src={IMG.gym3} alt="APP" className="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700" />
+                <img src="/app-banner.webp" alt="APP" className="w-full h-full object-cover opacity-70 group-hover:scale-105 transition-transform duration-700" />
                 <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/50 to-transparent" />
 
                 <motion.div animate={{ y: [0, -6, 0] }} transition={{ repeat: Infinity, duration: 4, ease: 'easeInOut' }} className="absolute bottom-3 right-5 w-24 sm:w-28 bg-gradient-to-b from-white/12 to-white/5 backdrop-blur-sm rounded-[1.2rem] p-1.5 shadow-2xl border border-white/12 hidden sm:block">
@@ -343,35 +342,32 @@ function ChooseYourPath() {
                 </div>
               </div>
 
-              <div className="p-6 sm:p-8">
-                <p className="text-white/45 text-sm leading-relaxed mb-6">
+              <div className="p-6 sm:p-8 flex flex-col flex-1">
+                <p className="text-white/70 text-sm leading-relaxed mb-6">
                   Entrenos en video, recetas saludables, lista de la compra, comunidad privada y chat con nutricionista. Todo en una app. Pago unico anual, sin sorpresas.
                 </p>
 
-                <div className="bg-white/8 border border-white/10 rounded-2xl p-5 mb-6">
-                  <div className="flex items-end gap-5">
-                    <div>
-                      <p className="text-[9px] font-bold uppercase tracking-widest text-white/30 mb-1">Individual</p>
-                      <div className="flex items-baseline gap-1">
-                        <span className="text-4xl font-black text-white">59&#8364;</span>
-                        <span className="text-sm text-white/30 font-semibold">/ano</span>
-                      </div>
-                      <p className="text-[10px] text-white/25 mt-0.5">4,92&#8364;/mes</p>
+                <div className="grid grid-cols-2 gap-3 mb-6">
+                  <div className="bg-white/8 border border-white/10 rounded-2xl p-4 text-center">
+                    <p className="text-[9px] font-bold uppercase tracking-widest text-white/35 mb-1">1 persona</p>
+                    <div className="flex items-baseline justify-center gap-1">
+                      <span className="text-3xl font-black text-white">59&#8364;</span>
+                      <span className="text-sm text-white/30 font-semibold">/ano</span>
                     </div>
-                    <div className="bg-primary/15 border border-primary/25 rounded-xl px-4 py-3 pulse-glow">
-                      <div className="flex items-center gap-2 mb-0.5">
-                        <span className="text-[9px] font-bold uppercase text-primary tracking-wider">Pack Duo</span>
-                        <span className="bg-primary text-white text-[7px] font-bold px-1.5 py-0.5 rounded-full">-17%</span>
-                      </div>
-                      <div className="flex items-baseline gap-1">
-                        <span className="text-2xl font-black text-white">69&#8364;</span>
-                        <span className="text-xs text-white/30">/2 personas</span>
-                      </div>
+                    <p className="text-[10px] text-white/25 mt-0.5">4,92&#8364;/mes</p>
+                  </div>
+                  <div className="bg-primary/15 border-2 border-primary/30 rounded-2xl p-4 text-center relative pulse-glow">
+                    <span className="absolute -top-2.5 left-1/2 -translate-x-1/2 bg-primary text-white text-[8px] font-bold px-2.5 py-0.5 rounded-full uppercase">Mejor precio</span>
+                    <p className="text-[9px] font-bold uppercase tracking-widest text-primary mb-1">Pack Duo</p>
+                    <div className="flex items-baseline justify-center gap-1">
+                      <span className="text-3xl font-black text-white">69&#8364;</span>
+                      <span className="text-sm text-white/30 font-semibold">/ano</span>
                     </div>
+                    <p className="text-[10px] text-white/40 mt-0.5">2 personas &middot; solo 10&#8364; mas</p>
                   </div>
                 </div>
 
-                <div className="grid grid-cols-2 gap-2.5 mb-6">
+                <div className="grid grid-cols-2 gap-2.5 mb-6 flex-1">
                   {[
                     { icon: <Video size={13} />, t: 'Entrenos en video' },
                     { icon: <Utensils size={13} />, t: 'Recetas saludables' },
@@ -379,6 +375,9 @@ function ChooseYourPath() {
                     { icon: <Users size={13} />, t: 'Comunidad privada' },
                     { icon: <MessageCircle size={13} />, t: 'Chat nutricionista' },
                     { icon: <Flame size={13} />, t: 'Nuevas recetas/mes' },
+                    { icon: <CalendarCheck size={13} />, t: 'Plan nuevo cada mes' },
+                    { icon: <Dumbbell size={13} />, t: 'Alternativas de ejercicios' },
+                    { icon: <MessageCircle size={13} />, t: 'Chat privado Telegram' },
                   ].map(f => (
                     <div key={f.t} className="flex items-center gap-2.5">
                       <span className="text-primary">{f.icon}</span>
@@ -387,9 +386,9 @@ function ChooseYourPath() {
                   ))}
                 </div>
 
-                <div className="space-y-3">
+                <div className="space-y-3 mt-auto">
                   <a href="https://www.bejao.fit/checkout?tribeId=381&typeProduct=DIT" target="_blank" rel="noopener noreferrer" className="shine-sweep w-full flex items-center justify-center gap-2.5 bg-white text-dark py-4 rounded-2xl font-bold text-sm uppercase tracking-wide transition-all hover:bg-cream hover:shadow-lg hover:scale-[1.01] group">
-                    DESCARGAR APP — 59&#8364;/ANO <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                    RESERVA TU PLAZA <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
                   </a>
                   <div className="flex items-center justify-center gap-4 text-[10px] text-white/25">
                     <span className="flex items-center gap-1"><Apple size={10} /> iOS</span>
@@ -409,70 +408,74 @@ function ChooseYourPath() {
 /* ============================== COMPARISON ============================== */
 function QuickComparison() {
   const rows = [
-    { label: 'Personalizacion', coaching: '100% a tu medida', app: 'Planes profesionales' },
-    { label: 'Seguimiento', coaching: 'Chat diario + revision quincenal', app: 'A tu ritmo' },
+    { label: 'Personalizacion', coaching: '100% a tu medida', app: 'Rutinas + recetas profesionales' },
+    { label: 'Seguimiento', coaching: 'Chat diario + revision quincenal', app: 'Comunidad + app' },
     { label: 'Incluye', coaching: 'Nutricion + entreno + suplementacion', app: 'Entrenos + recetas + comunidad' },
     { label: 'Ideal para', coaching: 'Resultados rapidos, maximo apoyo', app: 'Autonomia, presupuesto flexible' },
-    { label: 'Precio', coaching: 'Consulta gratis, sin compromiso', app: '59 EUR/ano (4,92 EUR/mes)' },
+    { label: 'Precio', coaching: 'Consulta gratis, sin compromiso', app: '59 EUR/ano · Pack Duo 69 EUR/ano' },
   ];
 
   return (
-    <section className="py-12 sm:py-16 bg-white">
-      <div className="max-w-3xl mx-auto px-4 sm:px-6">
+    <section className="py-12 sm:py-16 relative overflow-hidden">
+      <div className="absolute inset-0">
+        <img src="/app-mockup.webp" alt="" className="w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-white/85 backdrop-blur-sm" />
+      </div>
+      <div className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="text-center mb-8">
           <motion.h2 variants={fadeUp} className="text-2xl sm:text-3xl font-black uppercase">Coaching vs APP <span className="text-gradient">de un vistazo</span></motion.h2>
         </motion.div>
 
-        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="bg-cream rounded-2xl border border-dark/8 overflow-hidden shadow-sm">
-          <div className="grid grid-cols-[1fr_1fr_1fr] border-b border-dark/10">
-            <div className="p-3 sm:p-4" />
-            <div className="p-3 sm:p-4 text-center border-l border-dark/8 bg-primary/5">
-              <div className="inline-flex items-center gap-1.5">
-                <Crown size={12} className="text-primary-dark" />
-                <span className="text-xs font-black uppercase text-primary-dark">Coaching</span>
+        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="bg-white/90 backdrop-blur-md rounded-2xl border border-dark/10 overflow-hidden shadow-lg">
+          <div className="grid grid-cols-[1fr_1fr_1fr] border-b border-dark/15">
+            <div className="px-4 py-2.5 sm:px-5 sm:py-3" />
+            <div className="px-4 py-2.5 sm:px-5 sm:py-3 text-center border-l border-dark/10 bg-primary/8">
+              <div className="inline-flex items-center gap-2">
+                <Crown size={14} className="text-primary-dark" />
+                <span className="text-sm font-black uppercase text-primary-dark">Coaching</span>
               </div>
             </div>
-            <div className="p-3 sm:p-4 text-center border-l border-dark/8">
-              <div className="inline-flex items-center gap-1.5">
-                <Download size={12} className="text-dark/50" />
-                <span className="text-xs font-black uppercase text-dark/60">APP</span>
+            <div className="px-4 py-2.5 sm:px-5 sm:py-3 text-center border-l border-dark/10">
+              <div className="inline-flex items-center gap-2">
+                <Download size={14} className="text-dark/60" />
+                <span className="text-sm font-black uppercase text-dark/70">APP</span>
               </div>
             </div>
           </div>
 
           {rows.map((r, i) => (
-            <div key={r.label} className={`grid grid-cols-[1fr_1fr_1fr] ${i < rows.length - 1 ? 'border-b border-dark/5' : ''}`}>
-              <div className="p-3 sm:p-4 flex items-center">
-                <span className="text-[10px] sm:text-xs font-bold text-dark/45 uppercase tracking-wide">{r.label}</span>
+            <div key={r.label} className={`grid grid-cols-[1fr_1fr_1fr] ${i < rows.length - 1 ? 'border-b border-dark/8' : ''}`}>
+              <div className="px-4 py-2.5 sm:px-5 sm:py-3 flex items-center">
+                <span className="text-xs sm:text-sm font-bold text-dark/60 uppercase tracking-wide">{r.label}</span>
               </div>
-              <div className="p-3 sm:p-4 border-l border-dark/5 bg-primary/[0.02]">
-                <span className="text-[10px] sm:text-xs text-dark/55 leading-snug">{r.coaching}</span>
+              <div className="px-4 py-2.5 sm:px-5 sm:py-3 border-l border-dark/8 bg-primary/[0.03]">
+                <span className="text-xs sm:text-sm text-dark/70 leading-snug">{r.coaching}</span>
               </div>
-              <div className="p-3 sm:p-4 border-l border-dark/5">
-                <span className="text-[10px] sm:text-xs text-dark/55 leading-snug">{r.app}</span>
+              <div className="px-4 py-2.5 sm:px-5 sm:py-3 border-l border-dark/8">
+                <span className="text-xs sm:text-sm text-dark/70 leading-snug">{r.app}</span>
               </div>
             </div>
           ))}
 
-          <div className="grid grid-cols-[1fr_1fr_1fr] border-t border-dark/10 bg-cream/80">
-            <div className="p-3 sm:p-4 flex items-center">
-              <span className="text-[10px] font-bold text-dark/30 uppercase">Empezar</span>
+          <div className="grid grid-cols-[1fr_1fr_1fr] border-t border-dark/15 bg-cream/80">
+            <div className="px-4 py-2.5 sm:px-5 sm:py-3 flex items-center">
+              <span className="text-xs font-bold text-dark/50 uppercase">Empezar</span>
             </div>
-            <div className="p-3 sm:p-4 border-l border-dark/8 text-center">
-              <a href="https://calendar.app.google/LINK-VIDEOLLAMADA" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 bg-primary hover:bg-primary-dark text-white px-4 py-2 rounded-full text-[10px] sm:text-xs font-bold uppercase transition-all">
-                <CalendarCheck size={10} /> Videollamada gratis
+            <div className="px-4 py-2.5 sm:px-5 sm:py-3 border-l border-dark/10 text-center">
+              <a href="https://calendar.app.google/LINK-VIDEOLLAMADA" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 bg-primary hover:bg-primary-dark text-white px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold uppercase transition-all">
+                <CalendarCheck size={12} /> Videollamada gratis
               </a>
             </div>
-            <div className="p-3 sm:p-4 border-l border-dark/8 text-center">
-              <a href="https://www.bejao.fit/checkout?tribeId=381&typeProduct=DIT" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 bg-dark hover:bg-dark-soft text-white px-4 py-2 rounded-full text-[10px] sm:text-xs font-bold uppercase transition-all">
-                59&#8364;/ano <ArrowRight size={10} />
+            <div className="px-4 py-2.5 sm:px-5 sm:py-3 border-l border-dark/10 text-center">
+              <a href="https://www.bejao.fit/checkout?tribeId=381&typeProduct=DIT" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 bg-dark hover:bg-dark-soft text-white px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold uppercase transition-all">
+                59&#8364;/ano <ArrowRight size={12} />
               </a>
             </div>
           </div>
         </motion.div>
 
-        <motion.p initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="text-center text-xs text-dark/30 mt-4 flex items-center justify-center gap-1.5">
-          <MessageCircle size={12} className="text-primary" />
+        <motion.p initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="text-center text-sm text-dark/50 mt-5 flex items-center justify-center gap-1.5">
+          <MessageCircle size={14} className="text-primary" />
           ¿No sabes cual elegir? <a href="#contacto" className="text-primary-dark font-bold hover:underline">Pregunta sin compromiso</a>
         </motion.p>
       </div>
@@ -481,57 +484,41 @@ function QuickComparison() {
 }
 
 /* ============================== WHY IT WORKS ============================== */
-function WhyItWorks() {
-  const benefits = [
-    { icon: <Target size={22} />, title: 'Plan real, no dietas magicas', desc: 'Alimentacion y entreno diseñado para tu vida real, tus horarios, tus gustos.' },
-    { icon: <MessageCircle size={22} />, title: 'Nunca estas sola', desc: 'Chat diario con Ely (coaching) o comunidad activa (APP). Siempre hay alguien.' },
-    { icon: <TrendingUp size={22} />, title: 'Resultados desde la semana 2', desc: 'Menos hinchazon, mas energia. Cambios visibles entre 2-3 meses.' },
-    { icon: <Heart size={22} />, title: 'Se adapta a ti', desc: 'Patologias, intolerancias, embarazo, SOP, tiroides... todo contemplado.' },
-    { icon: <Shield size={22} />, title: 'Sin permanencia', desc: 'El coaching no tiene permanencia. La APP es pago unico anual. Sin letra pequeña.' },
-    { icon: <Award size={22} />, title: '+13 anos de experiencia', desc: 'Dietista y Entrenadora IFBB. No es una influencer mas: es una profesional.' },
-  ];
-
-  return (
-    <section className="py-16 sm:py-20 bg-cream">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6">
-        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="text-center mb-12">
-          <motion.h2 variants={fadeUp} className="text-2xl sm:text-4xl font-black uppercase">¿Por que funciona <span className="text-gradient">de verdad?</span></motion.h2>
-          <motion.p variants={fadeUp} className="text-dark/40 text-sm mt-2">Porque no es una dieta. Es un cambio de vida con acompanamiento real.</motion.p>
-        </motion.div>
-
-        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {benefits.map(b => (
-            <motion.div key={b.title} variants={fadeUp} className="bg-white rounded-2xl border border-dark/8 p-6 hover:shadow-md hover:-translate-y-1 transition-all group">
-              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-4 group-hover:bg-primary group-hover:text-white transition-all">
-                {b.icon}
-              </div>
-              <h3 className="font-bold text-sm text-dark mb-1.5">{b.title}</h3>
-              <p className="text-xs text-dark/40 leading-relaxed">{b.desc}</p>
-            </motion.div>
-          ))}
-        </motion.div>
-      </div>
-    </section>
-  );
-}
 
 /* ============================== TRANSFORMATIONS ============================== */
 function Transformations() {
   const [filter, setFilter] = useState('todos');
-  const data = [
-    { name: 'C.B.', result: '-20 kg', text: 'He perdido mas de 20 kg de forma saludable. No paso hambre y he vuelto a mirarme al espejo con orgullo.', before: 'https://images.unsplash.com/photo-1594381898411-846e7d193883?w=600&q=80', after: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?w=600&q=80', plan: 'coaching' },
-    { name: 'V.M.', result: 'Recomposicion', text: 'Baje muchisimo volumen en abdomen y piernas, y hoy me siento fuerte, segura y feliz.', before: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=80', after: 'https://images.unsplash.com/photo-1574680096145-d05b474e2155?w=600&q=80', plan: 'coaching' },
-    { name: 'M.M.', result: 'Sin medicacion', text: 'Hoy vivo sin medicacion, con mas salud y autoestima. He bajado de peso mejorando masa muscular.', before: 'https://images.unsplash.com/photo-1552196563-55cd4e45efb3?w=600&q=80', after: 'https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=600&q=80', plan: 'coaching' },
-    { name: 'T.H.', result: '-4.5 kg / 4 sem', text: 'He recuperado la menstruacion. He aprendido a comer y a disfrutar sin culpa.', before: 'https://images.unsplash.com/photo-1518310383802-640c2de311b2?w=600&q=80', after: 'https://images.unsplash.com/photo-1571008887538-b36bb32f4571?w=600&q=80', plan: 'coaching' },
-    { name: 'S.B.', result: 'Hibrido', text: 'Combinar fuerza y resistencia me ha dado un cuerpo mas eficiente y una mente mas fuerte.', before: 'https://images.unsplash.com/photo-1534258936925-c58bed479fcb?w=600&q=80', after: IMG.gym1, plan: 'coaching' },
-    { name: 'L.R.', result: '+Fuerza', text: 'Con la APP entreno 4 veces por semana. He ganado fuerza y confianza sin gastar mucho.', before: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600&q=80', after: 'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=600&q=80', plan: 'app' },
-    { name: 'A.G.', result: '-8 kg', text: 'El plan anual de la APP me cambio la vida. Recetas faciles y entrenos que puedo seguir desde casa.', before: 'https://images.unsplash.com/photo-1550345332-09e3ac987658?w=600&q=80', after: 'https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=600&q=80', plan: 'app' },
+  const coaching = [
+    { name: 'C.B.', result: '-20 kg', text: 'He perdido mas de 20 kg de forma saludable. No paso hambre y he vuelto a mirarme al espejo con orgullo.', img: '/cambios/carla.png', plan: 'coaching' },
+    { name: 'V.M.', result: 'Recomposicion', text: 'Baje muchisimo volumen en abdomen y piernas, y hoy me siento fuerte, segura y feliz.', img: '/cambios/vane-m.png', plan: 'coaching' },
+    { name: 'M.M.', result: 'Sin medicacion', text: 'Hoy vivo sin medicacion, con mas salud y autoestima. He bajado de peso mejorando masa muscular.', img: '/cambios/monica.png', plan: 'coaching' },
+    { name: 'T.H.', result: '-4.5 kg / 4 sem', text: 'He recuperado la menstruacion. He aprendido a comer y a disfrutar sin culpa.', img: '/cambios/tami.png', plan: 'coaching' },
+    { name: 'S.B.', result: 'Hibrido', text: 'Combinar fuerza y resistencia me ha dado un cuerpo mas eficiente y una mente mas fuerte.', img: '/cambios/sandra-buitra.png', plan: 'coaching' },
+    { name: 'R.R.', result: 'Recomposicion', text: 'He logrado un fisico que me gusta y que puedo mantener sin esfuerzo. Mis compañeros me lo dicen constantemente.', img: '/cambios/rafa-ruiz.png', plan: 'coaching' },
+    { name: 'A.C.', result: 'Confianza', text: 'Me miro al espejo y por fin me reconozco: fuerte, segura y llena de energia.', img: '/cambios/andrea-caijao.png', plan: 'coaching' },
   ];
+  const app = [
+    { name: 'K.G.', result: 'Campus + App', text: 'Combinar el Campus con la App ha sido espectacular. Hoy entreno mejor, como mejor y entiendo lo que hago.', img: '/cambios/kat-campus.png', plan: 'app' },
+    { name: 'A.P.', result: 'Habitos', text: 'Pase de ir a trompicones a tener un metodo claro. Ahora tengo herramientas reales para vivir mejor.', img: '/cambios/ap.png', plan: 'app' },
+    { name: 'E.G.', result: 'Adherencia', text: 'Nunca habia seguido un plan con tanta adherencia. La app es intuitiva y las recetas son un 10.', img: '/cambios/elena-gasto.png', plan: 'app' },
+    { name: 'C.H.', result: 'Pack Duo', text: 'Nos apuntamos al Pack Duo y fue un antes y un despues. Variedad de entrenos y recetas riquísimas.', img: '/cambios/carlos-hdz.png', plan: 'app' },
+    { name: 'L.J.', result: 'Comunidad', text: 'No es solo una app; es la comunidad que inspira. Los entrenos en casa realmente funcionan.', img: '/cambios/laura-juanos.png', plan: 'app' },
+    { name: 'M.S.', result: 'Flexibilidad', text: 'Lo que me convencio fue la flexibilidad. Se que entrenar y que comer, sin complicarme.', img: '/cambios/marisa.png', plan: 'app' },
+    { name: 'I.C.', result: '18 años', text: 'Tengo 18 años y ya noto cambios: entrenos claros y recetas faciles. Estoy construyendo habitos.', img: '/cambios/itzi.png', plan: 'app' },
+  ];
+  // "Todos" interleaves: 1:1, APP, 1:1, APP, 1:1, 1:1, APP...
+  const mixed = [];
+  const max = Math.max(coaching.length, app.length);
+  for (let i = 0; i < max; i++) {
+    if (i < coaching.length) mixed.push(coaching[i]);
+    if (i < app.length) mixed.push(app[i]);
+  }
+  const data = filter === 'todos' ? mixed : filter === 'coaching' ? coaching : app;
 
-  const filtered = filter === 'todos' ? data : data.filter(d => d.plan === filter);
+  const filtered = data;
   const tabs = [
     { key: 'todos', label: 'Todos' },
-    { key: 'coaching', label: 'Coaching' },
+    { key: 'coaching', label: '1:1' },
     { key: 'app', label: 'APP' },
   ];
 
@@ -556,24 +543,17 @@ function Transformations() {
       <div className="relative">
         <div className="absolute left-0 top-0 bottom-0 w-12 sm:w-24 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
         <div className="absolute right-0 top-0 bottom-0 w-12 sm:w-24 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
-        <div className="animate-marquee-cards flex gap-4" style={{ width: 'max-content' }}>
-          {[...filtered, ...filtered, ...filtered].map((t, i) => (
+        <div key={filter} className="animate-marquee-cards flex gap-4" style={{ width: 'max-content' }}>
+          {[...filtered, ...filtered].map((t, i) => (
             <div key={i} className="min-w-[280px] max-w-[280px] rounded-2xl overflow-hidden shrink-0 bg-cream border border-dark/8 shadow-sm hover:shadow-lg transition-all group">
-              <div className="grid grid-cols-2 gap-px bg-dark/10">
-                <div className="relative h-40 overflow-hidden">
-                  <img src={t.before} alt="" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
-                  <span className="absolute top-2 left-2 bg-white/85 text-dark text-[8px] font-bold uppercase px-2 py-0.5 rounded-full">Antes</span>
-                </div>
-                <div className="relative h-40 overflow-hidden">
-                  <img src={t.after} alt="" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
-                  <span className="absolute top-2 right-2 bg-primary text-white text-[8px] font-bold uppercase px-2 py-0.5 rounded-full">Despues</span>
-                </div>
+              <div className="relative h-52 overflow-hidden">
+                <img src={t.img} alt={`Transformación ${t.name}`} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+                <span className={`absolute top-2.5 right-2.5 text-[10px] font-black uppercase px-2.5 py-1 rounded-full shadow-md ${t.plan === 'coaching' ? 'bg-primary text-white' : 'bg-dark text-white'}`}>{t.plan === 'coaching' ? '1:1' : 'APP'}</span>
               </div>
               <div className="p-4">
                 <div className="flex items-center justify-between mb-1.5">
                   <div className="flex items-center gap-2">
                     <span className="text-sm font-black text-dark uppercase">{t.name}</span>
-                    <span className={`text-[8px] font-bold uppercase px-2 py-0.5 rounded-full ${t.plan === 'coaching' ? 'bg-primary/10 text-primary-dark' : 'bg-dark/5 text-dark/40'}`}>{t.plan === 'coaching' ? 'Coaching' : 'APP'}</span>
                   </div>
                   <span className="text-primary font-bold text-xs">{t.result}</span>
                 </div>
@@ -652,7 +632,7 @@ function FinalCTA() {
               <Crown size={16} /> COACHING — Videollamada gratis <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
             </a>
             <a href="https://www.bejao.fit/checkout?tribeId=381&typeProduct=DIT" target="_blank" rel="noopener noreferrer" className="group inline-flex items-center justify-center gap-2.5 bg-white/15 backdrop-blur-sm border border-white/25 text-white px-10 py-5 rounded-full font-bold text-sm uppercase tracking-wide hover:bg-white/25 transition-all">
-              <Download size={16} /> APP — 59&#8364;/ano <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+              <Download size={16} /> PLAN ANUAL — 59&#8364;/ano <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
             </a>
           </motion.div>
         </motion.div>
@@ -809,17 +789,21 @@ function Contact() {
   };
 
   return (
-    <section id="contacto" className="scroll-mt-16 py-16 sm:py-20 bg-cream">
-      <div className="max-w-2xl mx-auto px-4">
+    <section id="contacto" className="scroll-mt-16 py-16 sm:py-20 relative overflow-hidden">
+      <div className="absolute inset-0">
+        <img src="/contact-bg.jpg" alt="" className="w-full h-full object-cover blur-[2px] scale-105" />
+        <div className="absolute inset-0 bg-dark/60" />
+      </div>
+      <div className="relative z-10 max-w-2xl mx-auto px-4">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="text-center mb-8">
-          <motion.h2 variants={fadeUp} className="text-2xl sm:text-3xl font-black uppercase">Empieza tu <span className="text-gradient">cambio</span></motion.h2>
-          <motion.p variants={fadeUp} className="text-dark/40 text-sm mt-2">Escribeme y te respondo en menos de 24h. Sin compromiso.</motion.p>
+          <motion.h2 variants={fadeUp} className="text-2xl sm:text-3xl font-black uppercase text-white">Empieza tu <span className="text-gradient">cambio</span></motion.h2>
+          <motion.p variants={fadeUp} className="text-white/80 text-sm mt-2">Escribeme y te respondo en menos de 24h. Sin compromiso.</motion.p>
 
           <motion.div variants={fadeUp} className="flex flex-wrap justify-center gap-2 mt-4">
-            <a href="mailto:contacta@elyfitness.es" className="inline-flex items-center gap-2 bg-white border border-dark/10 hover:border-primary/30 text-dark/60 px-4 py-2 rounded-full text-sm font-bold transition-all">
+            <a href="mailto:contacta@elyfitness.es" className="inline-flex items-center gap-2 bg-white/10 border border-white/20 hover:border-primary/50 text-white/80 px-4 py-2 rounded-full text-sm font-bold transition-all backdrop-blur-sm">
               <Mail size={14} className="text-primary" /> contacta@elyfitness.es
             </a>
-            <a href="https://www.instagram.com/ely_fitness/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-white border border-dark/10 hover:border-primary/30 text-dark/60 px-4 py-2 rounded-full text-sm font-bold transition-all">
+            <a href="https://www.instagram.com/ely_fitness/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-white/10 border border-white/20 hover:border-primary/50 text-white/80 px-4 py-2 rounded-full text-sm font-bold transition-all backdrop-blur-sm">
               <Instagram size={14} className="text-primary" /> @ely_fitness
             </a>
           </motion.div>
@@ -835,19 +819,19 @@ function Contact() {
               <p className="text-dark/50 text-sm">Te respondere en menos de 24 horas.</p>
             </motion.div>
           ) : (
-            <motion.form key="form" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="bg-white rounded-3xl p-6 sm:p-8 space-y-4 text-left shadow-lg border border-dark/8" onSubmit={handleSubmit}>
+            <motion.form key="form" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="bg-white rounded-3xl p-6 sm:p-8 space-y-4 text-left shadow-2xl" onSubmit={handleSubmit}>
               <div className="flex flex-wrap gap-2 mb-2">
                 {['Respuesta < 24h', 'Sin compromiso', '+4.000 confian en Ely'].map(t => (
-                  <span key={t} className="inline-flex items-center gap-1 text-[9px] font-bold text-dark/30 bg-cream px-2.5 py-1 rounded-full">
+                  <span key={t} className="inline-flex items-center gap-1 text-[10px] font-bold text-dark/70 bg-primary/10 px-2.5 py-1 rounded-full">
                     <Check size={8} className="text-[#34d399]" /> {t}
                   </span>
                 ))}
               </div>
               <div className="grid sm:grid-cols-2 gap-3">
-                <motion.input variants={fadeUp} name="name" type="text" placeholder="Tu nombre" required className="bg-cream border border-dark/8 rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:border-primary/40 focus:ring-2 focus:ring-primary/15 w-full transition-all placeholder:text-dark/30" />
-                <motion.input variants={fadeUp} name="email" type="email" placeholder="Tu e-mail" required className="bg-cream border border-dark/8 rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:border-primary/40 focus:ring-2 focus:ring-primary/15 w-full transition-all placeholder:text-dark/30" />
+                <motion.input variants={fadeUp} name="name" type="text" placeholder="Tu nombre" required className="bg-gray-50 border border-dark/15 rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 w-full transition-all placeholder:text-dark/45" />
+                <motion.input variants={fadeUp} name="email" type="email" placeholder="Tu e-mail" required className="bg-gray-50 border border-dark/15 rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 w-full transition-all placeholder:text-dark/45" />
               </div>
-              <motion.select variants={fadeUp} name="plan" className="bg-cream border border-dark/8 rounded-xl px-4 py-3.5 text-sm text-dark/50 focus:outline-none focus:border-primary/40 focus:ring-2 focus:ring-primary/15 w-full transition-all">
+              <motion.select variants={fadeUp} name="plan" className="bg-gray-50 border border-dark/15 rounded-xl px-4 py-3.5 text-sm text-dark/65 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 w-full transition-all">
                 <option>¿Que plan te interesa?</option>
                 <option>Coaching — Premium Plus</option>
                 <option>Coaching — Premium Running</option>
@@ -858,7 +842,7 @@ function Contact() {
                 <option>No se cual elegir — ayudame</option>
                 <option>Otra consulta</option>
               </motion.select>
-              <motion.textarea variants={fadeUp} name="message" rows={3} placeholder="Cuentame tu objetivo..." className="bg-cream border border-dark/8 rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:border-primary/40 focus:ring-2 focus:ring-primary/15 w-full resize-none transition-all placeholder:text-dark/30" />
+              <motion.textarea variants={fadeUp} name="message" rows={3} placeholder="Cuentame tu objetivo..." className="bg-gray-50 border border-dark/15 rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 w-full resize-none transition-all placeholder:text-dark/45" />
               <motion.div variants={fadeUp} className="text-center pt-1">
                 <button type="submit" disabled={sending} className="shine-sweep group bg-primary hover:bg-primary-dark text-white px-12 py-4 rounded-full font-bold text-sm uppercase inline-flex items-center gap-2 transition-all shadow-lg shadow-primary/25 disabled:opacity-60 disabled:cursor-not-allowed">
                   <Send size={14} /> {sending ? 'Enviando...' : 'Enviar mensaje'}
@@ -879,21 +863,25 @@ function Footer() {
   const handleSub = async (e) => { e.preventDefault(); await submitToWix('/newsletter', { email }); setSub(true); setEmail(''); setTimeout(() => setSub(false), 3000); };
 
   return (
-    <footer className="bg-dark text-white">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6">
-        <div className="py-8 border-b border-white/8">
+    <footer className="relative text-white pt-12 sm:pt-16">
+      <div className="absolute inset-0 z-0">
+        <img src="/footer-bg.jpg" alt="" className="w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-dark/80" />
+      </div>
+      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6">
+        <div className="bg-gradient-to-r from-primary/20 via-primary/10 to-primary/20 border border-primary/20 rounded-2xl p-6 sm:p-8 mt-8 mb-8">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div>
-              <h3 className="text-base font-black">Newsletter de Ely</h3>
-              <p className="text-white/35 text-xs">Consejos de nutricion y entreno cada semana.</p>
+            <div className="text-center sm:text-left">
+              <h3 className="text-lg font-black text-white flex items-center gap-2 justify-center sm:justify-start"><Mail size={16} className="text-primary" /> Newsletter de Ely</h3>
+              <p className="text-white/60 text-sm mt-1">Consejos de nutricion y entreno cada semana. Gratis.</p>
             </div>
             <form onSubmit={handleSub} className="flex gap-2 w-full sm:w-auto">
               {sub ? (
                 <span className="text-[#34d399] text-sm font-bold flex items-center gap-1.5"><CheckCircle size={14} /> Suscrit@!</span>
               ) : (
                 <>
-                  <input type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder="Tu email" required className="bg-white/8 border border-white/8 rounded-lg px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-primary/25 placeholder:text-white/25 w-full sm:w-56" />
-                  <button type="submit" className="bg-primary hover:bg-primary-dark text-white px-5 py-2.5 rounded-lg font-bold text-sm transition-all shrink-0">OK</button>
+                  <input type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder="Tu email" required className="bg-white/10 border border-white/15 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-primary/40 focus:ring-2 focus:ring-primary/20 placeholder:text-white/40 w-full sm:w-60" />
+                  <button type="submit" className="bg-primary hover:bg-primary-dark text-white px-6 py-3 rounded-xl font-bold text-sm transition-all shrink-0">OK</button>
                 </>
               )}
             </form>
@@ -902,9 +890,8 @@ function Footer() {
 
         <div className="py-8 grid grid-cols-2 sm:grid-cols-3 gap-8 border-b border-white/8">
           <div>
-            <div className="flex items-center gap-2 mb-3">
-              <span className="text-lg font-black">ELY</span>
-              <span className="text-[7px] font-bold uppercase leading-tight text-primary">FITNESS<br />&amp; NUTRITION</span>
+            <div className="mb-3">
+              <svg className="h-7 w-auto [&_path]:fill-white/80" preserveAspectRatio="xMidYMid meet" viewBox="58.667 144.7 383.471 210.7" xmlns="http://www.w3.org/2000/svg"><g><path d="M58.667 312.597v-123h49.3v23.8h-24.2v23.9h23.2v23.2h-23.2v28.2h25.8v23.9h-50.9z"/><path d="M117.666 312.597v-123h49.3v23.9h-24.6v19.6h23.2v23.7h-23.2v56h-24.8v-.2z"/><path d="M106.8 144.7v24.9h-1.1v-24.9h1.1z"/><path d="M194.3 215.9c.4-1.8-.1-3.4-2.5-3.6-1-.1-1.9.2-2.8.4-1.8.4-3.4 1.3-4.7 2.6-.6.4-1 .9-1.7 1.4-.1-.3-.1-.4-.2-.6-.3-1.5-1-3-2.1-4.2-.4-.6-1-1-1.7-1.5-.2-.2-.7-.2-.9-.2-1 .3-1.8.9-2.1 1.9-.2.7-.4 1.4-.4 2.1-.1 3.1.1 6.1 1.5 8.9.7 1.2 1.2 2.4 1.8 3.6s1.2 2.3 2.1 3.4c.8 1 1.4 1.1 2.3.2.9-.8 1.7-1.7 2.5-2.5 2-2 3.6-4.1 5.3-6.4.9-1.2 1.7-2.5 2.5-3.7.5-.6 1-1.1 1.1-1.8z"/><path d="M227.258 269.115v1.8h-13.3v-19.8h13.1v1.6h-11.1v7.2h9.7v1.6h-9.7v7.5h11.3z"/><path d="M250.826 270.915v-19.8h2v18h11.5v1.8h-13.5z"/><path d="m287.063 251.115 6.4 10.6 6.6-10.6h2.1l-7.7 12.4v7.4h-2v-7.4l-7.7-12.3h2.3v-.1z"/><path d="M214.021 313.415v-19.8h12.9v1.6h-11v7.2h9.3v1.6h-9.3v9.2h-2v.2z"/><path d="M250.234 313.415v-19.8h2v19.8h-2z"/><path d="M290.9 295.415h-7v18h-2v-18h-7v-1.6H291v1.6z"/><path d="M315.78 297.415v16.2h-2v-20h1.5l13.1 16.4v-16.4h2v19.8h-1.6l-13-16z"/><path d="M368.427 311.615v1.8h-13.3v-19.8h13.1v1.6h-11.1v7.2h9.7v1.6h-9.7v7.5h11.3z"/><path d="M403.596 297.415c-.5-.7-1.3-1.1-2.3-1.5-1-.3-2-.7-3.1-.7-1.8 0-2.9.3-3.8 1-.8.7-1.1 1.6-1.1 2.6 0 .7.2 1.1.3 1.5.2.3.5.7 1 1 .5.3 1 .5 1.6.7.7.2 1.5.3 2.5.7 1 .2 2 .5 2.8.8s1.6.7 2.1 1c.7.3 1 1 1.3 1.5.3.7.5 1.3.5 2.3 0 1-.2 1.6-.5 2.5-.3.7-.8 1.1-1.5 1.6s-1.5.8-2.3 1c-.8.2-1.8.3-2.8.3-3.1 0-5.7-1-8-2.9l1-1.6c.3.3.8.8 1.3 1.1s1 .7 1.6.8c.7.3 1.3.5 2 .7.7.2 1.5.2 2.1.2 1.6 0 2.8-.3 3.6-.8.8-.5 1.3-1.5 1.3-2.6 0-.7-.2-1.1-.3-1.5-.3-.5-.7-.8-1.1-1.1-.5-.3-1.1-.7-1.8-.8-.7-.2-1.6-.5-2.6-.7-1-.3-2-.5-2.8-.8-.8-.3-1.5-.5-2-1-.5-.3-1-.8-1.1-1.5-.3-.5-.3-1.1-.3-2 0-1 .2-1.6.5-2.5.3-.7.8-1.3 1.5-1.8s1.3-.8 2.3-1.1c.8-.3 1.8-.3 2.9-.3 1.3 0 2.5.2 3.4.7 1 .3 2 1 2.8 1.6l-1 1.6z"/><path d="M440.338 297.415c-.5-.7-1.3-1.1-2.3-1.5-1-.3-2-.7-3.1-.7-1.8 0-2.9.3-3.8 1-.8.7-1.1 1.6-1.1 2.6 0 .7.2 1.1.3 1.5.2.3.5.7 1 1 .5.3 1 .5 1.6.7.7.2 1.5.3 2.5.7 1 .2 2 .5 2.8.8s1.6.7 2.1 1c.7.3 1 1 1.3 1.5.3.7.5 1.3.5 2.3 0 1-.2 1.6-.5 2.5-.3.7-.8 1.1-1.5 1.6s-1.5.8-2.3 1c-.8.2-1.8.3-2.8.3-3.1 0-5.7-1-8-2.9l1-1.6c.3.3.8.8 1.3 1.1s1 .7 1.6.8c.7.3 1.3.5 2 .7.7.2 1.5.2 2.1.2 1.6 0 2.8-.3 3.6-.8.8-.5 1.3-1.5 1.3-2.6 0-.7-.2-1.1-.3-1.5-.3-.5-.7-.8-1.1-1.1-.5-.3-1.1-.7-1.8-.8-.7-.2-1.6-.5-2.6-.7-1-.3-2-.5-2.8-.8-.8-.3-1.5-.5-2-1-.5-.3-1-.8-1.1-1.5-.3-.5-.3-1.1-.3-2 0-1 .2-1.6.5-2.5.3-.7.8-1.3 1.5-1.8s1.3-.8 2.3-1.1c.8-.3 1.8-.3 2.9-.3 1.3 0 2.5.2 3.4.7 1 .3 2 1 2.8 1.6l-1 1.6z"/><path d="M106.8 330.5v24.9h-1.1v-24.9h1.1z"/></g></svg>
             </div>
             <p className="text-white/35 text-[11px] leading-relaxed max-w-[200px]">Dietista y Entrenadora Personal IFBB. +13 anos ayudando online.</p>
             <div className="flex items-center gap-1.5 text-white/25 text-[10px] mt-2"><MapPin size={10} /> Espana - Online</div>
@@ -953,13 +940,14 @@ function Footer() {
 }
 
 /* ============================== CHAT WIDGET ============================== */
-function ChatWidget() {
+function ChatWidget({ onNewsletter }) {
   const [open, setOpen] = useState(false);
   const options = [
     { label: 'Videollamada gratuita', desc: 'Coaching 1:1', href: 'https://calendar.app.google/LINK-VIDEOLLAMADA', external: true, icon: <CalendarCheck size={13} /> },
-    { label: 'Descargar APP (59EUR)', href: 'https://www.bejao.fit/checkout?tribeId=381&typeProduct=DIT', external: true, icon: <Download size={13} /> },
+    { label: 'Plan Anual (59EUR)', href: 'https://www.bejao.fit/checkout?tribeId=381&typeProduct=DIT', external: true, icon: <Download size={13} /> },
     { label: 'Ver servicios', href: '#plan-ultra', icon: <Crown size={13} /> },
     { label: 'Contactar', href: '#contacto', icon: <Send size={13} /> },
+    { label: 'Newsletter', desc: 'Consejos gratis cada semana', icon: <Mail size={13} />, action: 'newsletter' },
   ];
 
   return (
@@ -982,7 +970,15 @@ function ChatWidget() {
               </div>
             </div>
             <div className="p-2.5 space-y-1">
-              {options.map(o => (
+              {options.map(o => o.action ? (
+                <button key={o.label} onClick={() => { setOpen(false); onNewsletter?.(); }} className="flex items-center gap-3 px-3.5 py-3 rounded-xl bg-cream hover:bg-primary/10 transition-colors w-full text-left">
+                  <span className="text-primary">{o.icon}</span>
+                  <div>
+                    <span className="text-sm font-semibold text-dark/70 block">{o.label}</span>
+                    {o.desc && <span className="text-[9px] text-dark/30">{o.desc}</span>}
+                  </div>
+                </button>
+              ) : (
                 <a key={o.label} href={o.href} target={o.external ? '_blank' : undefined} rel={o.external ? 'noopener noreferrer' : undefined} onClick={() => setOpen(false)} className="flex items-center gap-3 px-3.5 py-3 rounded-xl bg-cream hover:bg-primary/10 transition-colors">
                   <span className="text-primary">{o.icon}</span>
                   <div>
@@ -1003,10 +999,14 @@ function ChatWidget() {
 }
 
 /* ============================== NEWSLETTER MODAL ============================== */
-function NewsletterModal() {
+function NewsletterModal({ forceOpen, onClose }) {
   const [show, setShow] = useState(false);
   const [dismissed, setDismissed] = useState(false);
   const [subscribed, setSubscribed] = useState(false);
+
+  useEffect(() => {
+    if (forceOpen) setShow(true);
+  }, [forceOpen]);
 
   useEffect(() => {
     if (dismissed) return;
@@ -1014,7 +1014,7 @@ function NewsletterModal() {
     return () => clearTimeout(timer);
   }, [dismissed]);
 
-  const close = () => { setShow(false); setDismissed(true); };
+  const close = () => { setShow(false); setDismissed(true); onClose?.(); };
   const handleSubscribe = async (e) => {
     e.preventDefault();
     const form = e.target;
@@ -1124,6 +1124,7 @@ function StickyCTA() {
 
 /* ============================== PAGE ============================== */
 export default function Home() {
+  const [nlOpen, setNlOpen] = useState(false);
   return (
     <>
       <Navbar />
@@ -1131,7 +1132,6 @@ export default function Home() {
       <SocialProofBar />
       <ChooseYourPath />
       <QuickComparison />
-      <WhyItWorks />
       <Transformations />
       <About />
       <FinalCTA />
@@ -1139,8 +1139,8 @@ export default function Home() {
       <FAQ />
       <Contact />
       <Footer />
-      <ChatWidget />
-      <NewsletterModal />
+      <ChatWidget onNewsletter={() => setNlOpen(true)} />
+      <NewsletterModal forceOpen={nlOpen} onClose={() => setNlOpen(false)} />
       <StickyCTA />
     </>
   );
