@@ -133,8 +133,8 @@ function Navbar() {
       <AnimatePresence>
         {open && (
           <>
-          <div className="md:hidden fixed inset-0 top-14 z-[-1]" onClick={() => setOpen(false)} />
-          <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} exit={{ opacity: 0, height: 0 }} transition={{ duration: 0.3 }} className="md:hidden bg-cream/98 sticky-blur border-t border-dark/8 px-6 pb-5 overflow-hidden">
+          <div className="md:hidden fixed inset-0 top-14 z-40 bg-black/20" onClick={() => setOpen(false)} />
+          <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} exit={{ opacity: 0, height: 0 }} transition={{ duration: 0.3 }} className="md:hidden relative z-50 bg-cream/98 sticky-blur border-t border-dark/8 px-6 pb-5 overflow-hidden">
             {links.map(l => (
               <a key={l.href} href={l.href} onClick={(e) => { e.preventDefault(); smoothScroll(l.href); setTimeout(() => setOpen(false), 300); }} className="relative inline-flex items-center gap-2 font-bold text-sm uppercase py-3 border-b border-dark/8 last:border-0 text-dark/70 w-full">{l.label}{l.badge && <span className="bg-red-500 text-white text-[9px] font-black px-1.5 py-0.5 rounded-full leading-none">{l.badge}</span>}</a>
             ))}
@@ -432,7 +432,7 @@ function ChooseYourPath() {
         <div className="grid lg:grid-cols-2 gap-5 sm:gap-6 items-stretch">
           {/* COACHING CARD */}
           <motion.div id="coaching" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={scaleUp} className="flex">
-            <div className="card-lift relative bg-gradient-to-b from-primary/10 via-primary/5 to-white rounded-3xl border-2 border-primary/25 overflow-hidden shadow-lg group flex flex-col w-full">
+            <div className="card-lift relative bg-white rounded-3xl border-2 border-primary/25 overflow-hidden shadow-lg group flex flex-col w-full">
               <div className="absolute top-4 right-4 z-10">
                 <span className="inline-flex items-center gap-1.5 bg-primary text-white text-[9px] font-bold uppercase px-3 py-1.5 rounded-full shadow-lg shadow-primary/30 badge-pulse">
                   <Users size={10} /> Más resultados
@@ -441,7 +441,7 @@ function ChooseYourPath() {
 
               <div className="relative h-48 sm:h-56 overflow-hidden">
                 <img src="/coaching-bg.webp" alt="Coaching" loading="lazy" className="w-full h-full object-cover object-[center_30%] group-hover:scale-105 transition-transform duration-700" />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-primary/15 to-primary/5" />
+                <div className="absolute inset-0 bg-gradient-to-t from-dark/80 via-dark/20 to-transparent" />
                 <div className="absolute bottom-4 left-5">
                   <div className="flex items-center gap-2 mb-1">
                     <Users size={14} className="text-primary" />
@@ -466,8 +466,8 @@ function ChooseYourPath() {
               </div>
 
               <div className="relative h-48 sm:h-56 overflow-hidden bg-dark">
-                <img src="/app-banner.webp" alt="APP" loading="lazy" className="w-full h-full object-cover opacity-50 group-hover:scale-105 transition-transform duration-700" />
-                <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/70 to-dark/40" />
+                <img src="/app-banner.webp" alt="APP" loading="lazy" className="w-full h-full object-cover opacity-70 group-hover:scale-105 transition-transform duration-700" />
+                <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/50 to-transparent" />
 
                 <motion.div animate={{ y: [0, -6, 0] }} transition={{ repeat: Infinity, duration: 4, ease: 'easeInOut' }} className="absolute bottom-3 right-5 w-24 sm:w-28 bg-gradient-to-b from-white/12 to-white/5 backdrop-blur-sm rounded-[1.2rem] p-1.5 shadow-2xl border border-white/12 hidden sm:block">
                   <div className="rounded-[0.9rem] aspect-[9/16] overflow-hidden bg-[#1a1a1a]">
@@ -510,18 +510,18 @@ function QuickComparison() {
       <div className="absolute inset-0 flex">
         <div className="w-1/2 h-full relative">
           <img src="/comparison-training.webp" alt="" loading="lazy" className="w-full h-full object-cover saturate-[0.3] sepia-[0.15]" />
-          <div className="absolute inset-0 bg-primary/30" />
+          <div className="absolute inset-0 bg-primary/45" />
         </div>
         <div className="w-1/2 h-full relative">
           <img src="/comparison-bg.webp" alt="" loading="lazy" className="w-full h-full object-cover saturate-[0.3] sepia-[0.15]" />
-          <div className="absolute inset-0 bg-dark/40" />
+          <div className="absolute inset-0 bg-dark/55" />
         </div>
-        <div className="absolute inset-0 bg-white/75" />
+        <div className="absolute inset-0 bg-white/55" />
         <div className="absolute inset-0 bg-primary/[0.03]" />
       </div>
       <div className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="text-center mb-8">
-          <motion.h2 variants={fadeUp} className="text-2xl sm:text-3xl font-black uppercase"><span className="text-primary">Coaching</span> vs <span className="text-dark">APP</span></motion.h2>
+          <motion.h2 variants={fadeUp} className="inline-flex items-center gap-3 bg-white/80 backdrop-blur-md px-8 py-4 rounded-2xl shadow-lg border border-white/60 text-2xl sm:text-3xl font-black uppercase"><span className="text-primary">Coaching</span> <span className="text-dark/30">vs</span> <span className="text-dark">APP</span></motion.h2>
         </motion.div>
 
         {/* Mobile: 2 cards */}
@@ -630,9 +630,9 @@ function QuickComparison() {
           ¿No sabes cuál elegir? <a href="#contacto" className="text-primary-dark font-bold hover:underline">Pregunta sin compromiso</a>
         </motion.p>
       </div>
-      {/* Bottom wave — comparison into cream (About) */}
+      {/* Bottom wave — comparison into white (Resultados) */}
       <svg viewBox="0 0 1440 50" xmlns="http://www.w3.org/2000/svg" className="absolute bottom-0 left-0 w-full" preserveAspectRatio="none" style={{ height: 50 }}>
-        <path d="M0 30C240 48 480 50 720 35C960 20 1200 5 1440 18V50H0Z" fill="#FCF3EF" />
+        <path d="M0 30C240 48 480 50 720 35C960 20 1200 5 1440 18V50H0Z" fill="#ffffff" />
       </svg>
     </section>
   );
@@ -687,7 +687,7 @@ function Transformations() {
           </div>
           <motion.div variants={fadeUp} className="flex gap-1.5">
             {tabs.map(tab => (
-              <button key={tab.key} onClick={() => setFilter(tab.key)} className={`inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wide transition-all ${filter === tab.key ? 'bg-dark text-white shadow-sm' : 'bg-cream border border-dark/10 text-dark/40 hover:text-dark/60'}`}>
+              <button key={tab.key} onClick={() => setFilter(tab.key)} className={`inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wide transition-all ${filter === tab.key ? (tab.key === 'coaching' ? 'bg-primary text-white shadow-sm shadow-primary/25' : tab.key === 'app' ? 'bg-dark text-white shadow-sm' : 'bg-dark text-white shadow-sm') : 'bg-cream border border-dark/10 text-dark/40 hover:text-dark/60'}`}>
                 {tab.icon} {tab.label}
               </button>
             ))}
@@ -877,11 +877,11 @@ function FinalCTA() {
         <div className="absolute inset-0 bg-dark/90 sm:bg-dark/80" />
       </div>
       {/* Top wave — cream into video */}
-      <svg viewBox="0 0 1440 50" xmlns="http://www.w3.org/2000/svg" className="absolute top-0 left-0 w-full" preserveAspectRatio="none" style={{ height: 50 }}>
+      <svg viewBox="0 0 1440 50" xmlns="http://www.w3.org/2000/svg" className="absolute top-0 left-0 w-full z-[1]" preserveAspectRatio="none" style={{ height: 50 }}>
         <path d="M0 0H1440V20C1200 45 960 50 720 35C480 20 240 5 0 18Z" fill="#FCF3EF" />
       </svg>
       {/* Bottom wave — video into cream */}
-      <svg viewBox="0 0 1440 50" xmlns="http://www.w3.org/2000/svg" className="absolute bottom-0 left-0 w-full" preserveAspectRatio="none" style={{ height: 50 }}>
+      <svg viewBox="0 0 1440 50" xmlns="http://www.w3.org/2000/svg" className="absolute bottom-0 left-0 w-full z-[1]" preserveAspectRatio="none" style={{ height: 50 }}>
         <path d="M0 30C240 48 480 50 720 35C960 20 1200 5 1440 18V50H0Z" fill="#FCF3EF" />
       </svg>
       <div className="relative z-10 max-w-3xl mx-auto px-4 text-center">
