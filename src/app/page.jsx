@@ -512,16 +512,18 @@ function QuickComparison() {
       <div className="absolute inset-0 flex">
         <div className="w-1/2 h-full relative">
           <img src="/comparison-training.webp" alt="" loading="lazy" className="w-full h-full object-cover saturate-[0.3] sepia-[0.15]" />
+          <div className="absolute inset-0 bg-primary/30" />
         </div>
         <div className="w-1/2 h-full relative">
           <img src="/comparison-bg.webp" alt="" loading="lazy" className="w-full h-full object-cover saturate-[0.3] sepia-[0.15]" />
+          <div className="absolute inset-0 bg-dark/40" />
         </div>
-        <div className="absolute inset-0 bg-white/90" />
+        <div className="absolute inset-0 bg-white/75" />
         <div className="absolute inset-0 bg-primary/[0.03]" />
       </div>
       <div className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="text-center mb-8">
-          <motion.h2 variants={fadeUp} className="text-2xl sm:text-3xl font-black uppercase">Coaching vs APP <span className="text-gradient">de un vistazo</span></motion.h2>
+          <motion.h2 variants={fadeUp} className="text-2xl sm:text-3xl font-black uppercase"><span className="text-primary">Coaching</span> vs <span className="text-dark">APP</span></motion.h2>
         </motion.div>
 
         {/* Mobile: 2 cards */}
@@ -1008,6 +1010,7 @@ function FAQ() {
     { q: '¿Cuándo empiezo a ver resultados?', a: 'La mayoría nota cambios en 2-4 semanas: menos hinchazón, más energía. Resultados visibles significativos entre 2-3 meses.' },
     { q: '¿Hay permanencia?', a: 'No. El coaching no tiene permanencia, puedes cancelar cuando quieras. La APP es pago único anual.' },
     { q: '¿Cómo empiezo?', a: 'Completa el formulario de contacto justo abajo o agenda una videollamada gratuita si te interesa el coaching 1 a 1. Indícame qué plan te interesa y tu objetivo. Te respondo en menos de 24 horas.' },
+    { q: '¿Cómo consigo el descuento en Prozis?', a: 'Usa el código ELY en prozis.com para obtener un 10% de descuento en toda la tienda: suplementos, ropa, accesorios y más. Sin mínimo de compra.' },
   ];
 
   return (
@@ -1248,11 +1251,14 @@ function ChatWidget({ onNewsletter }) {
     { label: 'Plan Anual (59EUR)', href: 'https://www.bejao.fit/checkout?tribeId=381&typeProduct=DIT', external: true, icon: <Smartphone size={13} /> },
     { label: 'Ver servicios', href: '#plan-ultra', icon: <Users size={13} /> },
     { label: 'Contactar', href: '#contacto', icon: <Send size={13} /> },
+    { label: 'Descuento Prozis 10%', desc: 'Código ELY', href: 'https://www.prozis.com/es/es/?ot=AFFES2777&utm_source=prz_affiliate&utm_medium=referral&utm_campaign=el_es_ib_pr_af', external: true, icon: <Gift size={13} /> },
     { label: 'Newsletter', desc: 'Consejos gratis cada semana', icon: <Mail size={13} />, action: 'newsletter' },
   ];
 
   return (
     <div className="fixed bottom-[4.5rem] sm:bottom-5 right-4 sm:right-5 z-40">
+      {/* Backdrop to close on outside click */}
+      {open && <div className="fixed inset-0 z-[-1]" onClick={() => setOpen(false)} />}
       <AnimatePresence>
         {open && (
           <motion.div initial={{ opacity: 0, y: 8, scale: 0.95 }} animate={{ opacity: 1, y: 0, scale: 1 }} exit={{ opacity: 0, y: 8, scale: 0.95 }} className="absolute bottom-16 right-0 w-72 bg-white rounded-2xl shadow-2xl border border-dark/10 overflow-hidden mb-2">
