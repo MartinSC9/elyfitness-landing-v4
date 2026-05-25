@@ -22,7 +22,7 @@ const LINKS = [
     img: 'https://ugc.production.linktr.ee/903680ef-3904-4ea5-b858-fee4b892abe8_app.jpeg?io=true&size=thumbnail-stack_v1_0',
   },
   {
-    title: 'Mi Te Matcha Favorito - 26% dto CODIGO ELY',
+    title: 'Mi Té Matcha Favorito - 26% dto CÓDIGO ELY',
     url: 'https://matchaflix.com/ELY',
     img: 'https://ugc.production.linktr.ee/2178ec7e-5b31-437e-8ee1-93657167526c_Logo-MATCHAFLIX-01-850862fe-7148-4483-9959-513d962f5cfb.png?io=true&size=thumbnail-stack_v1_0',
   },
@@ -45,17 +45,17 @@ const LINKS = [
 
 const SHOP = [
   {
-    title: 'ASESORIA PREMIUM 1a1 | PLANES ULTRA',
+    title: 'ASESORÍA PREMIUM 1a1 | PLANES ULTRA',
     url: '/#plan-ultra',
     img: 'https://ugc.production.linktr.ee/2ba9b9f8-dc0a-4172-8c26-b1119b7b1c5d_4cd4b0-ee76ab2a1046403ab63584360344375e-mv2.webp?io=true&size=thumbnail-grid-carousel-v1_1',
   },
   {
-    title: 'PROZIS | CODIGO dto. ELY 10%',
+    title: 'PROZIS | CÓDIGO dto. ELY 10%',
     url: 'https://www.prozis.com/1DTPL',
     img: 'https://ugc.production.linktr.ee/529c5333-03a3-4bca-ab6d-bee8085f4d6e_prozis-link-share.png?io=true&size=thumbnail-grid-carousel-v1_1',
   },
   {
-    title: "WOMEN'S BEST | CODIGO dto. ELY 10%",
+    title: "WOMEN'S BEST | CÓDIGO dto. ELY 10%",
     url: 'https://womens.best/ElyFitness',
     img: 'https://ugc.production.linktr.ee/c29cc784-4b8a-43f8-b05b-eb21c33531f4_logo-header-mobile-600x472.png?io=true&size=thumbnail-grid-carousel-v1_1',
   },
@@ -175,7 +175,7 @@ function ShareModal({ onClose }) {
         </div>
 
         {/* Share buttons */}
-        <div className="flex items-center justify-center gap-4 mb-4">
+        <div className="flex items-center justify-center gap-3 sm:gap-4 mb-4">
           {/* Copy link */}
           <button onClick={copyLink} className="flex flex-col items-center gap-1.5">
             <div className={`w-11 h-11 rounded-full flex items-center justify-center transition-colors ${
@@ -187,7 +187,7 @@ function ShareModal({ onClose }) {
               }
             </div>
             <span className="text-[10px] text-[#2c2420]/60 font-medium">
-              {copied ? 'Copiado!' : 'Copiar'}
+              {copied ? '¡Copiado!' : 'Copiar'}
             </span>
           </button>
 
@@ -269,7 +269,7 @@ export default function Links() {
             <div className="absolute inset-0 bg-[#2c2420]/60" />
           </div>
 
-          <div className="relative z-10 flex flex-col items-center px-6 py-6">
+          <div className="relative z-10 flex flex-col items-center px-4 sm:px-6 py-6">
             {/* Top buttons - inside the card */}
             <div className="w-full flex justify-between mb-1">
               <a

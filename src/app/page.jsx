@@ -182,7 +182,7 @@ function Hero() {
             </motion.p>
 
             {/* Dual CTA */}
-            <motion.div variants={fadeUp} className="flex flex-col sm:flex-row justify-center gap-3 mb-12">
+            <motion.div variants={fadeUp} className="flex flex-col sm:flex-row justify-center gap-3 mb-8 sm:mb-12">
               <MagneticButton href="#plan-ultra" className="shine-sweep group inline-flex items-center justify-center gap-2 sm:gap-2.5 bg-primary text-white px-5 sm:px-8 py-4 sm:py-4.5 rounded-full font-bold text-xs sm:text-sm uppercase tracking-wide transition-all shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/50 hover:scale-[1.02]">
                 <Crown size={16} /> COACHING 1:1 <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
               </MagneticButton>
@@ -220,7 +220,7 @@ function Hero() {
 function SocialProofBar() {
   return (
     <div className="bg-dark py-3 border-b border-white/5">
-      <div className="max-w-5xl mx-auto px-4 flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-[10px] sm:text-xs text-white/40">
+      <div className="max-w-5xl mx-auto px-4 flex flex-wrap items-center justify-center gap-x-4 sm:gap-x-8 gap-y-2 text-[10px] sm:text-xs text-white/40">
         {[
           { icon: <Shield size={12} />, t: 'Sin permanencia' },
           { icon: <CheckCircle size={12} />, t: 'Resultados desde 2 semanas' },
@@ -244,7 +244,7 @@ function CoachingCardBody() {
         Ely diseña tu plan de nutrición y entrenamiento 100% a tu medida. Chat diario, revisiones quincenales, ajustes constantes. Tu entrenadora personal contigo cada día.
       </p>
 
-      <div className="grid grid-cols-2 gap-2.5 mb-4">
+      <div className="grid grid-cols-1 xs:grid-cols-2 gap-2.5 mb-4">
         {[
           { name: 'Premium Plus', desc: 'Dieta + entreno + suplementación', hot: true },
           { name: 'Premium Running', desc: 'De 5K a ultramaratones' },
@@ -300,7 +300,7 @@ function CoachingCardBody() {
       </button>
 
       <div className="space-y-3 mt-auto">
-        <a href="https://calendar.app.google/LINK-VIDEOLLAMADA" target="_blank" rel="noopener noreferrer" className="shine-sweep w-full flex items-center justify-center gap-2.5 bg-primary hover:bg-primary-dark text-white py-4 rounded-2xl font-bold text-sm uppercase tracking-wide transition-all shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/40 hover:scale-[1.01]">
+        <a href="https://calendar.app.google/LINK-VIDEOLLAMADA" target="_blank" rel="noopener noreferrer" className="shine-sweep w-full flex items-center justify-center gap-2 sm:gap-2.5 bg-primary hover:bg-primary-dark text-white py-3.5 sm:py-4 rounded-2xl font-bold text-xs sm:text-sm uppercase tracking-wide transition-all shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/40 hover:scale-[1.01]">
           <CalendarCheck size={16} /> VIDEOLLAMADA GRATUITA <ArrowRight size={14} />
         </a>
         <p className="text-center text-[10px] text-dark/30 flex items-center justify-center gap-1.5">
@@ -319,23 +319,23 @@ function AppCardBody() {
         Entrenos en video, recetas saludables, lista de la compra, comunidad privada y chat con nutricionista. Todo en una app. Pago único anual, sin sorpresas.
       </p>
 
-      <div className="grid grid-cols-2 gap-3 mb-4">
-        <div className="bg-white/8 border border-white/10 rounded-2xl p-4 text-center">
+      <div className="grid grid-cols-2 gap-2 sm:gap-3 mb-4">
+        <div className="bg-white/8 border border-white/10 rounded-2xl p-3 sm:p-4 text-center">
           <p className="text-[9px] font-bold uppercase tracking-widest text-white/35 mb-1">1 persona</p>
           <div className="flex items-baseline justify-center gap-1">
-            <span className="text-3xl font-black text-white">59&#8364;</span>
-            <span className="text-sm text-white/30 font-semibold">/ano</span>
+            <span className="text-2xl sm:text-3xl font-black text-white">59&#8364;</span>
+            <span className="text-sm text-white/30 font-semibold">/año</span>
           </div>
           <p className="text-[10px] text-white/25 mt-0.5">4,92&#8364;/mes</p>
         </div>
-        <div className="bg-primary/15 border-2 border-primary/30 rounded-2xl p-4 text-center relative pulse-glow">
+        <div className="bg-primary/15 border-2 border-primary/30 rounded-2xl p-3 sm:p-4 text-center relative pulse-glow">
           <span className="absolute -top-2.5 left-1/2 -translate-x-1/2 bg-primary text-white text-[8px] font-bold px-2.5 py-0.5 rounded-full uppercase">Mejor precio</span>
           <p className="text-[9px] font-bold uppercase tracking-widest text-primary mb-1">Pack Duo</p>
           <div className="flex items-baseline justify-center gap-1">
-            <span className="text-3xl font-black text-white">69&#8364;</span>
-            <span className="text-sm text-white/30 font-semibold">/ano</span>
+            <span className="text-2xl sm:text-3xl font-black text-white">69&#8364;</span>
+            <span className="text-sm text-white/30 font-semibold">/año</span>
           </div>
-          <p className="text-[10px] text-white/40 mt-0.5">2 personas &middot; solo 10&#8364; mas</p>
+          <p className="text-[10px] text-white/40 mt-0.5">2 personas &middot; solo 10&#8364; más</p>
         </div>
       </div>
 
@@ -349,10 +349,10 @@ function AppCardBody() {
             className="overflow-hidden"
           >
             <div className="mb-3">
-              <p className="text-[10px] font-bold uppercase tracking-widest text-white/30 mb-2">Nutricion adaptada</p>
+              <p className="text-[10px] font-bold uppercase tracking-widest text-white/30 mb-2">Nutrición adaptada</p>
               <div className="space-y-1.5 mb-4">
                 {[
-                  'Plan alimentacion personalizado',
+                  'Plan alimentación personalizado',
                   'Buscador y recetas nuevas cada mes',
                   'Chat directo con la nutri y soporte',
                   'Lista de la compra',
@@ -363,7 +363,7 @@ function AppCardBody() {
                   </div>
                 ))}
               </div>
-              <p className="text-[10px] font-bold uppercase tracking-widest text-white/30 mb-2">Metodo Hibrido en video</p>
+              <p className="text-[10px] font-bold uppercase tracking-widest text-white/30 mb-2">Método Híbrido en video</p>
               <div className="space-y-1.5 mb-4">
                 {[
                   'Entrenamiento en video para gym y casa',
@@ -378,7 +378,7 @@ function AppCardBody() {
               </div>
               <div className="flex items-start gap-2">
                 <Users size={12} className="text-primary shrink-0 mt-0.5" />
-                <span className="text-xs text-white/50 leading-snug">Comunidad privada donde nos apoyamos dia a dia</span>
+                <span className="text-xs text-white/50 leading-snug">Comunidad privada donde nos apoyamos día a día</span>
               </div>
             </div>
           </motion.div>
@@ -391,7 +391,7 @@ function AppCardBody() {
       </button>
 
       <div className="space-y-3 mt-auto">
-        <a href="https://www.bejao.fit/checkout?tribeId=381&typeProduct=DIT" target="_blank" rel="noopener noreferrer" className="shine-sweep w-full flex items-center justify-center gap-2.5 bg-white text-dark py-4 rounded-2xl font-bold text-sm uppercase tracking-wide transition-all hover:bg-cream hover:shadow-lg hover:scale-[1.01] group">
+        <a href="https://www.bejao.fit/checkout?tribeId=381&typeProduct=DIT" target="_blank" rel="noopener noreferrer" className="shine-sweep w-full flex items-center justify-center gap-2.5 bg-white text-dark py-3.5 sm:py-4 rounded-2xl font-bold text-xs sm:text-sm uppercase tracking-wide transition-all hover:bg-cream hover:shadow-lg hover:scale-[1.01] group">
           RESERVA TU PLAZA <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
         </a>
         <div className="flex items-center justify-center gap-4 text-[10px] text-white/25">
@@ -409,7 +409,7 @@ function ChooseYourPath() {
   return (
     <section id="plan-ultra" className="py-16 sm:py-24 scroll-mt-16 relative overflow-hidden">
       <div className="absolute inset-0">
-        <img src="/choose-path-bg.webp" alt="" className="w-full h-full object-cover" />
+        <img src="/choose-path-bg.webp" alt="" loading="lazy" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-cream/85" />
       </div>
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6">
@@ -422,7 +422,7 @@ function ChooseYourPath() {
             Elige tu <span className="text-gradient">plan ideal</span>
           </motion.h2>
           <motion.p variants={fadeUp} className="text-dark/40 text-sm sm:text-base mt-3 max-w-lg mx-auto">
-            No importa donde estes: hay un plan perfecto para ti.
+            No importa dónde estés: hay un plan perfecto para ti.
           </motion.p>
         </motion.div>
 
@@ -432,12 +432,12 @@ function ChooseYourPath() {
             <div className="card-lift relative bg-white rounded-3xl border-2 border-primary/25 overflow-hidden shadow-lg group flex flex-col w-full">
               <div className="absolute top-4 right-4 z-10">
                 <span className="inline-flex items-center gap-1.5 bg-primary text-white text-[9px] font-bold uppercase px-3 py-1.5 rounded-full shadow-lg shadow-primary/30 badge-pulse">
-                  <Crown size={10} /> Mas resultados
+                  <Crown size={10} /> Más resultados
                 </span>
               </div>
 
               <div className="relative h-48 sm:h-56 overflow-hidden">
-                <img src="/coaching-bg.webp" alt="Coaching" className="w-full h-full object-cover object-[center_30%] group-hover:scale-105 transition-transform duration-700" />
+                <img src="/coaching-bg.webp" alt="Coaching" loading="lazy" className="w-full h-full object-cover object-[center_30%] group-hover:scale-105 transition-transform duration-700" />
                 <div className="absolute inset-0 bg-gradient-to-t from-dark/80 via-dark/20 to-transparent" />
                 <div className="absolute bottom-4 left-5">
                   <div className="flex items-center gap-2 mb-1">
@@ -463,7 +463,7 @@ function ChooseYourPath() {
               </div>
 
               <div className="relative h-48 sm:h-56 overflow-hidden bg-dark">
-                <img src="/app-banner.webp" alt="APP" className="w-full h-full object-cover opacity-70 group-hover:scale-105 transition-transform duration-700" />
+                <img src="/app-banner.webp" alt="APP" loading="lazy" className="w-full h-full object-cover opacity-70 group-hover:scale-105 transition-transform duration-700" />
                 <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/50 to-transparent" />
 
                 <motion.div animate={{ y: [0, -6, 0] }} transition={{ repeat: Infinity, duration: 4, ease: 'easeInOut' }} className="absolute bottom-3 right-5 w-24 sm:w-28 bg-gradient-to-b from-white/12 to-white/5 backdrop-blur-sm rounded-[1.2rem] p-1.5 shadow-2xl border border-white/12 hidden sm:block">
@@ -498,11 +498,11 @@ function QuickComparison() {
   const bgScale = useTransform(scrollYProgress, [0, 0.5, 1], [1.02, 1.12, 1.02]);
 
   const rows = [
-    { label: 'Personalizacion', coaching: '100% a tu medida', app: 'Rutinas + recetas profesionales' },
-    { label: 'Seguimiento', coaching: 'Chat diario + revision quincenal', app: 'Comunidad + app' },
-    { label: 'Incluye', coaching: 'Nutricion + entreno + suplementacion', app: 'Entrenos + recetas + comunidad' },
-    { label: 'Ideal para', coaching: 'Resultados rapidos, maximo apoyo', app: 'Autonomia, presupuesto flexible' },
-    { label: 'Precio', coaching: 'Consulta gratis, sin compromiso', app: '59 EUR/ano · Pack Duo 69 EUR/ano' },
+    { label: 'Personalización', coaching: '100% a tu medida', app: 'Rutinas + recetas profesionales' },
+    { label: 'Seguimiento', coaching: 'Chat diario + revisión quincenal', app: 'Comunidad + app' },
+    { label: 'Incluye', coaching: 'Nutrición + entreno + suplementación', app: 'Entrenos + recetas + comunidad' },
+    { label: 'Ideal para', coaching: 'Resultados rápidos, máximo apoyo', app: 'Autonomía, presupuesto flexible' },
+    { label: 'Precio', coaching: 'Consulta gratis, sin compromiso', app: '59 EUR/año · Pack Duo 69 EUR/año' },
   ];
 
   return (
@@ -522,48 +522,48 @@ function QuickComparison() {
         </motion.div>
 
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="bg-white/95 backdrop-blur-md rounded-2xl border border-primary/15 overflow-hidden shadow-lg">
-          <div className="grid grid-cols-[1fr_1fr_1fr] border-b border-primary/20">
-            <div className="px-4 py-2.5 sm:px-5 sm:py-3" />
-            <div className="px-4 py-2.5 sm:px-5 sm:py-3 text-center border-l border-primary/12 bg-primary/10">
+          <div className="grid grid-cols-[0.8fr_1fr_1fr] sm:grid-cols-[1fr_1fr_1fr] border-b border-primary/20">
+            <div className="px-2 py-2 sm:px-5 sm:py-3" />
+            <div className="px-2 py-2 sm:px-5 sm:py-3 text-center border-l border-primary/12 bg-primary/10">
               <div className="inline-flex items-center gap-2">
                 <Crown size={14} className="text-primary-dark" />
-                <span className="text-sm font-black uppercase text-primary-dark">Coaching</span>
+                <span className="text-[11px] sm:text-sm font-black uppercase text-primary-dark">Coaching</span>
               </div>
             </div>
-            <div className="px-4 py-2.5 sm:px-5 sm:py-3 text-center border-l border-primary/12 bg-primary/5">
+            <div className="px-2 py-2 sm:px-5 sm:py-3 text-center border-l border-primary/12 bg-primary/5">
               <div className="inline-flex items-center gap-2">
                 <Download size={14} className="text-dark/70" />
-                <span className="text-sm font-black uppercase text-dark/80">APP</span>
+                <span className="text-[11px] sm:text-sm font-black uppercase text-dark/80">APP</span>
               </div>
             </div>
           </div>
 
           {rows.map((r, i) => (
-            <div key={r.label} className={`grid grid-cols-[1fr_1fr_1fr] ${i < rows.length - 1 ? 'border-b border-primary/10' : ''}`}>
-              <div className="px-4 py-2.5 sm:px-5 sm:py-3 flex items-center">
-                <span className="text-xs sm:text-sm font-bold text-dark/70 uppercase tracking-wide">{r.label}</span>
+            <div key={r.label} className={`grid grid-cols-[0.8fr_1fr_1fr] sm:grid-cols-[1fr_1fr_1fr] ${i < rows.length - 1 ? 'border-b border-primary/10' : ''}`}>
+              <div className="px-2 py-2 sm:px-5 sm:py-3 flex items-center">
+                <span className="text-[10px] sm:text-sm font-bold text-dark/70 uppercase tracking-wide">{r.label}</span>
               </div>
-              <div className="px-4 py-2.5 sm:px-5 sm:py-3 border-l border-primary/10 bg-primary/[0.05]">
-                <span className="text-xs sm:text-sm text-dark/75 leading-snug">{r.coaching}</span>
+              <div className="px-2 py-2 sm:px-5 sm:py-3 border-l border-primary/10 bg-primary/[0.05]">
+                <span className="text-[10px] sm:text-sm text-dark/75 leading-snug">{r.coaching}</span>
               </div>
-              <div className="px-4 py-2.5 sm:px-5 sm:py-3 border-l border-primary/10">
-                <span className="text-xs sm:text-sm text-dark/75 leading-snug">{r.app}</span>
+              <div className="px-2 py-2 sm:px-5 sm:py-3 border-l border-primary/10">
+                <span className="text-[10px] sm:text-sm text-dark/75 leading-snug">{r.app}</span>
               </div>
             </div>
           ))}
 
-          <div className="grid grid-cols-[1fr_1fr_1fr] border-t border-primary/20 bg-primary/5">
-            <div className="px-2 py-2.5 sm:px-5 sm:py-3 flex items-center">
+          <div className="grid grid-cols-[0.8fr_1fr_1fr] sm:grid-cols-[1fr_1fr_1fr] border-t border-primary/20 bg-primary/5">
+            <div className="px-2 py-2 sm:px-5 sm:py-3 flex items-center">
               <span className="text-[10px] sm:text-xs font-bold text-dark/60 uppercase">Empezar</span>
             </div>
-            <div className="px-1.5 py-2.5 sm:px-5 sm:py-3 border-l border-primary/12 text-center">
+            <div className="px-1.5 py-2 sm:px-5 sm:py-3 border-l border-primary/12 text-center">
               <a href="https://calendar.app.google/LINK-VIDEOLLAMADA" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 sm:gap-1.5 bg-primary hover:bg-primary-dark text-white px-2.5 py-2 sm:px-5 sm:py-2.5 rounded-full text-[10px] sm:text-sm font-bold uppercase transition-all">
                 <CalendarCheck size={11} className="shrink-0" /> <span className="hidden xs:inline">Videollamada</span><span className="xs:hidden">Llamada</span>
               </a>
             </div>
-            <div className="px-1.5 py-2.5 sm:px-5 sm:py-3 border-l border-primary/12 text-center">
+            <div className="px-1.5 py-2 sm:px-5 sm:py-3 border-l border-primary/12 text-center">
               <a href="https://www.bejao.fit/checkout?tribeId=381&typeProduct=DIT" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 sm:gap-1.5 bg-dark hover:bg-dark-soft text-white px-2.5 py-2 sm:px-5 sm:py-2.5 rounded-full text-[10px] sm:text-sm font-bold uppercase transition-all">
-                59&#8364;/ano <ArrowRight size={11} className="shrink-0" />
+                59&#8364;/año <ArrowRight size={11} className="shrink-0" />
               </a>
             </div>
           </div>
@@ -571,7 +571,7 @@ function QuickComparison() {
 
         <motion.p initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="text-center text-sm text-dark/50 mt-5 flex items-center justify-center gap-1.5">
           <MessageCircle size={14} className="text-primary" />
-          ¿No sabes cual elegir? <a href="#contacto" className="text-primary-dark font-bold hover:underline">Pregunta sin compromiso</a>
+          ¿No sabes cuál elegir? <a href="#contacto" className="text-primary-dark font-bold hover:underline">Pregunta sin compromiso</a>
         </motion.p>
       </div>
     </section>
@@ -584,22 +584,22 @@ function QuickComparison() {
 function Transformations() {
   const [filter, setFilter] = useState('todos');
   const coaching = [
-    { name: 'C.B.', result: '-20 kg', text: 'He perdido mas de 20 kg de forma saludable. No paso hambre y he vuelto a mirarme al espejo con orgullo.', img: '/cambios/carla.png', plan: 'coaching' },
-    { name: 'V.M.', result: 'Recomposicion', text: 'Baje muchisimo volumen en abdomen y piernas, y hoy me siento fuerte, segura y feliz.', img: '/cambios/vane-m.png', plan: 'coaching' },
-    { name: 'M.M.', result: 'Sin medicacion', text: 'Hoy vivo sin medicacion, con mas salud y autoestima. He bajado de peso mejorando masa muscular.', img: '/cambios/monica.png', plan: 'coaching' },
-    { name: 'T.H.', result: '-4.5 kg / 4 sem', text: 'He recuperado la menstruacion. He aprendido a comer y a disfrutar sin culpa.', img: '/cambios/tami.png', plan: 'coaching' },
-    { name: 'S.B.', result: 'Hibrido', text: 'Combinar fuerza y resistencia me ha dado un cuerpo mas eficiente y una mente mas fuerte.', img: '/cambios/sandra-buitra.png', plan: 'coaching' },
-    { name: 'R.R.', result: 'Recomposicion', text: 'He logrado un fisico que me gusta y que puedo mantener sin esfuerzo. Mis compañeros me lo dicen constantemente.', img: '/cambios/rafa-ruiz.png', plan: 'coaching' },
-    { name: 'A.C.', result: 'Confianza', text: 'Me miro al espejo y por fin me reconozco: fuerte, segura y llena de energia.', img: '/cambios/andrea-caijao.png', plan: 'coaching' },
+    { name: 'C.B.', result: '-20 kg', text: 'He perdido más de 20 kg de forma saludable. No paso hambre y he vuelto a mirarme al espejo con orgullo.', img: '/cambios/carla.webp', plan: 'coaching' },
+    { name: 'V.M.', result: 'Recomposición', text: 'Bajé muchísimo volumen en abdomen y piernas, y hoy me siento fuerte, segura y feliz.', img: '/cambios/vane-m.webp', plan: 'coaching' },
+    { name: 'M.M.', result: 'Sin medicación', text: 'Hoy vivo sin medicación, con más salud y autoestima. He bajado de peso mejorando masa muscular.', img: '/cambios/monica.webp', plan: 'coaching' },
+    { name: 'T.H.', result: '-4.5 kg / 4 sem', text: 'He recuperado la menstruación. He aprendido a comer y a disfrutar sin culpa.', img: '/cambios/tami.webp', plan: 'coaching' },
+    { name: 'S.B.', result: 'Híbrido', text: 'Combinar fuerza y resistencia me ha dado un cuerpo más eficiente y una mente más fuerte.', img: '/cambios/sandra-buitra.webp', plan: 'coaching' },
+    { name: 'R.R.', result: 'Recomposición', text: 'He logrado un físico que me gusta y que puedo mantener sin esfuerzo. Mis compañeros me lo dicen constantemente.', img: '/cambios/rafa-ruiz.webp', plan: 'coaching' },
+    { name: 'A.C.', result: 'Confianza', text: 'Me miro al espejo y por fin me reconozco: fuerte, segura y llena de energía.', img: '/cambios/andrea-caijao.webp', plan: 'coaching' },
   ];
   const app = [
-    { name: 'K.G.', result: 'Campus + App', text: 'Combinar el Campus con la App ha sido espectacular. Hoy entreno mejor, como mejor y entiendo lo que hago.', img: '/cambios/kat-campus.png', plan: 'app' },
-    { name: 'A.P.', result: 'Habitos', text: 'Pase de ir a trompicones a tener un metodo claro. Ahora tengo herramientas reales para vivir mejor.', img: '/cambios/ap.png', plan: 'app' },
-    { name: 'E.G.', result: 'Adherencia', text: 'Nunca habia seguido un plan con tanta adherencia. La app es intuitiva y las recetas son un 10.', img: '/cambios/elena-gasto.png', plan: 'app' },
-    { name: 'C.H.', result: 'Pack Duo', text: 'Nos apuntamos al Pack Duo y fue un antes y un despues. Variedad de entrenos y recetas riquísimas.', img: '/cambios/carlos-hdz.png', plan: 'app' },
-    { name: 'L.J.', result: 'Comunidad', text: 'No es solo una app; es la comunidad que inspira. Los entrenos en casa realmente funcionan.', img: '/cambios/laura-juanos.png', plan: 'app' },
-    { name: 'M.S.', result: 'Flexibilidad', text: 'Lo que me convencio fue la flexibilidad. Se que entrenar y que comer, sin complicarme.', img: '/cambios/marisa.png', plan: 'app' },
-    { name: 'I.C.', result: '18 años', text: 'Tengo 18 años y ya noto cambios: entrenos claros y recetas faciles. Estoy construyendo habitos.', img: '/cambios/itzi.png', plan: 'app' },
+    { name: 'K.G.', result: 'Campus + App', text: 'Combinar el Campus con la App ha sido espectacular. Hoy entreno mejor, como mejor y entiendo lo que hago.', img: '/cambios/kat-campus.webp', plan: 'app' },
+    { name: 'A.P.', result: 'Hábitos', text: 'Pasé de ir a trompicones a tener un método claro. Ahora tengo herramientas reales para vivir mejor.', img: '/cambios/ap.webp', plan: 'app' },
+    { name: 'E.G.', result: 'Adherencia', text: 'Nunca había seguido un plan con tanta adherencia. La app es intuitiva y las recetas son un 10.', img: '/cambios/elena-gasto.webp', plan: 'app' },
+    { name: 'C.H.', result: 'Pack Duo', text: 'Nos apuntamos al Pack Duo y fue un antes y un después. Variedad de entrenos y recetas riquísimas.', img: '/cambios/carlos-hdz.webp', plan: 'app' },
+    { name: 'L.J.', result: 'Comunidad', text: 'No es solo una app; es la comunidad que inspira. Los entrenos en casa realmente funcionan.', img: '/cambios/laura-juanos.webp', plan: 'app' },
+    { name: 'M.S.', result: 'Flexibilidad', text: 'Lo que me convenció fue la flexibilidad. Sé qué entrenar y qué comer, sin complicarme.', img: '/cambios/marisa.webp', plan: 'app' },
+    { name: 'I.C.', result: '18 años', text: 'Tengo 18 años y ya noto cambios: entrenos claros y recetas fáciles. Estoy construyendo hábitos.', img: '/cambios/itzi.webp', plan: 'app' },
   ];
   // "Todos" interleaves: 1:1, APP, 1:1, APP, 1:1, 1:1, APP...
   const mixed = [];
@@ -680,22 +680,22 @@ function About() {
               <Award size={12} className="text-primary-dark" />
               <span className="text-[10px] font-bold text-primary-dark uppercase tracking-wider">Sobre Ely</span>
             </div>
-            <h2 className="text-2xl sm:text-4xl font-black uppercase">Quien esta <span className="text-gradient">detras</span></h2>
+            <h2 className="text-2xl sm:text-4xl font-black uppercase">Quién está <span className="text-gradient">detrás</span></h2>
           </motion.div>
 
           <div className="grid md:grid-cols-2 gap-6 items-center">
             <motion.div variants={fadeUp} className="grid grid-cols-2 gap-3">
               <div className="space-y-3">
                 <div className="rounded-2xl overflow-hidden shadow-lg">
-                  <img src="/ely-about-1.webp" alt="Ely estirando" className="w-full h-52 sm:h-64 object-cover" />
+                  <img src="/ely-about-1.webp" loading="lazy" alt="Ely estirando" className="w-full h-52 sm:h-64 object-cover" />
                 </div>
                 <div className="rounded-2xl overflow-hidden shadow-lg">
-                  <img src="/ely-about-3.jpg" alt="Ely en el gym" className="w-full h-36 sm:h-44 object-cover" />
+                  <img src="/ely-about-3.webp" loading="lazy" alt="Ely en el gym" className="w-full h-36 sm:h-44 object-cover" />
                 </div>
               </div>
               <div className="pt-6">
                 <div className="rounded-2xl overflow-hidden shadow-lg">
-                  <img src="/ely-about-2.webp" alt="Ely fitness" className="w-full h-72 sm:h-80 object-cover" />
+                  <img src="/ely-about-2.webp" loading="lazy" alt="Ely fitness" className="w-full h-72 sm:h-80 object-cover" />
                 </div>
               </div>
             </motion.div>
@@ -703,15 +703,15 @@ function About() {
             <motion.div variants={fadeUp}>
               <h3 className="text-xl sm:text-2xl font-black text-dark mb-3">Dietista y Entrenadora Personal IFBB</h3>
               <p className="text-sm text-dark/65 leading-relaxed mb-4">
-                Soy Ely, y llevo +13 anos ayudando a miles de personas a transformar su cuerpo y su salud de forma real y sostenible. No soy una influencer mas: soy profesional titulada y certificada IFBB.
+                Soy Ely, y llevo +13 años ayudando a miles de personas a transformar su cuerpo y su salud de forma real y sostenible. No soy una influencer más: soy profesional titulada y certificada IFBB.
               </p>
               <p className="text-sm text-dark/65 leading-relaxed mb-5">
-                Especializada en nutricion deportiva, patologias digestivas (SIBO, SOP, tiroides), adaptacion a intolerancias, embarazo y lactancia. Tambien preparo corredores desde 5K hasta ultramaratones.
+                Especializada en nutrición deportiva, patologías digestivas (SIBO, SOP, tiroides), adaptación a intolerancias, embarazo y lactancia. También preparo corredores desde 5K hasta ultramaratones.
               </p>
 
               <div className="grid grid-cols-3 gap-3 mb-5">
                 {[
-                  { num: '+13', label: 'Anos experiencia' },
+                  { num: '+13', label: 'Años experiencia' },
                   { num: '+4K', label: 'Cambios reales' },
                   { num: '400K+', label: 'Seguidores' },
                 ].map(s => (
@@ -724,10 +724,10 @@ function About() {
 
               <div className="space-y-2">
                 {[
-                  'Nutricion deportiva y clinica',
+                  'Nutrición deportiva y clínica',
                   'Entrenamiento personalizado (gym, casa, running)',
-                  'Acompanamiento diario via chat',
-                  'Online desde Espana para todo el mundo',
+                  'Acompañamiento diario vía chat',
+                  'Online desde España para todo el mundo',
                 ].map(t => (
                   <div key={t} className="flex items-center gap-2.5">
                     <CheckCircle size={14} className="text-primary shrink-0" />
@@ -744,7 +744,7 @@ function About() {
 }
 
 /* ============================== MI MÉTODO ============================== */
-const ELY_METODO = ['/ely-metodo-1.jpg', '/ely-metodo-2.webp'];
+const ELY_METODO = ['/ely-metodo-1.webp', '/ely-metodo-2.webp'];
 
 function MiMetodo() {
   const [current, setCurrent] = useState(0);
@@ -800,17 +800,17 @@ function FinalCTA() {
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
           <motion.p variants={fadeUp} className="text-primary text-xs font-bold uppercase tracking-widest mb-4">El momento es ahora</motion.p>
           <motion.h2 variants={fadeUp} className="text-3xl sm:text-5xl font-black uppercase text-white leading-tight mb-4">
-            Tu futuro yo<br /><span className="text-gradient">te lo agradecera.</span>
+            Tu futuro yo<br /><span className="text-gradient">te lo agradecerá.</span>
           </motion.h2>
-          <motion.p variants={fadeUp} className="text-white/40 text-sm sm:text-base mb-10 max-w-lg mx-auto">
-            Cada dia que pospones es un dia menos para sentirte bien. No necesitas estar lista: solo necesitas empezar.
+          <motion.p variants={fadeUp} className="text-white/40 text-sm sm:text-base mb-6 sm:mb-10 max-w-lg mx-auto">
+            Cada día que pospones es un día menos para sentirte bien. No necesitas estar lista: solo necesitas empezar.
           </motion.p>
           <motion.div variants={fadeUp} className="flex flex-col sm:flex-row justify-center gap-3">
-            <a href="https://calendar.app.google/LINK-VIDEOLLAMADA" target="_blank" rel="noopener noreferrer" className="shine-sweep group inline-flex items-center justify-center gap-2.5 bg-primary hover:bg-primary-dark text-white px-10 py-5 rounded-full font-bold text-sm uppercase tracking-wide transition-all shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/50 hover:scale-[1.02]">
+            <a href="https://calendar.app.google/LINK-VIDEOLLAMADA" target="_blank" rel="noopener noreferrer" className="shine-sweep group inline-flex items-center justify-center gap-2 sm:gap-2.5 bg-primary hover:bg-primary-dark text-white px-5 sm:px-10 py-4 sm:py-5 rounded-full font-bold text-xs sm:text-sm uppercase tracking-wide transition-all shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/50 hover:scale-[1.02]">
               <Crown size={16} /> COACHING — Videollamada gratis <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
             </a>
-            <a href="https://www.bejao.fit/checkout?tribeId=381&typeProduct=DIT" target="_blank" rel="noopener noreferrer" className="group inline-flex items-center justify-center gap-2.5 bg-white/15 backdrop-blur-sm border border-white/25 text-white px-10 py-5 rounded-full font-bold text-sm uppercase tracking-wide hover:bg-white/25 transition-all">
-              <Download size={16} /> PLAN ANUAL — 59&#8364;/ano <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+            <a href="https://www.bejao.fit/checkout?tribeId=381&typeProduct=DIT" target="_blank" rel="noopener noreferrer" className="group inline-flex items-center justify-center gap-2 sm:gap-2.5 bg-white/15 backdrop-blur-sm border border-white/25 text-white px-5 sm:px-10 py-4 sm:py-5 rounded-full font-bold text-xs sm:text-sm uppercase tracking-wide hover:bg-white/25 transition-all">
+              <Download size={16} /> PLAN ANUAL — 59&#8364;/año <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
             </a>
           </motion.div>
         </motion.div>
@@ -821,12 +821,12 @@ function FinalCTA() {
 
 /* ============================== PROZIS ============================== */
 const PROZIS_PRODUCTS = [
-  { name: 'Creatina Micropure', desc: 'Rendimiento, recuperacion y foco.', img: 'https://static.sscontent.com/thumb/1000/1000/products/124/v1698746_prozis_creatine-micronpure-300g_newin.webp', url: 'https://www.prozis.com/es/es/prozis/creatina-micronpure-300-g/?ot=AFFES2777&utm_source=prz_affiliate&utm_medium=referral&utm_campaign=el_es_ib_pr_af&utm_content=product' },
-  { name: 'Colageno PeptiPlus', desc: 'Articulaciones, piel y recuperacion.', img: 'https://static.sscontent.com/thumb/1000/1000/products/124/v1708709_prozis_peptiplus-hydrolyzed-collagen-protein-900g_newin.webp', url: 'https://www.prozis.com/es/es/?ot=AFFES2777&utm_source=prz_affiliate&utm_medium=referral&utm_campaign=el_es_ib_pr_af' },
-  { name: 'Ely x Prozis', desc: 'Mi seleccion favorita.', img: 'https://static.wixstatic.com/media/daf224_4c28ae1a03584cb6aea95c0817480351~mv2.png/v1/fill/w_358,h_478,q_90,enc_avif,quality_auto/daf224_4c28ae1a03584cb6aea95c0817480351~mv2.png', url: 'https://www.prozis.com/es/es/?ot=AFFES2777&utm_source=prz_affiliate&utm_medium=referral&utm_campaign=el_es_ib_pr_af' },
+  { name: 'Creatina Micropure', desc: 'Rendimiento, recuperación y foco.', img: 'https://static.sscontent.com/thumb/1000/1000/products/124/v1698746_prozis_creatine-micronpure-300g_newin.webp', url: 'https://www.prozis.com/es/es/prozis/creatina-micronpure-300-g/?ot=AFFES2777&utm_source=prz_affiliate&utm_medium=referral&utm_campaign=el_es_ib_pr_af&utm_content=product' },
+  { name: 'Colageno PeptiPlus', desc: 'Articulaciones, piel y recuperación.', img: 'https://static.sscontent.com/thumb/1000/1000/products/124/v1708709_prozis_peptiplus-hydrolyzed-collagen-protein-900g_newin.webp', url: 'https://www.prozis.com/es/es/?ot=AFFES2777&utm_source=prz_affiliate&utm_medium=referral&utm_campaign=el_es_ib_pr_af' },
+  { name: 'Ely x Prozis', desc: 'Mi selección favorita.', img: 'https://static.wixstatic.com/media/daf224_4c28ae1a03584cb6aea95c0817480351~mv2.png/v1/fill/w_358,h_478,q_90,enc_avif,quality_auto/daf224_4c28ae1a03584cb6aea95c0817480351~mv2.png', url: 'https://www.prozis.com/es/es/?ot=AFFES2777&utm_source=prz_affiliate&utm_medium=referral&utm_campaign=el_es_ib_pr_af' },
   { name: 'Duffle Backpack 35L', desc: 'Mochila deportiva ideal gym.', img: 'https://static.sscontent.com/thumb/500/500/products/124/v1499995_prozis_core-workout-duffle-backpack-35l-black_single-size_black_other2.webp', url: 'https://www.prozis.com/es/es/?ot=AFFES2777&utm_source=prz_affiliate&utm_medium=referral&utm_campaign=el_es_ib_pr_af' },
-  { name: 'Guantes Minimalist', desc: 'Agarre y proteccion.', img: 'https://static.sscontent.com/thumb/1000/1000/products/124/v1498172_prozis_minimalist-padded-gloves-black_s_black_newin.webp', url: 'https://www.prozis.com/es/es/?ot=AFFES2777&utm_source=prz_affiliate&utm_medium=referral&utm_campaign=el_es_ib_pr_af' },
-  { name: 'Suplementacion Top', desc: 'Omega 3, magnesio, vitaminas.', img: IMG.lifestyle1, url: 'https://www.prozis.com/es/es/?ot=AFFES2777&utm_source=prz_affiliate&utm_medium=referral&utm_campaign=el_es_ib_pr_af' },
+  { name: 'Guantes Minimalist', desc: 'Agarre y protección.', img: 'https://static.sscontent.com/thumb/1000/1000/products/124/v1498172_prozis_minimalist-padded-gloves-black_s_black_newin.webp', url: 'https://www.prozis.com/es/es/?ot=AFFES2777&utm_source=prz_affiliate&utm_medium=referral&utm_campaign=el_es_ib_pr_af' },
+  { name: 'Suplementación Top', desc: 'Omega 3, magnesio, vitaminas.', img: IMG.lifestyle1, url: 'https://www.prozis.com/es/es/?ot=AFFES2777&utm_source=prz_affiliate&utm_medium=referral&utm_campaign=el_es_ib_pr_af' },
 ];
 
 function Prozis() {
@@ -838,9 +838,9 @@ function Prozis() {
   return (
     <section id="prozis" className="scroll-mt-16 py-12 sm:py-16 bg-cream relative overflow-hidden">
       <div className="absolute inset-0 flex flex-col items-center justify-between py-8 pointer-events-none select-none opacity-[0.06]">
-        <img src="/prozis-logo.png" alt="" className="w-[300px] sm:w-[450px] -rotate-12" />
-        <img src="/prozis-logo.png" alt="" className="w-[350px] sm:w-[500px] rotate-6" />
-        <img src="/prozis-logo.png" alt="" className="w-[300px] sm:w-[450px] -rotate-12" />
+        <img src="/prozis-logo.png" alt="" className="w-[200px] sm:w-[450px] -rotate-12" />
+        <img src="/prozis-logo.png" alt="" className="w-[250px] sm:w-[500px] rotate-6" />
+        <img src="/prozis-logo.png" alt="" className="w-[200px] sm:w-[450px] -rotate-12" />
       </div>
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="mb-6">
@@ -848,19 +848,19 @@ function Prozis() {
             <div className="absolute inset-0 bg-gradient-to-r from-primary/15 via-transparent to-primary/8 pointer-events-none" />
             <div className="relative flex flex-col sm:flex-row items-center justify-between gap-4">
               <div className="text-center sm:text-left">
-                <h2 className="text-2xl sm:text-3xl font-black uppercase text-white flex items-center gap-3 flex-wrap justify-center sm:justify-start"><span className="text-gradient">10% dto</span> en <img src="/prozis-logo.png" alt="Prozis" className="h-6 sm:h-7 invert" /></h2>
-                <p className="text-white/40 text-xs sm:text-sm mt-1">Suplementos, ropa y accesorios con mi codigo exclusivo</p>
+                <h2 className="text-xl sm:text-3xl font-black uppercase text-white flex items-center gap-2 sm:gap-3 flex-wrap justify-center sm:justify-start"><span className="text-gradient">10% dto</span> en <img src="/prozis-logo.png" alt="Prozis" className="h-6 sm:h-7 invert" /></h2>
+                <p className="text-white/40 text-xs sm:text-sm mt-1">Suplementos, ropa y accesorios con mi código exclusivo</p>
               </div>
-              <div className="flex items-center gap-3 shrink-0">
+              <div className="flex flex-col xs:flex-row items-center gap-3 shrink-0 w-full sm:w-auto">
                 <button onClick={copyCode} className={`bg-white/10 border-2 border-dashed border-primary/50 rounded-xl px-5 py-3 text-center hover:bg-white/15 transition-all ${copied ? 'copy-pop' : ''}`}>
-                  <p className="text-[9px] font-bold uppercase tracking-widest text-white/35 mb-0.5">Codigo</p>
+                  <p className="text-[9px] font-bold uppercase tracking-widest text-white/35 mb-0.5">Código</p>
                   <div className="flex items-center gap-2">
-                    <span className="text-3xl font-black text-primary tracking-wider">ELY</span>
+                    <span className="text-2xl sm:text-3xl font-black text-primary tracking-wider">ELY</span>
                     {copied ? <CheckCircle size={14} className="text-[#34d399]" /> : <Copy size={12} className="text-white/25" />}
                   </div>
-                  <p className="text-[8px] text-white/20 mt-0.5">{copied ? 'Copiado!' : 'Click para copiar'}</p>
+                  <p className="text-[8px] text-white/20 mt-0.5">{copied ? '¡Copiado!' : 'Click para copiar'}</p>
                 </button>
-                <a href="https://www.prozis.com/es/es/?ot=AFFES2777&utm_source=prz_affiliate&utm_medium=referral&utm_campaign=el_es_ib_pr_af" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white px-6 py-3.5 rounded-full font-bold text-sm uppercase transition-all group">
+                <a href="https://www.prozis.com/es/es/?ot=AFFES2777&utm_source=prz_affiliate&utm_medium=referral&utm_campaign=el_es_ib_pr_af" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white px-5 sm:px-6 py-3 sm:py-3.5 rounded-full font-bold text-xs sm:text-sm uppercase transition-all group">
                   Ir a Prozis <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform" />
                 </a>
               </div>
@@ -916,16 +916,16 @@ function Prozis() {
 function FAQ() {
   const [open, setOpen] = useState(null);
   const faqs = [
-    { q: '¿Coaching vs APP, cual es para mi?', a: 'Coaching = seguimiento 1:1 conmigo, chat diario, ajustes constantes. Ideal si quieres resultados rapidos y personalizados. La APP = plan economico con entrenos, recetas y comunidad a tu ritmo (59 euros/ano).' },
-    { q: '¿Cuando empiezo a ver resultados?', a: 'La mayoria nota cambios en 2-4 semanas: menos hinchazon, mas energia. Resultados visibles significativos entre 2-3 meses.' },
-    { q: '¿Hay permanencia?', a: 'No. El coaching no tiene permanencia, puedes cancelar cuando quieras. La APP es pago unico anual.' },
-    { q: '¿Como empiezo?', a: 'Completa el formulario de contacto justo abajo o agenda una videollamada gratuita si te interesa el coaching 1 a 1. Indicame que plan te interesa y tu objetivo. Te respondo en menos de 24 horas.' },
+    { q: '¿Coaching vs APP, cuál es para mí?', a: 'Coaching = seguimiento 1:1 conmigo, chat diario, ajustes constantes. Ideal si quieres resultados rápidos y personalizados. La APP = plan económico con entrenos, recetas y comunidad a tu ritmo (59 euros/año).' },
+    { q: '¿Cuándo empiezo a ver resultados?', a: 'La mayoría nota cambios en 2-4 semanas: menos hinchazón, más energía. Resultados visibles significativos entre 2-3 meses.' },
+    { q: '¿Hay permanencia?', a: 'No. El coaching no tiene permanencia, puedes cancelar cuando quieras. La APP es pago único anual.' },
+    { q: '¿Cómo empiezo?', a: 'Completa el formulario de contacto justo abajo o agenda una videollamada gratuita si te interesa el coaching 1 a 1. Indícame qué plan te interesa y tu objetivo. Te respondo en menos de 24 horas.' },
   ];
 
   return (
     <section className="py-16 sm:py-24 relative overflow-hidden">
       <div className="absolute inset-0">
-        <img src="/faq-bg.webp" alt="" className="w-full h-full object-cover object-right" />
+        <img src="/faq-bg.webp" loading="lazy" alt="" className="w-full h-full object-cover object-right" />
         <div className="absolute inset-0 bg-white/70" />
       </div>
       <div className="relative z-10 max-w-xl mx-auto px-4">
@@ -977,13 +977,13 @@ function Contact() {
   return (
     <section id="contacto" className="scroll-mt-16 py-16 sm:py-20 relative overflow-hidden">
       <div className="absolute inset-0">
-        <img src="/contact-bg.jpg" alt="" className="w-full h-full object-cover blur-[6px] scale-105" />
+        <img src="/contact-bg.webp" loading="lazy" alt="" className="w-full h-full object-cover blur-[6px] scale-105" />
         <div className="absolute inset-0 bg-cream/80" />
       </div>
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="text-center mb-8">
           <motion.h2 variants={fadeUp} className="text-2xl sm:text-3xl font-black uppercase text-dark">Empieza tu <span className="text-gradient">cambio</span></motion.h2>
-          <motion.p variants={fadeUp} className="text-dark/50 text-sm mt-2">Escribeme y te respondo en menos de 24h. Sin compromiso.</motion.p>
+          <motion.p variants={fadeUp} className="text-dark/50 text-sm mt-2">Escríbeme y te respondo en menos de 24h. Sin compromiso.</motion.p>
 
           <motion.div variants={fadeUp} className="flex items-center justify-center gap-3 mt-4">
             <a href="mailto:contacta@elyfitness.es" aria-label="Email" className="w-10 h-10 rounded-full bg-dark flex items-center justify-center text-primary hover:bg-dark-soft transition-all">
@@ -1004,7 +1004,7 @@ function Contact() {
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="max-w-4xl mx-auto bg-white rounded-3xl shadow-xl border border-dark/8 overflow-hidden grid lg:grid-cols-2">
           {/* Foto de Ely — izquierda en desktop, oculta en mobile */}
           <div className="hidden lg:block relative">
-            <img src="/ely-contact.webp" alt="Ely Fitness" className="absolute inset-0 w-full h-full object-cover object-top" />
+            <img src="/ely-contact.webp" loading="lazy" alt="Ely Fitness" className="absolute inset-0 w-full h-full object-cover object-top" />
           </div>
 
           {/* Formulario — derecha en desktop, full en mobile */}
@@ -1016,12 +1016,12 @@ function Contact() {
                     <Check size={28} className="text-green-500" />
                   </div>
                   <h3 className="text-2xl font-black mb-2">¡Mensaje enviado!</h3>
-                  <p className="text-dark/50 text-sm">Te respondere en menos de 24 horas.</p>
+                  <p className="text-dark/50 text-sm">Te responderé en menos de 24 horas.</p>
                 </motion.div>
               ) : (
                 <motion.form key="form" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="p-6 sm:p-8 space-y-4 text-left" onSubmit={handleSubmit}>
                   <div className="flex flex-wrap gap-2 mb-2">
-                    {['Respuesta < 24h', 'Sin compromiso', '+4.000 confian en Ely'].map(t => (
+                    {['Respuesta < 24h', 'Sin compromiso', '+4.000 confían en Ely'].map(t => (
                       <span key={t} className="inline-flex items-center gap-1 text-[10px] font-bold text-dark/60 bg-primary/10 px-2.5 py-1 rounded-full">
                         <Check size={8} className="text-primary" /> {t}
                       </span>
@@ -1032,19 +1032,19 @@ function Contact() {
                     <motion.input variants={fadeUp} name="email" type="email" placeholder="Tu e-mail" required className="bg-cream border border-dark/10 rounded-xl px-4 py-3.5 text-sm text-dark focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 w-full transition-all placeholder:text-dark/35" />
                   </div>
                   <motion.select variants={fadeUp} name="plan" className="bg-cream border border-dark/10 rounded-xl px-4 py-3.5 text-sm text-dark/60 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 w-full transition-all">
-                    <option>¿Que plan te interesa?</option>
+                    <option>¿Qué plan te interesa?</option>
                     <option>Coaching — Premium Plus</option>
                     <option>Coaching — Premium Running</option>
-                    <option>Coaching — Nutricion</option>
+                    <option>Coaching — Nutrición</option>
                     <option>Coaching — Training</option>
-                    <option>ElyFitness APP (59&#8364;/ano)</option>
-                    <option>Pack Duo (69&#8364;/ano)</option>
-                    <option>No se cual elegir — ayudame</option>
+                    <option>ElyFitness APP (59&#8364;/año)</option>
+                    <option>Pack Duo (69&#8364;/año)</option>
+                    <option>No sé cuál elegir — ayúdame</option>
                     <option>Otra consulta</option>
                   </motion.select>
-                  <motion.textarea variants={fadeUp} name="message" rows={3} placeholder="Cuentame tu objetivo..." className="bg-cream border border-dark/10 rounded-xl px-4 py-3.5 text-sm text-dark focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 w-full resize-none transition-all placeholder:text-dark/35" />
+                  <motion.textarea variants={fadeUp} name="message" rows={3} placeholder="Cuéntame tu objetivo..." className="bg-cream border border-dark/10 rounded-xl px-4 py-3.5 text-sm text-dark focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 w-full resize-none transition-all placeholder:text-dark/35" />
                   <motion.div variants={fadeUp} className="text-center pt-1">
-                    <button type="submit" disabled={sending} className="shine-sweep group bg-primary hover:bg-primary-dark text-white px-12 py-4 rounded-full font-bold text-sm uppercase inline-flex items-center gap-2 transition-all shadow-lg shadow-primary/25 disabled:opacity-60 disabled:cursor-not-allowed">
+                    <button type="submit" disabled={sending} className="shine-sweep group bg-primary hover:bg-primary-dark text-white px-8 sm:px-12 py-3.5 sm:py-4 rounded-full font-bold text-xs sm:text-sm uppercase inline-flex items-center gap-2 transition-all shadow-lg shadow-primary/25 disabled:opacity-60 disabled:cursor-not-allowed">
                       <Send size={14} /> {sending ? 'Enviando...' : 'Enviar mensaje'}
                     </button>
                   </motion.div>
@@ -1071,7 +1071,7 @@ function Footer() {
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="text-center sm:text-left">
               <h3 className="text-lg font-black text-white flex items-center gap-2 justify-center sm:justify-start"><Mail size={16} className="text-primary" /> Newsletter de Ely</h3>
-              <p className="text-white/60 text-sm mt-1">Consejos de nutricion y entreno cada semana. Gratis.</p>
+              <p className="text-white/60 text-sm mt-1">Consejos de nutrición y entreno cada semana. Gratis.</p>
             </div>
             <form onSubmit={handleSub} className="flex gap-2 w-full sm:w-auto">
               {sub ? (
@@ -1091,8 +1091,8 @@ function Footer() {
             <div className="mb-3">
               <svg className="h-7 w-auto [&_path]:fill-white/80" preserveAspectRatio="xMidYMid meet" viewBox="58.667 144.7 383.471 210.7" xmlns="http://www.w3.org/2000/svg"><g><path d="M58.667 312.597v-123h49.3v23.8h-24.2v23.9h23.2v23.2h-23.2v28.2h25.8v23.9h-50.9z"/><path d="M117.666 312.597v-123h49.3v23.9h-24.6v19.6h23.2v23.7h-23.2v56h-24.8v-.2z"/><path d="M106.8 144.7v24.9h-1.1v-24.9h1.1z"/><path d="M194.3 215.9c.4-1.8-.1-3.4-2.5-3.6-1-.1-1.9.2-2.8.4-1.8.4-3.4 1.3-4.7 2.6-.6.4-1 .9-1.7 1.4-.1-.3-.1-.4-.2-.6-.3-1.5-1-3-2.1-4.2-.4-.6-1-1-1.7-1.5-.2-.2-.7-.2-.9-.2-1 .3-1.8.9-2.1 1.9-.2.7-.4 1.4-.4 2.1-.1 3.1.1 6.1 1.5 8.9.7 1.2 1.2 2.4 1.8 3.6s1.2 2.3 2.1 3.4c.8 1 1.4 1.1 2.3.2.9-.8 1.7-1.7 2.5-2.5 2-2 3.6-4.1 5.3-6.4.9-1.2 1.7-2.5 2.5-3.7.5-.6 1-1.1 1.1-1.8z"/><path d="M227.258 269.115v1.8h-13.3v-19.8h13.1v1.6h-11.1v7.2h9.7v1.6h-9.7v7.5h11.3z"/><path d="M250.826 270.915v-19.8h2v18h11.5v1.8h-13.5z"/><path d="m287.063 251.115 6.4 10.6 6.6-10.6h2.1l-7.7 12.4v7.4h-2v-7.4l-7.7-12.3h2.3v-.1z"/><path d="M214.021 313.415v-19.8h12.9v1.6h-11v7.2h9.3v1.6h-9.3v9.2h-2v.2z"/><path d="M250.234 313.415v-19.8h2v19.8h-2z"/><path d="M290.9 295.415h-7v18h-2v-18h-7v-1.6H291v1.6z"/><path d="M315.78 297.415v16.2h-2v-20h1.5l13.1 16.4v-16.4h2v19.8h-1.6l-13-16z"/><path d="M368.427 311.615v1.8h-13.3v-19.8h13.1v1.6h-11.1v7.2h9.7v1.6h-9.7v7.5h11.3z"/><path d="M403.596 297.415c-.5-.7-1.3-1.1-2.3-1.5-1-.3-2-.7-3.1-.7-1.8 0-2.9.3-3.8 1-.8.7-1.1 1.6-1.1 2.6 0 .7.2 1.1.3 1.5.2.3.5.7 1 1 .5.3 1 .5 1.6.7.7.2 1.5.3 2.5.7 1 .2 2 .5 2.8.8s1.6.7 2.1 1c.7.3 1 1 1.3 1.5.3.7.5 1.3.5 2.3 0 1-.2 1.6-.5 2.5-.3.7-.8 1.1-1.5 1.6s-1.5.8-2.3 1c-.8.2-1.8.3-2.8.3-3.1 0-5.7-1-8-2.9l1-1.6c.3.3.8.8 1.3 1.1s1 .7 1.6.8c.7.3 1.3.5 2 .7.7.2 1.5.2 2.1.2 1.6 0 2.8-.3 3.6-.8.8-.5 1.3-1.5 1.3-2.6 0-.7-.2-1.1-.3-1.5-.3-.5-.7-.8-1.1-1.1-.5-.3-1.1-.7-1.8-.8-.7-.2-1.6-.5-2.6-.7-1-.3-2-.5-2.8-.8-.8-.3-1.5-.5-2-1-.5-.3-1-.8-1.1-1.5-.3-.5-.3-1.1-.3-2 0-1 .2-1.6.5-2.5.3-.7.8-1.3 1.5-1.8s1.3-.8 2.3-1.1c.8-.3 1.8-.3 2.9-.3 1.3 0 2.5.2 3.4.7 1 .3 2 1 2.8 1.6l-1 1.6z"/><path d="M440.338 297.415c-.5-.7-1.3-1.1-2.3-1.5-1-.3-2-.7-3.1-.7-1.8 0-2.9.3-3.8 1-.8.7-1.1 1.6-1.1 2.6 0 .7.2 1.1.3 1.5.2.3.5.7 1 1 .5.3 1 .5 1.6.7.7.2 1.5.3 2.5.7 1 .2 2 .5 2.8.8s1.6.7 2.1 1c.7.3 1 1 1.3 1.5.3.7.5 1.3.5 2.3 0 1-.2 1.6-.5 2.5-.3.7-.8 1.1-1.5 1.6s-1.5.8-2.3 1c-.8.2-1.8.3-2.8.3-3.1 0-5.7-1-8-2.9l1-1.6c.3.3.8.8 1.3 1.1s1 .7 1.6.8c.7.3 1.3.5 2 .7.7.2 1.5.2 2.1.2 1.6 0 2.8-.3 3.6-.8.8-.5 1.3-1.5 1.3-2.6 0-.7-.2-1.1-.3-1.5-.3-.5-.7-.8-1.1-1.1-.5-.3-1.1-.7-1.8-.8-.7-.2-1.6-.5-2.6-.7-1-.3-2-.5-2.8-.8-.8-.3-1.5-.5-2-1-.5-.3-1-.8-1.1-1.5-.3-.5-.3-1.1-.3-2 0-1 .2-1.6.5-2.5.3-.7.8-1.3 1.5-1.8s1.3-.8 2.3-1.1c.8-.3 1.8-.3 2.9-.3 1.3 0 2.5.2 3.4.7 1 .3 2 1 2.8 1.6l-1 1.6z"/><path d="M106.8 330.5v24.9h-1.1v-24.9h1.1z"/></g></svg>
             </div>
-            <p className="text-white/35 text-[11px] leading-relaxed max-w-[200px]">Dietista y Entrenadora Personal IFBB. +13 anos ayudando online.</p>
-            <div className="flex items-center gap-1.5 text-white/25 text-[10px] mt-2"><MapPin size={10} /> Espana - Online</div>
+            <p className="text-white/35 text-[11px] leading-relaxed max-w-[200px]">Dietista y Entrenadora Personal IFBB. +13 años ayudando online.</p>
+            <div className="flex items-center gap-1.5 text-white/25 text-[10px] mt-2"><MapPin size={10} /> España - Online</div>
           </div>
           <div>
             <p className="text-[9px] font-bold uppercase text-white/40 mb-3 tracking-widest">Links</p>
@@ -1159,7 +1159,7 @@ function ChatWidget({ onNewsletter }) {
   ];
 
   return (
-    <div className="fixed bottom-5 right-5 z-40">
+    <div className="fixed bottom-[4.5rem] sm:bottom-5 right-4 sm:right-5 z-40">
       <AnimatePresence>
         {open && (
           <motion.div initial={{ opacity: 0, y: 8, scale: 0.95 }} animate={{ opacity: 1, y: 0, scale: 1 }} exit={{ opacity: 0, y: 8, scale: 0.95 }} className="absolute bottom-16 right-0 w-72 bg-white rounded-2xl shadow-2xl border border-dark/10 overflow-hidden mb-2">
@@ -1263,11 +1263,11 @@ function NewsletterModal({ forceOpen, onClose }) {
                         </div>
                         <span className="text-[10px] font-bold uppercase tracking-widest text-primary-dark">Exclusivo</span>
                       </div>
-                      <h3 className="text-2xl sm:text-3xl font-black leading-tight mb-4 text-dark">
-                        Consejos reales para tu transformacion
+                      <h3 className="text-xl sm:text-3xl font-black leading-tight mb-4 text-dark">
+                        Consejos reales para tu transformación
                       </h3>
                       <p className="text-sm text-dark/45 mb-6 leading-relaxed">
-                        Apuntate a mi newsletter: alimentacion, entrenamiento y autocuidado. Gratis.
+                        Apúntate a mi newsletter: alimentación, entrenamiento y autocuidado. Gratis.
                       </p>
                       <form onSubmit={handleSubscribe} className="space-y-3">
                         <input name="nlname" type="text" placeholder="Tu nombre" required className="w-full bg-white border border-dark/8 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-primary/30 placeholder:text-dark/35" />
