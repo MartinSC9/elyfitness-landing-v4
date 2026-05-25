@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 
-export default function MagneticButton({ children, href, className = '', strength = 0.25 }) {
+export default function MagneticButton({ children, href, className = '', strength = 0.25, onClick }) {
   const outerRef = useRef(null);
   const innerRef = useRef(null);
   const [isTouchDevice] = useState(() =>
@@ -64,13 +64,13 @@ export default function MagneticButton({ children, href, className = '', strengt
   }, [strength, isTouchDevice]);
 
   if (isTouchDevice) {
-    return <a href={href} className={className}>{children}</a>;
+    return <a href={href} onClick={onClick} className={className}>{children}</a>;
   }
 
   return (
     <span ref={outerRef} style={{ display: 'inline-block' }}>
       <span ref={innerRef} style={{ display: 'inline-block', willChange: 'transform' }}>
-        <a href={href} className={className}>{children}</a>
+        <a href={href} onClick={onClick} className={className}>{children}</a>
       </span>
     </span>
   );
