@@ -409,8 +409,9 @@ function ChooseYourPath() {
   return (
     <section id="plan-ultra" className="py-16 sm:py-24 scroll-mt-16 relative overflow-hidden">
       <div className="absolute inset-0">
-        <img src="/choose-path-bg.webp" alt="" loading="lazy" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-cream/85" />
+        <img src="/choose-path-bg.webp" alt="" loading="lazy" className="w-full h-full object-cover saturate-[0.3] sepia-[0.15]" />
+        <div className="absolute inset-0 bg-cream/92" />
+        <div className="absolute inset-0 bg-primary/[0.03]" />
       </div>
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="text-center mb-14">
@@ -509,12 +510,13 @@ function QuickComparison() {
     <section ref={sectionRef} className="py-12 sm:py-16 relative overflow-hidden">
       <div className="absolute inset-0 flex">
         <div className="w-1/2 h-full relative">
-          <motion.img src="/comparison-training.webp" alt="" className="w-full h-full object-cover origin-center" style={{ scale: bgScale }} />
+          <motion.img src="/comparison-training.webp" alt="" className="w-full h-full object-cover origin-center saturate-[0.3] sepia-[0.15]" style={{ scale: bgScale }} />
         </div>
         <div className="w-1/2 h-full relative">
-          <motion.img src="/comparison-bg.webp" alt="" className="w-full h-full object-cover origin-center" style={{ scale: bgScale }} />
+          <motion.img src="/comparison-bg.webp" alt="" className="w-full h-full object-cover origin-center saturate-[0.3] sepia-[0.15]" style={{ scale: bgScale }} />
         </div>
-        <div className="absolute inset-0 bg-white/80" />
+        <div className="absolute inset-0 bg-white/90" />
+        <div className="absolute inset-0 bg-primary/[0.03]" />
       </div>
       <div className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="text-center mb-8">
@@ -695,7 +697,7 @@ function About() {
               </div>
               <div className="pt-6">
                 <div className="rounded-2xl overflow-hidden shadow-lg">
-                  <img src="/ely-about-2.webp" loading="lazy" alt="Ely fitness" className="w-full h-72 sm:h-80 object-cover" />
+                  <img src="/ely-about-2.webp" loading="lazy" alt="Ely fitness" className="w-full h-[22rem] sm:h-[28rem] object-cover" />
                 </div>
               </div>
             </motion.div>
@@ -745,6 +747,22 @@ function About() {
 
 /* ============================== MI MÉTODO ============================== */
 const ELY_METODO = ['/ely-metodo-1.webp', '/ely-metodo-2.webp'];
+const TICKER_ITEMS = ['NUTRICIÓN DEPORTIVA', 'PERSONAL TRAINER IFBB', 'PLANES ULTRA', 'MÉTODO HÍBRIDO', '+ 13 AÑOS EXPERIENCIA', 'APP EXCLUSIVA', 'RESULTADOS REALES', 'COMUNIDAD ACTIVA'];
+
+function TrustStrip() {
+  const repeated = [...TICKER_ITEMS, ...TICKER_ITEMS, ...TICKER_ITEMS];
+  return (
+    <div className="bg-dark text-white py-3.5 relative overflow-hidden">
+      <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-[#323130] to-transparent z-10 pointer-events-none" />
+      <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-[#323130] to-transparent z-10 pointer-events-none" />
+      <div className="animate-marquee-ticker flex whitespace-nowrap">
+        {repeated.map((t, i) => (
+          <span key={i} className="text-xs sm:text-sm font-semibold uppercase mx-6 tracking-wider text-white/70">{t} <span className="text-primary mx-4">·</span></span>
+        ))}
+      </div>
+    </div>
+  );
+}
 
 function MiMetodo() {
   const [current, setCurrent] = useState(0);
@@ -755,34 +773,38 @@ function MiMetodo() {
   }, []);
 
   return (
-    <section className="relative h-[40vh] sm:h-[50vh] overflow-hidden">
-      {ELY_METODO.map((src, i) => (
-        <img key={i} src={src} alt="Ely Fitness" className="absolute inset-0 w-full h-full object-cover object-top transition-opacity duration-[1.5s] ease-in-out" style={{ opacity: current === i ? 1 : 0 }} />
-      ))}
-      <div className="absolute inset-0 bg-gradient-to-r from-dark/60 via-dark/25 to-transparent" />
-      <div className="absolute inset-0 bg-gradient-to-t from-dark/80 via-transparent to-transparent" />
-      <div className="relative z-10 h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center">
-        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="max-w-xl">
-          <motion.p variants={fadeUp} className="text-primary font-bold text-xs uppercase tracking-widest mb-3">Mi método</motion.p>
-          <motion.h2 variants={fadeUp} className="text-[1.6rem] sm:text-5xl font-black uppercase text-white leading-[0.9] mb-4">
-            Tú pones el objetivo,<br />yo te guío en<br /><span className="text-primary">el camino</span>
-          </motion.h2>
-          <motion.p variants={fadeUp} className="text-white/55 text-sm sm:text-base mb-6 max-w-md">
-            Has puesto esfuerzo pero no ves resultados. Tu plan exclusivo te ayudará a lograr tus objetivos encontrando el equilibrio entre tu vida social, laboral y la salud.
-          </motion.p>
-          <motion.div variants={fadeUp}>
-            <a href="#planes" className="group inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white px-7 py-3.5 rounded-full font-bold text-sm uppercase tracking-wide transition-all shadow-lg shadow-primary/20">
-              Ver planes <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
-            </a>
-          </motion.div>
-        </motion.div>
-      </div>
+    <section className="relative overflow-hidden">
+      <TrustStrip />
 
-      {/* Slide indicators */}
-      <div className="absolute bottom-6 left-6 lg:left-12 z-10 flex gap-2">
-        {ELY_METODO.map((_, i) => (
-          <button key={i} onClick={() => setCurrent(i)} className={`h-1 rounded-full transition-all duration-500 ${current === i ? 'w-8 bg-primary' : 'w-2.5 bg-white/30 hover:bg-white/50'}`} />
+      <div className="relative h-[55vh] sm:h-[60vh] overflow-hidden">
+        {ELY_METODO.map((src, i) => (
+          <img key={i} src={src} alt="" className="absolute inset-0 w-full h-full object-cover object-top transition-opacity duration-[1.5s] ease-in-out" style={{ opacity: current === i ? 1 : 0 }} />
         ))}
+        <div className="absolute inset-0 bg-gradient-to-r from-dark/60 via-dark/25 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-dark/80 via-transparent to-transparent" />
+        <div className="relative z-10 h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="max-w-xl">
+            <motion.p variants={fadeUp} className="text-primary font-bold text-xs uppercase tracking-widest mb-3">Mi método</motion.p>
+            <motion.h2 variants={fadeUp} className="text-4xl sm:text-5xl font-black uppercase text-white leading-[0.9] mb-4">
+              Tú pones el objetivo,<br />yo te guío en<br /><span className="text-primary">el camino</span>
+            </motion.h2>
+            <motion.p variants={fadeUp} className="text-white/55 text-sm sm:text-base mb-6 max-w-md">
+              Has puesto esfuerzo pero no ves resultados. Tu plan exclusivo te ayudará a lograr tus objetivos encontrando el equilibrio entre tu vida social, laboral y la salud.
+            </motion.p>
+            <motion.div variants={fadeUp}>
+              <a href="#plan-ultra" className="group inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white px-7 py-3.5 rounded-full font-bold text-sm uppercase tracking-wide transition-all shadow-lg shadow-primary/20">
+                Ver planes <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+              </a>
+            </motion.div>
+          </motion.div>
+        </div>
+
+        {/* Slide indicators */}
+        <div className="absolute bottom-6 left-6 lg:left-12 z-10 flex gap-2">
+          {ELY_METODO.map((_, i) => (
+            <button key={i} onClick={() => setCurrent(i)} className={`h-1 rounded-full transition-all duration-500 ${current === i ? 'w-8 bg-primary' : 'w-2.5 bg-white/30 hover:bg-white/50'}`} />
+          ))}
+        </div>
       </div>
     </section>
   );
@@ -923,16 +945,12 @@ function FAQ() {
   ];
 
   return (
-    <section className="py-16 sm:py-24 relative overflow-hidden">
-      <div className="absolute inset-0">
-        <img src="/faq-bg.webp" loading="lazy" alt="" className="w-full h-full object-cover object-right" />
-        <div className="absolute inset-0 bg-white/70" />
-      </div>
-      <div className="relative z-10 max-w-xl mx-auto px-4">
+    <section className="py-16 sm:py-24 bg-cream">
+      <div className="max-w-xl mx-auto px-4">
         <h2 className="text-xl sm:text-2xl font-black uppercase text-center mb-8">Preguntas <span className="text-gradient">frecuentes</span></h2>
         <div className="space-y-2.5">
           {faqs.map((f, i) => (
-            <div key={i} className={`bg-cream rounded-xl overflow-hidden transition-all ${open === i ? 'shadow-md border-l-3 border-l-primary border border-primary/20' : 'border border-dark/8'}`}>
+            <div key={i} className={`bg-white rounded-xl overflow-hidden transition-all ${open === i ? 'shadow-md border-l-3 border-l-primary border border-primary/20' : 'border border-dark/8'}`}>
               <button onClick={() => setOpen(open === i ? null : i)} className="w-full flex items-center justify-between p-4 text-left gap-3">
                 <span className="font-bold text-sm text-dark">{f.q}</span>
                 <div className={`w-7 h-7 rounded-full flex items-center justify-center shrink-0 transition-all ${open === i ? 'bg-primary text-white rotate-180' : 'bg-white text-dark/30'}`}>
@@ -977,8 +995,9 @@ function Contact() {
   return (
     <section id="contacto" className="scroll-mt-16 py-16 sm:py-20 relative overflow-hidden">
       <div className="absolute inset-0">
-        <img src="/contact-bg.webp" loading="lazy" alt="" className="w-full h-full object-cover blur-[6px] scale-105" />
-        <div className="absolute inset-0 bg-cream/80" />
+        <img src="/contact-bg.webp" loading="lazy" alt="" className="w-full h-full object-cover blur-[6px] scale-105 saturate-[0.3] sepia-[0.15]" />
+        <div className="absolute inset-0 bg-cream/92" />
+        <div className="absolute inset-0 bg-primary/[0.03]" />
       </div>
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="text-center mb-8">
@@ -1341,7 +1360,6 @@ export default function Home() {
       <SocialProofBar />
       <WaveDivider from="#323130" to="#FCF3EF" />
       <ChooseYourPath />
-      <WaveDivider from="#FCF3EF" to="#ffffff" />
       <QuickComparison />
       <Transformations />
       <WaveDivider from="#ffffff" to="#FCF3EF" />
@@ -1350,9 +1368,8 @@ export default function Home() {
       <FinalCTA />
       <WaveDivider from="#323130" to="#FCF3EF" />
       <Prozis />
-      <WaveDivider from="#FCF3EF" to="#ffffff" />
+      <div className="gradient-line max-w-2xl mx-auto" />
       <FAQ />
-      <WaveDivider from="#ffffff" to="#FCF3EF" />
       <Contact />
       <WaveDivider from="#FCF3EF" to="#323130" />
       <Footer />

@@ -46,6 +46,13 @@ button, a, [role="button"], input[type="submit"], select { cursor: pointer; }
 @media (min-width: 640px) { .animate-marquee-cards { animation-duration: 30s; } }
 .animate-marquee-cards:hover { animation-play-state: paused; }
 
+/* Marquee ticker */
+@keyframes marqueeTicker {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-33.333%); }
+}
+.animate-marquee-ticker { animation: marqueeTicker 25s linear infinite; }
+
 /* Pulse glow for pricing */
 @keyframes pulseGlow {
   0%, 100% { box-shadow: 0 0 0 0 rgba(217, 163, 255, 0.5); }
