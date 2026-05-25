@@ -520,49 +520,96 @@ function QuickComparison() {
           <motion.h2 variants={fadeUp} className="text-2xl sm:text-3xl font-black uppercase">Coaching vs APP <span className="text-gradient">de un vistazo</span></motion.h2>
         </motion.div>
 
-        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="bg-white/95 backdrop-blur-md rounded-2xl border border-primary/15 overflow-hidden shadow-lg">
-          <div className="grid grid-cols-[0.8fr_1fr_1fr] sm:grid-cols-[1fr_1fr_1fr] border-b border-primary/20">
-            <div className="px-2 py-2 sm:px-5 sm:py-3" />
-            <div className="px-2 py-2 sm:px-5 sm:py-3 text-center border-l border-primary/12 bg-primary/10">
-              <div className="inline-flex items-center gap-2">
-                <Crown size={14} className="text-primary-dark" />
-                <span className="text-[11px] sm:text-sm font-black uppercase text-primary-dark">Coaching</span>
+        {/* Mobile: 2 cards */}
+        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="sm:hidden grid grid-cols-2 gap-3">
+          <div className="bg-white rounded-2xl border border-primary/20 overflow-hidden shadow-lg">
+            <div className="bg-primary/10 px-4 py-3 text-center">
+              <div className="inline-flex items-center gap-1.5">
+                <Crown size={13} className="text-primary-dark" />
+                <span className="text-xs font-black uppercase text-primary-dark">Coaching</span>
               </div>
             </div>
-            <div className="px-2 py-2 sm:px-5 sm:py-3 text-center border-l border-primary/12 bg-primary/5">
+            <div className="p-4 space-y-3">
+              {rows.map(r => (
+                <div key={r.label}>
+                  <p className="text-[9px] font-bold text-primary-dark uppercase tracking-wider mb-0.5">{r.label}</p>
+                  <p className="text-xs text-dark/70 leading-snug">{r.coaching}</p>
+                </div>
+              ))}
+            </div>
+            <div className="px-4 pb-4">
+              <a href="https://calendar.app.google/LINK-VIDEOLLAMADA" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-1.5 bg-primary hover:bg-primary-dark text-white py-2.5 rounded-full text-[11px] font-bold uppercase transition-all w-full">
+                <CalendarCheck size={12} /> Llamada gratis
+              </a>
+            </div>
+          </div>
+          <div className="bg-white rounded-2xl border border-dark/10 overflow-hidden shadow-lg">
+            <div className="bg-dark/5 px-4 py-3 text-center">
+              <div className="inline-flex items-center gap-1.5">
+                <Download size={13} className="text-dark/70" />
+                <span className="text-xs font-black uppercase text-dark/80">APP</span>
+              </div>
+            </div>
+            <div className="p-4 space-y-3">
+              {rows.map(r => (
+                <div key={r.label}>
+                  <p className="text-[9px] font-bold text-dark/50 uppercase tracking-wider mb-0.5">{r.label}</p>
+                  <p className="text-xs text-dark/70 leading-snug">{r.app}</p>
+                </div>
+              ))}
+            </div>
+            <div className="px-4 pb-4">
+              <a href="https://www.bejao.fit/checkout?tribeId=381&typeProduct=DIT" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-1.5 bg-dark hover:bg-dark-soft text-white py-2.5 rounded-full text-[11px] font-bold uppercase transition-all w-full">
+                59&#8364;/año <ArrowRight size={12} />
+              </a>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Desktop: table */}
+        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="hidden sm:block bg-white/95 backdrop-blur-md rounded-2xl border border-primary/15 overflow-hidden shadow-lg">
+          <div className="grid grid-cols-[1fr_1fr_1fr] border-b border-primary/20">
+            <div className="px-5 py-3" />
+            <div className="px-5 py-3 text-center border-l border-primary/12 bg-primary/10">
+              <div className="inline-flex items-center gap-2">
+                <Crown size={14} className="text-primary-dark" />
+                <span className="text-sm font-black uppercase text-primary-dark">Coaching</span>
+              </div>
+            </div>
+            <div className="px-5 py-3 text-center border-l border-primary/12 bg-primary/5">
               <div className="inline-flex items-center gap-2">
                 <Download size={14} className="text-dark/70" />
-                <span className="text-[11px] sm:text-sm font-black uppercase text-dark/80">APP</span>
+                <span className="text-sm font-black uppercase text-dark/80">APP</span>
               </div>
             </div>
           </div>
 
           {rows.map((r, i) => (
-            <div key={r.label} className={`grid grid-cols-[0.8fr_1fr_1fr] sm:grid-cols-[1fr_1fr_1fr] ${i < rows.length - 1 ? 'border-b border-primary/10' : ''}`}>
-              <div className="px-2 py-2 sm:px-5 sm:py-3 flex items-center">
-                <span className="text-[10px] sm:text-sm font-bold text-dark/70 uppercase tracking-wide">{r.label}</span>
+            <div key={r.label} className={`grid grid-cols-[1fr_1fr_1fr] ${i < rows.length - 1 ? 'border-b border-primary/10' : ''}`}>
+              <div className="px-5 py-3 flex items-center">
+                <span className="text-sm font-bold text-dark/70 uppercase tracking-wide">{r.label}</span>
               </div>
-              <div className="px-2 py-2 sm:px-5 sm:py-3 border-l border-primary/10 bg-primary/[0.05]">
-                <span className="text-[10px] sm:text-sm text-dark/75 leading-snug">{r.coaching}</span>
+              <div className="px-5 py-3 border-l border-primary/10 bg-primary/[0.05]">
+                <span className="text-sm text-dark/75 leading-snug">{r.coaching}</span>
               </div>
-              <div className="px-2 py-2 sm:px-5 sm:py-3 border-l border-primary/10">
-                <span className="text-[10px] sm:text-sm text-dark/75 leading-snug">{r.app}</span>
+              <div className="px-5 py-3 border-l border-primary/10">
+                <span className="text-sm text-dark/75 leading-snug">{r.app}</span>
               </div>
             </div>
           ))}
 
-          <div className="grid grid-cols-[0.8fr_1fr_1fr] sm:grid-cols-[1fr_1fr_1fr] border-t border-primary/20 bg-primary/5">
-            <div className="px-2 py-2 sm:px-5 sm:py-3 flex items-center">
-              <span className="text-[10px] sm:text-xs font-bold text-dark/60 uppercase">Empezar</span>
+          <div className="grid grid-cols-[1fr_1fr_1fr] border-t border-primary/20 bg-primary/5">
+            <div className="px-5 py-3 flex items-center">
+              <span className="text-xs font-bold text-dark/60 uppercase">Empezar</span>
             </div>
-            <div className="px-1.5 py-2 sm:px-5 sm:py-3 border-l border-primary/12 text-center">
-              <a href="https://calendar.app.google/LINK-VIDEOLLAMADA" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 sm:gap-1.5 bg-primary hover:bg-primary-dark text-white px-2.5 py-2 sm:px-5 sm:py-2.5 rounded-full text-[10px] sm:text-sm font-bold uppercase transition-all">
-                <CalendarCheck size={11} className="shrink-0" /> <span className="hidden xs:inline">Videollamada</span><span className="xs:hidden">Llamada</span>
+            <div className="px-5 py-3 border-l border-primary/12 text-center">
+              <a href="https://calendar.app.google/LINK-VIDEOLLAMADA" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 bg-primary hover:bg-primary-dark text-white px-5 py-2.5 rounded-full text-sm font-bold uppercase transition-all">
+                <CalendarCheck size={12} /> Videollamada gratis
               </a>
             </div>
-            <div className="px-1.5 py-2 sm:px-5 sm:py-3 border-l border-primary/12 text-center">
-              <a href="https://www.bejao.fit/checkout?tribeId=381&typeProduct=DIT" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 sm:gap-1.5 bg-dark hover:bg-dark-soft text-white px-2.5 py-2 sm:px-5 sm:py-2.5 rounded-full text-[10px] sm:text-sm font-bold uppercase transition-all">
-                59&#8364;/año <ArrowRight size={11} className="shrink-0" />
+            <div className="px-5 py-3 border-l border-primary/12 text-center">
+              <a href="https://www.bejao.fit/checkout?tribeId=381&typeProduct=DIT" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 bg-dark hover:bg-dark-soft text-white px-5 py-2.5 rounded-full text-sm font-bold uppercase transition-all">
+                59&#8364;/año <ArrowRight size={12} />
               </a>
             </div>
           </div>
