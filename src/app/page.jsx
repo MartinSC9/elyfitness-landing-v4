@@ -156,7 +156,7 @@ function Hero() {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
       <div className="absolute inset-0 bg-dark">
-        <video ref={videoRef} autoPlay muted loop playsInline className={`w-full h-full object-cover transition-opacity duration-700 ${videoLoaded ? 'opacity-100' : 'opacity-0'}`} />
+        <video ref={videoRef} autoPlay muted loop playsInline className={`w-full h-full object-cover transition-opacity duration-700 blur-[2px] sm:blur-0 ${videoLoaded ? 'opacity-100' : 'opacity-0'}`} />
       </div>
       <div className="absolute inset-0 bg-gradient-to-b from-dark/70 via-dark/75 to-dark/90 sm:from-dark/50 sm:via-dark/60 sm:to-dark/80" />
 
